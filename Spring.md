@@ -47,35 +47,86 @@
 
 ## 4. Dependency Injection (DI)
 
-- DI is a design pattern
-- Dependencies are injected by Spring container
+- Dependency Injection is a design principle where objects do not create their own dependencies.
+- Instead, Spring container injects the required objects at runtime.
+- 👉 This promotes loose coupling, easy testing, and better maintainability.
 
-### Types of Dependency Injection
+### Types of Dependency Injection 
 
-1. **Constructor Injection** (Recommended)
-2. Setter Injection
-3. Field Injection
+- Constructor Injection ✅ (Best practice)
+- Setter Injection
+- Field Injection (Not recommended for testing)
+
+
+### Problem without Dependency Injection (Tight Coupling)
 
 ### Example – Constructor Injection
 
 ```java
-@Component
 class Engine {
-    void start() {
+    public void start() {
         System.out.println("Engine started");
     }
 }
 
-@Component
 class Car {
+    private Engine engine = new Engine(); // tightly coupled
+
+    public void drive() {
+        engine.start();
+        System.out.println("Car is running");
+    }
+}
+
+```
+❌ Problems:
+
+- Car is tightly coupled to Engine
+- Difficult to replace Engine or test Car
+
+### How Dependency Injection (Loose Coupling) solve it ?
+
+### Step 1: Create Interface
+```java
+public interface Engine {
+    void start();
+}
+```
+### Step 2: Implement Interface
+```java
+@Component
+public class PetrolEngine implements Engine {
+    public void start() {
+        System.out.println("Petrol Engine started");
+    }
+}
+```
+### Step 3: Inject Dependency using Constructor Injection (Recommended)
+```java
+@Component
+public class Car {
+
     private final Engine engine;
 
     @Autowired
     public Car(Engine engine) {
         this.engine = engine;
     }
+
+    public void drive() {
+        engine.start();
+        System.out.println("Car is running");
+    }
 }
 ```
+### Advantages of DI
+
+- Loose coupling between classes
+- Easy unit testing (mock dependencies)
+- Better code maintainability
+- Easy to switch implementations
+```java
+
 
 ---
 
