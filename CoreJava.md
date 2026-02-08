@@ -17,3 +17,5 @@ public class LoggingAspect {}
 - **Advice** – action taken at join points
 - **Join Point** – point during execution
 - **Pointcut** – defines where advice applies
+
+<img width="898" height="380" alt="image" src="https://github.com/user-attachments/assets/8fefc2bf-0dae-4b63-847b-555d36031c2e" />
