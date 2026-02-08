@@ -130,7 +130,7 @@ public class MaxMinDigitLong {
         int minDigit = 9;
 
         while (n > 0) {
-            int r = (int) (n % 10);
+            int r = n % 10;
 
             if (r > maxDigit)
                 maxDigit = r;
