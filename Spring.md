@@ -34,10 +34,35 @@
 
 ## 3. Inversion of Control (IoC)
 
-- IoC means **control of object creation is given to Spring**
+- Inversion of Control (IoC) is a design principle , where Spring container takes control of object creation and dependency management instead of the application code.
+- That is  👉 Instead of the developer creating objects using **new** operator, Spring creates, manages, and injects them. 
 - Developer does **not use `new` keyword** directly
-- Spring container manages object lifecycle
+- Spring container manages object lifecycle, object creation and dependency management is transferred from the program to the Spring container.
 
+### Traditional Approach (Without IoC)
+
+```java
+Engine engine = new PetrolEngine();
+Car car = new Car(engine);
+
+// Developer controls object creation
+// Tight coupling between classes
+```
+
+### With Spring IoC
+```java
+@Component
+class PetrolEngine implements Engine {}
+
+@Component
+class Car {
+    @Autowired
+    Engine engine;
+}
+
+// Spring container creates objects
+// Spring manages dependencies automatically
+```
 ### IoC Containers
 
 - **BeanFactory** – basic container
