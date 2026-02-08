@@ -209,15 +209,24 @@ public class FactorialNumber {
     public static void main(String[] args) {
 
         int num = 5;
-        int fact = 1;
+        int fact = num;
+        int n = num;
 
-        for (int i = 1; i <= num; i++) {
-            fact = fact * i;
+        while (n > 1) {
+            n--;
+            fact = fact * n;
         }
 
         System.out.println("Factorial = " + fact);  // Factorial = 120
     }
 }
+
+```
+```
+fact = 5, n = 5
+n-- → 4 → fact = 5 * 4 = 20
+n-- → 3 → fact = 20 * 3 = 60
+n-- → 2 → fact = 60 * 2 = 120
 ```
 
 # Recursive Factorial
