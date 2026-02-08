@@ -91,3 +91,30 @@ public class ArmstrongNumber {
 // num == sum = 153 = (1x1x1) + (5x5x5) + (3x3x3)
 
 ```
+
+# Palindrome number (121 → true)
+
+```java
+public class PalindromeNumber {
+    public static void main(String[] args) {
+
+        int num = 121;
+        int n = num;
+        int sum = 0;
+
+        while (n > 0) {
+            int r = n % 10;
+            reverse = (sum * 10) + r;
+            n = n / 10;
+        }
+
+        System.out.println("Reverse = " + sum);
+
+        if (sum == num) {
+            System.out.println("Palindrome number");
+        } else {
+            System.out.println("Not a Palindrome");
+        }
+    }
+}
+```
