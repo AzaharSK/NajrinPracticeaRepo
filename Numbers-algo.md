@@ -128,7 +128,7 @@ public class PalindromeNumber {
 
         while (n > 0) {
             int r = n % 10;
-            reverse = (sum * 10) + r;
+            sum = (sum * 10) + r;
             n = n / 10;
         }
 
