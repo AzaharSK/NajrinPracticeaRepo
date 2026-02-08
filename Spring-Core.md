@@ -294,6 +294,11 @@ public class Car {
 ```
 <img width="729" height="385" alt="image" src="https://github.com/user-attachments/assets/ad64013d-30df-480d-ac38-55726c440f5d" />
 
+### Difference between IoC and DI ?
+ 
+-  **IoC says who creates objects, DI says how they are provided.**
+-  IoC is a principle where Spring controls object creation, and DI is the technique Spring uses to inject dependencies into those objects.
+  <img width="1581" height="623" alt="image" src="https://github.com/user-attachments/assets/46ad7fd5-ea45-48a3-9673-30688e4d475a" />
 
 ## 5. Spring Beans
 
