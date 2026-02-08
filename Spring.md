@@ -5,9 +5,9 @@
 ## 1. What is Spring Framework?
 
 - Spring is a **lightweight, open‑source Java framework** for building **enterprise‑level applications**
-- It provides features such as **Dependency Injection(DI)**, **Inversion of Control(IOC)**, **Aspect-Oriented Programming(AOP)**, 
-- It also provides declarative **transaction management** , **logging**, **security**, and seamless integration with ORM frameworks like **Hibernate** for efficient database operations.
-- Spring offers a rich ecosystem of modules (Spring MVC, Spring JDBC, Spring ORM, and Spring Security ) for end-to-end rapid App development and serves as the foundation for Spring Boot.
+- It provides features such as **Dependency Injection(DI)**, **Inversion of Control(IOC)**, to manage the object cration & lifecycle by framework itself, 
+- It also provides  **Aspect-Oriented Programming(AOP)** , declarative **transaction management** , **logging**, **security**, and seamless integration with ORM frameworks like **Hibernate** for efficient database operations.
+- Spring offers a rich ecosystem of modules (Spring MVC, Spring JDBC, Spring Data, Spring ORM, and Spring Security ) for end-to-end rapid App development and serves as the foundation for Spring Boot.
 
 
 ### Key Problems Spring Solves
@@ -150,10 +150,41 @@ public class Car {
 - Easy unit testing (mock dependencies)
 - Better code maintainability
 - Easy to switch implementations
-```java
+
 
 
 ---
+
+## What are Spring Modules?
+
+- **#1 Core Container** – Provides IoC and Dependency Injection.
+- **#2 AOP Module** – Handles cross-cutting concerns like logging and security.
+- **#3 Data Access Module** – Simplifies JDBC, ORM (Hibernate/JPA), and transactions
+- **#4 Web Module** – Used to build web and REST applications (Spring MVC, WebFlux).
+- **#5 Security & Test Modules** – Provides authentication, authorization, and testing support.
+
+```sql
++--------------------------------------------------+
+|                 Spring Framework                 |
++--------------------------------------------------+
+|  Core Container                                  |
+|  - Core | Beans | Context | SpEL                 |
++--------------------------------------------------+
+|  AOP & Aspects                                   |
+|  - Spring AOP | Spring Aspects                   |
++--------------------------------------------------+
+|  Data Access / Integration                       |
+|  - JDBC | ORM (Hibernate/JPA) | Transactions     |
++--------------------------------------------------+
+|  Web                                            |
+|  - Spring MVC | Spring Web | WebFlux             |
++--------------------------------------------------+
+|  Security & Testing                              |
+|  - Spring Security | Spring Test                 |
++--------------------------------------------------+
+```
+<img width="729" height="385" alt="image" src="https://github.com/user-attachments/assets/ad64013d-30df-480d-ac38-55726c440f5d" />
+
 
 ## 5. Spring Beans
 
