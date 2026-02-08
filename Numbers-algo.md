@@ -129,13 +129,6 @@ public class MaxMinDigitLong {
         int maxDigit = 0;
         int minDigit = 9;
 
-        // Special case
-        if (n == 0) {
-            System.out.println("Max digit = 0");
-            System.out.println("Min digit = 0");
-            return;
-        }
-
         while (n > 0) {
             int r = (int) (n % 10);
 
