@@ -27,8 +27,8 @@
 - ♻️ __AOP support:__ – cleanly handles cross-cutting concerns such as logging, security, and auditing.
 - 🔌 __Easy integration:__ – works seamlessly with Hibernate, JPA, JDBC, REST, messaging, and other frameworks.
 - 🔁 __Spring Boot support:__ – enables **Rapid** end-to-end App development development with minimal configuration.
-- 🧪 __Easy unit & integration testing:__ (mocking object supported and DI)
-- ♻️ __Strong community and ecosystem:__ – excellent documentation, tools, and long-term support.
+- 🧪 __Easy unit & integration testing:__  Mocking object supported with dependency injection
+- ♻️ __Strong community and ecosystem:__  excellent documentation, tools, and long-term support.
 
 ---
 
