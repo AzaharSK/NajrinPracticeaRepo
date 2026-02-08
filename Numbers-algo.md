@@ -114,7 +114,7 @@ sum = 5
 
 # Max & Min Digit using long
 
-```
+```java
 public class MaxMinDigitLong {
     public static void main(String[] args) {
 
