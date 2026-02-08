@@ -111,6 +111,48 @@ ldigit = 2
 fdigit = 3
 sum = 5
 ```
+
+# Max & Min Digit using long
+
+```
+public class MaxMinDigitLong {
+    public static void main(String[] args) {
+
+        long num = 907654321045678L;
+        long n = num;
+
+        // Handle negative number
+        if (n < 0) {
+            n = -n;
+        }
+
+        int maxDigit = 0;
+        int minDigit = 9;
+
+        // Special case
+        if (n == 0) {
+            System.out.println("Max digit = 0");
+            System.out.println("Min digit = 0");
+            return;
+        }
+
+        while (n > 0) {
+            int r = (int) (n % 10);
+
+            if (r > maxDigit)
+                maxDigit = r;
+
+            if (r < minDigit)
+                minDigit = r;
+
+            n = n / 10;
+        }
+
+        System.out.println("Max digit = " + maxDigit);
+        System.out.println("Min digit = " + minDigit);
+    }
+}
+```
 # ArmstrongNumber
 ```java
 
