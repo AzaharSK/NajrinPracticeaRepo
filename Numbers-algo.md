@@ -203,6 +203,10 @@ public class PalindromeNumber {
 
 
 # Factorial 
+- 5 ! = 5x4x3x2x1
+- 1 ! = 1
+- 0 ! = 1 
+
 
 ```java
 public class FactorialNumber {
@@ -211,6 +215,10 @@ public class FactorialNumber {
         int num = 5;
         int fact = num;
         int n = num;
+
+        if (num == 0 || num == 1) {
+            System.out.println("Factorial = 1");
+        }
 
         while (n > 1) {
             n--;
