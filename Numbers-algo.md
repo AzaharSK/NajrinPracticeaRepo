@@ -64,7 +64,30 @@ ldigit = 2
 fdigit = 3
 sum = 5
 ```
+# ArmstrongNumber
+```java
 
+public class ArmstrongNumber {
+    public static void main(String[] args) {
 
+        int num = 153;
+        int n = num;
+        int sum = 0;
+
+        while (n > 0) {
+            int r = n % 10;
+            sum = sum + (r * r * r);
+            n = n / 10;
+        }
+
+        if (sum == num) {   
+            System.out.println("Armstrong number");
+        } else {
+            System.out.println("Not an Armstrong number");
+        }
+    }
+}
+
+// num == sum = 153 = (1x1x1) + (5x5x5) + (3x3x3)
 
 ```
