@@ -1,3 +1,27 @@
+#  CountDigits
+
+```java
+public class CountDigits {
+    public static void main(String[] args) {
+
+        int num = 375879;
+        int n = num;
+        int count = 0;
+
+        while (n > 0) {
+           
+            n = n / 10;
+            count++;
+        }
+
+        
+        System.out.println(count);  //6
+            
+        
+    }
+}
+```
+
 # sum of all digits in a number code in java
 ```java
 public class SumOfDigits {
