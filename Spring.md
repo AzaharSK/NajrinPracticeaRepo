@@ -21,14 +21,14 @@
 
 ## 2. Advantages of Spring
 
-- ♻️ Lightweight Opensource and modular – you use only what you need, reducing application complexity.
-- 🔁 Loose coupling with Dependency Injection (DI) & Inversion of Control mechanism – improves code maintainability, testing, and flexibility.
-- 🧪 Powerful transaction management – supports declarative transactions across databases and ORM , Messaging , Security and tools like Hibernate.
-- ♻️ AOP support – cleanly handles cross-cutting concerns such as logging, security, and auditing.
-- 🔌 Easy integration – works seamlessly with Hibernate, JPA, JDBC, REST, messaging, and other frameworks.
-- 🔁 Spring Boot support – enables **Rapid** end-to-end App development development with minimal configuration.
-- 🧪 Easy unit & integration testing (mocking object supported)
-- ♻️ Strong community and ecosystem – excellent documentation, tools, and long-term support.
+- ♻️ __Lightweight Opensource and modular:__ – you use only what you need, reducing application complexity.
+- 🔁 __Loose coupling with Dependency Injection (DI) & Inversion of Control mechanism:__ – improves code maintainability, testing, and flexibility.
+- 🧪 __Powerful transaction management:__ – supports declarative transactions across databases and ORM , Messaging , Security and tools like Hibernate.
+- ♻️ __AOP support:__ – cleanly handles cross-cutting concerns such as logging, security, and auditing.
+- 🔌 __Easy integration:__ – works seamlessly with Hibernate, JPA, JDBC, REST, messaging, and other frameworks.
+- 🔁 __Spring Boot support:__ – enables **Rapid** end-to-end App development development with minimal configuration.
+- 🧪 __Easy unit & integration testing:__ (mocking object supported and DI)
+- ♻️ __Strong community and ecosystem:__ – excellent documentation, tools, and long-term support.
 
 ---
 
