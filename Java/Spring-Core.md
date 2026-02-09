@@ -103,9 +103,8 @@ class Car {
 ---
 
 ## 4. Dependency Injection (DI)
-
-- Dependency Injection is a design principle where objects do not create their own dependencies.
-- Instead, Spring container injects the required objects at runtime.
+- `Dependency Injection` is a `design pattern` in which an object does not create its own dependencies.
+- Instead, the Spring Framework creates and provides the required dependent objects and injects them at runtime, rather than the class creating them itself.
 - 👉 This promotes loose coupling, easy testing, and better maintainability.
 
 ### Types of Dependency Injection 
@@ -534,6 +533,12 @@ Constructor Injection     → Mandatory & safe
 Setter Injection          → Optional & flexible
 Field Injection           → Simple but risky
 ```
+
+
+## What is @Autowired?
+
+- __`@Autowired`__ is a `Spring annotation` used for automatic dependency injection.
+- It tells the Spring container to find a matching bean and inject it into the required field, constructor, or setter.
 
 #############################################################################################################################
 Allows correct behavior in web applications
