@@ -8,4 +8,3 @@
 | Uses `extends` keyword                         | Uses `implements` keyword                                                 |
 | Can have method implementation                 | Focuses on **what to do**, not how                                        |
 
-```
