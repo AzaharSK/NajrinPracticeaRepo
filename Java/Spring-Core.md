@@ -522,6 +522,8 @@ public class OrderService {
 ## Why is constructor injection preferred?
 - 👉 Because it ensures mandatory dependencies, promotes immutability, and improves testability.
 
+---
+
 <img width="1561" height="877" alt="image" src="https://github.com/user-attachments/assets/753a80d9-948b-4217-bbc3-8896899e00ab" />
 
 #############################################################################################################################
