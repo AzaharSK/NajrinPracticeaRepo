@@ -356,6 +356,8 @@ public class OrderController {
 - `Spring Container` = `Bean Factory` + `Dependency Injection` + `Lifecycle Management`
 
 
+<img width="1658" height="660" alt="image" src="https://github.com/user-attachments/assets/ede6c3bd-8bf4-4b70-b326-d25c409dcec6" />
+
 ### Responsibilities of Spring Container
 
 - Creates Spring Beans
