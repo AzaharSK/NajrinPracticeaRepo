@@ -524,7 +524,16 @@ public class OrderService {
 
 ---
 
-<img width="1561" height="877" alt="image" src="https://github.com/user-attachments/assets/753a80d9-948b-4217-bbc3-8896899e00ab" />
+## When to Use What?
+- __`Constructor Injection:`__ When we use Constructor Injection, dependency when a dependency is mandatory, immutable, Easy to Test.
+- __`Setter Injection:`__ Setter method dependency is used when the dependency is optional or requires late initialization, Medium to Test
+- __`Field Injection:`__ Field injection dependency is used for small projects, but not for production code, Difficult to Test.
+
+```sql
+Constructor Injection     → Mandatory & safe
+Setter Injection          → Optional & flexible
+Field Injection           → Simple but risky
+```
 
 #############################################################################################################################
 Allows correct behavior in web applications
