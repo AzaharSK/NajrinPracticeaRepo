@@ -610,10 +610,17 @@ public class OrderService {
 
 // ✔ Injected → Card Payment Service
 ```
-@Primary       → default choice
-@Qualifier     → explicit choice (wins)
+### Who wins ?
 ```
-#############################################################################################################################
+@Primary       → default choice
+@Qualifier     → explicit choice (wins), override default choice
+```
+
+
+
+
+
+#############################################################
 Allows correct behavior in web applications
 ---
 
