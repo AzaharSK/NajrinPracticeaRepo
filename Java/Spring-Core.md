@@ -465,6 +465,64 @@ __Key Features:__
 - Annotation-based configuration
 - Advance feature like `Event` handling ,`Internationalization (i18n)`, `AOP` etc fully supported which are used in most Real-world-Apps
 
+---
+
+## What are the types of Dependency Injections in java spring ?
+- Spring supports the 3 types of Dependency Injection
+  
+```
+1. Constructor Injection ( Recommended ✅ )
+2. Setter Injection
+3. Field Injection (Not Recommended ❌)
+```
+
+###  `Constructor Injection ` => Dependencies are provided through the constructor.
+```java
+@Component
+public class OrderService {
+
+    private final PaymentService paymentService;
+
+    @Autowired
+    public OrderService(PaymentService paymentService) {
+        this.paymentService = paymentService;   // Makes dependencies mandatory , Avoids NullPointerException
+    }
+}
+```
+### `Setter Injection` ( Recommended ✅ ) => Dependencies are injected using setter methods.
+
+```java
+@Component
+public class OrderService {
+
+    private PaymentService paymentService;
+
+    @Autowired
+    public void setPaymentService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+
+// Optional dependencies - Runtime reconfiguration via set Method
+}
+```
+### `Field Injection`  (Not Recommended ❌) = > Dependencies are injected directly into fields. 
+
+```java
+@Component
+public class OrderService {
+
+    @Autowired
+    private PaymentService paymentService;
+}
+
+
+// Hidden dependencies
+// Breaks immutability
+```
+## Why is constructor injection preferred?
+- 👉 Because it ensures mandatory dependencies, promotes immutability, and improves testability.
+
+<img width="1561" height="877" alt="image" src="https://github.com/user-attachments/assets/753a80d9-948b-4217-bbc3-8896899e00ab" />
 
 #############################################################################################################################
 Allows correct behavior in web applications
