@@ -333,6 +333,50 @@ public class AppConfig {
 
 ---
 
+## What are the types of Spring Bean scopes?
+- `Bean Scope` defines `how many instances` of a Spring Bean are created and `how long` they live within the Spring container.
+- For Example of `prototype` type Bean scopes – new instance every time it’s requested
+
+```java
+
+@Component
+@Scope("prototype")
+public class PaymentService {
+}
+
+// A new instance is created EVERY time PaymentService is requested
+// PaymentService p1 and PaymentService p2 are different objects
+
+ 
+// The lifecycle lasts only until the client code releases the reference, i.e- Until the client code is done with it
+// Spring IOC container manages it only up to dependency injection. After that, the bean’s lifecycle is managed by the client, not Spring.
+```
+### Types of Bean Scopes
+
+- `singleton` (default) – one instance per Spring container
+- `prototype` – new instance every time it’s requested
+- `request` – one instance per HTTP request
+- `session` – one instance per HTTP session
+- `application` – one instance per ServletContext
+- `websocket` – one instance per WebSocket session
+
+### Importance of Bean Scope
+
+- Controls object creation and memory usage
+- Helps manage stateful vs stateless beans
+- Improves performance and scalability
+- Prevents thread-safety issues
+
+---
+### Bean Lifecycle (1-liner)
+
+- __Instantiate → Populate properties → Initialize → Ready → Destroy__
+
+---
+
+Allows correct behavior in web applications
+---
+
 ```
 ### Bean Scopes
 
