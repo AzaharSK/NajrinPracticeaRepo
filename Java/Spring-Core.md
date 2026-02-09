@@ -537,9 +537,82 @@ Field Injection           → Simple but risky
 
 ## What is @Autowired?
 
-- __`@Autowired`__ is a `Spring annotation` used for automatic dependency injection.
+- __`@Autowired`__ is a `Spring annotation` used for enabling automatic dependency injection, by instructing Spring to inject a required bean into a class.
 - It tells the Spring container to find a matching bean and inject it into the required field, constructor, or setter.
 
+## What if multiple beans of the same type exist ?
+- When multiple beans of the same type exist, Spring throws __`NoUniqueBeanDefinitionException`__, which can be resolved using `@Qualifier`, `@Primary`, or bean name matching.
+
+```java
+
+// Explicit selection service (Selected using @Qualifier)
+
+@Component("cardPaymentService")
+public class CardPaymentService implements PaymentService {
+    public String pay() {
+        return "Paid using Card";
+    }
+}
+
+
+
+// Something Else (Not injected unless asked)-ignored unless referenced
+
+@Component("netBankingPaymentService")
+public class NetBankingPaymentService implements PaymentService {
+    public String pay() {
+        return "Paid using Net Banking";
+    }
+}
+
+
+// Default implementation / Primary Service
+
+@Primary
+@Component("upiPaymentService")
+public class UpiPaymentService implements PaymentService {
+    public String pay() {
+        return "Paid using UPI";
+    }
+}
+
+```
+### Case 1: No @Qualifier → @Primary is injected
+
+```java
+
+@Component
+public class OrderService {
+
+    private final PaymentService paymentService;
+
+   
+    public OrderService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+}
+
+ // ✔ Injected → UPI Payment Service
+```
+### Case 2: Explicit selection → @Qualifier overrides @Primary
+
+```java
+@Component
+public class OrderService {
+
+    private final PaymentService paymentService;
+
+    public OrderService(
+            @Qualifier("cardPaymentService") PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+}
+
+// ✔ Injected → Card Payment Service
+```
+@Primary       → default choice
+@Qualifier     → explicit choice (wins)
+```
 #############################################################################################################################
 Allows correct behavior in web applications
 ---
