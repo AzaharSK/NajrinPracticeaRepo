@@ -15,99 +15,22 @@ what are top 50 interview question on java spring
 - What are the types of Spring Bean scopes?
 - What is Spring Container?
 - Difference between BeanFactory and ApplicationContext?
+- What are the types of Dependency Injection?
+- Which DI is recommended and why?
+- What is @Autowired?
+- Difference between @Component, @Service, @Repository, @Controller?
+- What is @Qualifier?
+- What is @Primary?
+- What is Spring Java-based configuration?
+- Difference between XML and Annotation configuration?
+- What is @Configuration?
+- What is @Bean?
+- What is Spring Bean lifecycle?
+- What are init and destroy methods?
+- What is @PostConstruct and @PreDestroy?
+- What is lazy initialization?
+- What is eager initialization?
 
----
-⚙️ Dependency Injection & Configuration
-
-What are the types of Dependency Injection?
-
-Which DI is recommended and why?
-
-What is @Autowired?
-
-Difference between @Component, @Service, @Repository, @Controller?
-
-What is @Qualifier?
-
-What is @Primary?
-
-What is Spring Java-based configuration?
-
-Difference between XML and Annotation configuration?
-
-What is @Configuration?
-
-What is @Bean?
-
-🔁 Spring Bean Lifecycle
-
-What is Spring Bean lifecycle?
-
-What are init and destroy methods?
-
-What is @PostConstruct and @PreDestroy?
-
-What is lazy initialization?
-
-What is eager initialization?
-
-✂️ Spring AOP
-
-What is AOP?
-
-What are cross-cutting concerns?
-
-What is an Aspect?
-
-What is Advice?
-
-What is Pointcut?
-
-What is Join Point?
-
-Types of Advice in Spring AOP?
-
-🗄️ Data Access & Transactions
-
-How does Spring handle JDBC?
-
-What is Spring ORM?
-
-How does Spring integrate with Hibernate?
-
-What is transaction management in Spring?
-
-What is @Transactional?
-
-Difference between programmatic and declarative transactions?
-
-🌐 Spring MVC & Web
-
-What is Spring MVC?
-
-What is DispatcherServlet?
-
-What is @Controller vs @RestController?
-
-What is @RequestMapping?
-
-Difference between @GetMapping and @PostMapping?
-
-What is @PathVariable and @RequestParam?
-
-🚀 Spring Boot & Advanced
-
-What is Spring Boot?
-
-Difference between Spring and Spring Boot?
-
-What are Spring Boot starters?
-
-What is auto-configuration?
-
-What is embedded server in Spring Boot?
-
-What are Spring Profiles?
 
 ---
 
