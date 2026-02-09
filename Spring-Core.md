@@ -508,8 +508,40 @@ public class OrderController {
 // Manages their ( PaymentService & OrderController) lifecycle
 ```
 
+---
+
+##  Difference between `BeanFactory` and `ApplicationContext`?
+
+### Spring offers two main container abstractions:
+    - 1. BeanFactory
+    - 2. ApplicationContext
+- These are interfaces, not concrete classes and they represent two different levels of container capability.
+- Below is the hierarchy of the BeanFactory(I) and ApplicationContext(I) with some of their implementation classes.
+
+<img width="800" height="324" alt="image" src="https://github.com/user-attachments/assets/ae89dd05-299f-499a-a4bb-489ded964aec" />
+
+### BeanFactory :
+- BeanFactory, defined in `org.springframework.beans.factory`, - is the basic/root IoC container interface in Spring.
+- XmlBeanFactory implements BeanFactory (deprecated)
+- It provides core functionalities such as bean creation and dependency injection.
+
+__Key Characteristics:__
+- Beans are created only when requested (on demand)
+- This behavior is known as lazy initialization
+- Suitable for lightweight or memory-constrained applications But Rarely used in  Real-world-Apps , mostly theoretical.
+
+### ApplicationContext:
+- `ApplicationContext`, defined in `org.springframework.context`, -- is an `Advanced container interface` that `extends BeanFactory` and provides additional `enterprise-level features`.
+- ClassPathXmlApplicationContext, FileSystemXmlApplicationContext, etc, implement ApplicationContext
+  
+__Key Features:__
+
+- Eager initialization (at startup, by default)
+- Annotation-based configuration
+- Advance feature like `Event` handling ,`Internationalization (i18n)`, `AOP` etc fully supported which are used in most Real-world-Apps
 
 
+#############################################################################################################################
 Allows correct behavior in web applications
 ---
 
