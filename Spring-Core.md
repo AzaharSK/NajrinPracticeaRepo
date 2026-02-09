@@ -382,6 +382,36 @@ public class OrderService {
     // Here both P1 and P2 are same objects as Bean scope creation type: singleton by default - only one isntance allowed
 }
 ```
+### Request scope
+- Request scope creates a single bean instance per one HTTP request, shared within that request and destroyed once the request completes.
+
+```java
+
+@Component
+@RequestScope
+public class PaymentService {
+}
+
+
+@RestController
+public class OrderController {
+
+    @Autowired
+    private PaymentService p1;
+
+    @Autowired
+    private PaymentService p2;
+
+    @GetMapping("/pay")
+    public String pay() {
+        return String.valueOf(p1 == p2);  //true  ✔ Same request → same bean instance
+    }
+}
+```
+- Same HTTP request → same PaymentService instance
+- Different HTTP request → new instance
+- Previous Bean instance is → destroyed after request completion
+
 
 ### Importance of Bean Scope
 
@@ -396,6 +426,89 @@ public class OrderService {
 - __Instantiate → Populate properties → Initialize → Ready → Destroy__
 
 ---
+
+## What is Spring Container?
+
+- The **Spring Container** is responsible for **creating, configuring, and managing the lifecycle** of **Spring Beans and injecting dependencies**.
+- `Spring Container` = `Bean Factory` + `Dependency Injection` + `Lifecycle Management`
+
+
+### Responsibilities of Spring Container
+
+- Creates Spring Beans
+- Injects dependencies (DI)
+- Manages bean lifecycle
+- Handles bean scopes (singleton, prototype, request, etc.)
+- Manages configuration metadata
+
+### Types of Spring Containers
+
+- `BeanFactory` – basic container (lazy initialization)
+- `ApplicationContext` – advanced container (most commonly used)
+
+### BeanFactory (Basic Spring Container)
+- `BeanFactory` is a basic `Spring container` that uses `lazy initialization` and creates `beans/bean objects` only when they are requested.
+
+__Key Characteristics:__
+
+- Basic IoC container
+- Supports Dependency Injection
+- Uses lazy initialization (beans are created only when requested)
+- Lightweight and memory-efficient
+- No advanced enterprise features by default
+  
+__Lazy Initialization Explained:__
+
+- Beans are NOT created at application startup
+- A bean is created only when getBean() is called
+
+```java
+// Beans
+public class PaymentService {
+    public PaymentService() {
+        System.out.println("PaymentService created");
+    }
+}
+
+BeanFactory factory = new ClassPathXmlApplicationContext("beans.xml");
+PaymentService service = factory.getBean(PaymentService.class);  // PaymentService created
+```
+
+
+### Example using ApplicationContext:
+- `ApplicationContext` is an advanced Spring container that extend BeanFactory , It support creates, configures, and manages Spring beans.
+- It provides dependency injection, lifecycle management, and enterprise features like `AOP`, `events`, and `internationalization`.
+- By default, it eagerly initializes singleton beans at application startup.
+- `ApplicationContext` is almost always preferred/recommanded over `BeanFactory`
+
+```java
+//Bean => Creates PaymentService
+
+@Component
+public class PaymentService {
+    public String pay() {
+        return "Payment Successful";
+    }
+}
+
+// Controller / Client => Creates OrderController
+
+@RestController
+public class OrderController {
+
+    @Autowired
+    private PaymentService paymentService;
+
+    @GetMapping("/pay")
+    public String pay() {
+        return paymentService.pay();  // Injects PaymentService into OrderController
+    }
+}
+
+// Manages their ( PaymentService & OrderController) lifecycle
+```
+
+
 
 Allows correct behavior in web applications
 ---
