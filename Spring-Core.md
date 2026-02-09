@@ -335,22 +335,7 @@ public class AppConfig {
 
 ## What are the types of Spring Bean scopes?
 - `Bean Scope` defines `how many instances` of a Spring Bean are created and `how long` they live within the Spring container.
-- For Example of `prototype` type Bean scopes – new instance every time it’s requested
 
-```java
-
-@Component
-@Scope("prototype")
-public class PaymentService {
-}
-
-// A new instance is created EVERY time PaymentService is requested
-// PaymentService p1 and PaymentService p2 are different objects
-
- 
-// The lifecycle lasts only until the client code releases the reference, i.e- Until the client code is done with it
-// Spring IOC container manages it only up to dependency injection. After that, the bean’s lifecycle is managed by the client, not Spring.
-```
 ### Types of Bean Scopes
 
 - `singleton` (default) – one instance per Spring container
@@ -359,6 +344,44 @@ public class PaymentService {
 - `session` – one instance per HTTP session
 - `application` – one instance per ServletContext
 - `websocket` – one instance per WebSocket session
+
+### prototype: type Bean scopes – new instance every time it’s requested
+```java
+
+@Component
+@Scope("prototype")
+public class PaymentService {
+}
+
+@Autowired
+PaymentService p1;
+
+@Autowired
+PaymentService p2;
+
+// A new instance is created EVERY time PaymentService is requested
+// p1 → one PaymentService object
+// p2 → another PaymentService object
+// p1 != p2  ( Both are different objects as Bean scope creation type: prototype)
+
+ 
+// The lifecycle lasts only until the client code releases the reference, i.e- Until the client code is done with it
+// Spring IOC container manages it only up to dependency injection. After that, the bean’s lifecycle is managed by the client, not Spring.
+```
+### Singleton Bean scope - only one isntance allowed
+```java
+@Component
+public class OrderService {
+
+    @Autowired
+    private PaymentService p1;
+
+    @Autowired
+    private PaymentService p2;
+
+    // Here both P1 and P2 are same objects as Bean scope creation type: singleton by default - only one isntance allowed
+}
+```
 
 ### Importance of Bean Scope
 
