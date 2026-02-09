@@ -294,17 +294,46 @@ public class Car {
 ```
 <img width="729" height="385" alt="image" src="https://github.com/user-attachments/assets/ad64013d-30df-480d-ac38-55726c440f5d" />
 
+---
 ### Difference between IoC and DI ?
  
 -  **IoC says who creates objects, DI says how they are provided.**
 -  IoC is a principle where Spring controls object creation, and DI is the technique Spring uses to inject dependencies into those objects.
   <img width="1581" height="623" alt="image" src="https://github.com/user-attachments/assets/46ad7fd5-ea45-48a3-9673-30688e4d475a" />
 
-## 5. Spring Beans
+---
+## What are Spring Beans ? 
+- A Spring Bean is a **Java object** - whose entire lifecycle (create → configure → inject → destroy) is managed by the Spring Framework IoC container.
+- Beans are created based on configuration metadata (XML, annotations, or Java config)
 
-- A **Bean** is an object managed by Spring container
-- Defined using annotations or XML
+### [1] Using XML (legacy)
+```xml
+<bean id="userService" class="com.example.UserService"/>
+```
+### [2] Using Annotations (most common)
+```java
+@Component
+public class UserService {
+}
+```
+### [3] Using Java Configuration
+```java
+@Configuration
+public class AppConfig {
 
+    @Bean
+    public UserService userService() {
+        return new UserService();
+    }
+}
+```
+
+- Beans support Dependency Injection (DI)
+- They promote loose coupling and easy testing
+
+---
+
+```
 ### Bean Scopes
 
 - `singleton` (default)
