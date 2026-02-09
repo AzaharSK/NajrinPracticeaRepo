@@ -5,7 +5,7 @@ what are top 50 interview question on java spring
 ---
 🌱 Spring Core & Basics
 
-- What is Spring Framework?
+- What is Spring Framework? 
 - What are the advantages of Spring?
 - What problems does Spring solve?
 - What is Inversion of Control (IoC)?
