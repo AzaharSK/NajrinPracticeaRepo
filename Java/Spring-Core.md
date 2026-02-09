@@ -444,8 +444,8 @@ public class OrderController {
 <img width="800" height="324" alt="image" src="https://github.com/user-attachments/assets/ae89dd05-299f-499a-a4bb-489ded964aec" />
 
 ### BeanFactory :
-- BeanFactory, defined in `org.springframework.beans.factory`, - is the basic/root IoC container interface in Spring.
-- XmlBeanFactory implements BeanFactory (deprecated)
+- BeanFactory, defined in `org.springframework.beans.factory`, - is the `basic/root IoC container interface` in Spring.
+- `XmlBeanFactory` implements `BeanFactory` (deprecated)
 - It provides core functionalities such as bean creation and dependency injection.
 
 __Key Characteristics:__
@@ -455,7 +455,7 @@ __Key Characteristics:__
 
 ### ApplicationContext:
 - `ApplicationContext`, defined in `org.springframework.context`, -- is an `Advanced container interface` that `extends BeanFactory` and provides additional `enterprise-level features`.
-- ClassPathXmlApplicationContext, FileSystemXmlApplicationContext, etc, implement ApplicationContext
+- `ClassPathXmlApplicationContext`, `FileSystemXmlApplicationContext`, etc, `implement ApplicationContext`
   
 __Key Features:__
 
