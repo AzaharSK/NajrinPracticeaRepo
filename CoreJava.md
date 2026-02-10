@@ -15,7 +15,7 @@
 ```
 
 ````
-##1. What is Java?
+##  1. What is Java?
 
 Theory:
 Java is a high-level, object-oriented, platform-independent programming language.
@@ -28,7 +28,7 @@ class Hello {
     }
 }
 
-2. Why is Java platform-independent?
+## 2. Why is Java platform-independent?
 
 Theory:
 Java code compiles into bytecode, which runs on the JVM regardless of OS.
@@ -37,7 +37,7 @@ Code:
 
 Java Source → Bytecode → JVM → Any OS
 
-3. What is JVM?
+## 3. What is JVM?
 
 Theory:
 JVM executes bytecode and handles memory, GC, and runtime.
@@ -46,7 +46,7 @@ Code:
 
 System.out.println("Executed by JVM");
 
-4. Difference between JDK, JRE, JVM?
+## 4. Difference between JDK, JRE, JVM?
 
 Theory:
 
@@ -61,12 +61,12 @@ Code:
 javac → JDK
 java  → JRE
 
-5. What are Java features?
+## 5. What are Java features?
 
 Theory:
 OOP, portable, secure, robust, multithreaded.
 
-6. What is a class?
+## 6. What is a class?
 
 Theory:
 Blueprint of an object.
@@ -77,7 +77,7 @@ class Car {
     String color;
 }
 
-7. What is an object?
+## 7. What is an object?
 
 Theory:
 Instance of a class.
@@ -86,7 +86,7 @@ Code:
 
 Car c = new Car();
 
-8. What is Encapsulation?
+## 8. What is Encapsulation?
 
 Theory:
 Wrapping data and methods, hiding data using private access.
@@ -100,7 +100,7 @@ class User {
     }
 }
 
-9. What is Inheritance?
+## 9. What is Inheritance?
 
 Theory:
 One class acquires properties of another.
@@ -112,7 +112,7 @@ class Animal {
 }
 class Dog extends Animal {}
 
-10. What is Polymorphism?
+## 10. What is Polymorphism?
 
 Theory:
 Same method name, different behavior.
@@ -126,7 +126,7 @@ class B extends A {
     void show() { System.out.println("B"); }
 }
 
-11. Compile-time vs Runtime polymorphism?
+## 11. Compile-time vs Runtime polymorphism?
 
 Theory:
 
@@ -139,7 +139,7 @@ Code:
 int add(int a, int b) {}
 double add(double a, double b) {}
 
-12. What is Abstraction?
+## 12. What is Abstraction?
 
 Theory:
 Hiding implementation details.
@@ -150,7 +150,7 @@ abstract class Shape {
     abstract void draw();
 }
 
-13. Abstract class vs Interface?
+## 13. Abstract class vs Interface?
 
 Theory:
 Interface supports multiple inheritance; abstract class does not.
@@ -160,7 +160,7 @@ Code:
 interface A { void show(); }
 abstract class B { abstract void display(); }
 
-14. What is a constructor?
+## 14. What is a constructor?
 
 Theory:
 Used to initialize objects.
@@ -173,7 +173,7 @@ class Test {
     }
 }
 
-15. Can constructors be overloaded?
+## 15. Can constructors be overloaded?
 
 Theory:
 Yes, multiple constructors with different parameters.
@@ -183,7 +183,7 @@ Code:
 Test() {}
 Test(int a) {}
 
-# 16. What is this keyword?
+## 16. What is this keyword?
 
 Theory:
 Refers to current object.
