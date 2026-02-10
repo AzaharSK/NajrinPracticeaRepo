@@ -192,3 +192,35 @@ Code:
 
 this.name = name;
 ```
+## Constructors & Types
+* A **constructor** is a special method used to **initialize an object**.
+* It is **automatically invoked** when an object is created.
+* The constructor name is **same as the class name**.
+* Constructors **do not have a return type**.
+* They are used to **assign initial values** to data members.
+``
+## class Test {
+    Test() {
+        System.out.println("Constructor");
+    }
+}
+```
+
+
+Yes ✅ — **constructors can be overloaded**.
+
+### **Constructor Overloading (Interview Answer)**
+
+* Constructor overloading means **having multiple constructors** in the same class with **different parameter lists**.
+* It allows creating objects in **different ways**.
+* Overloading is based on **number, type, or order of parameters**.
+* All constructors have the **same class name**.
+* It improves **flexibility and usability** of the class.
+
+### **One-line Answer**
+
+Yes, constructors can be overloaded by using different parameter lists in the same class.
+
+If you want, I can also share a **short example**.
+
+
