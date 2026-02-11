@@ -291,6 +291,8 @@ Object obj = clazz.getDeclaredConstructor().newInstance();
 
 <img width="1516" height="986" alt="image" src="https://github.com/user-attachments/assets/0b842410-4731-4b39-b2f1-a8ff2895eeb0" />
 
+------------------------------------------------------------------------
+
 ## Difference between ClassNotFoundException vs NoClassdefFoundError in java
 - `ClassNotFoundException` → Loading problem  - is a checked exception thrown when Java tries to dynamically load a class that is not found in the classpath.
 - `NoClassDefFoundError` → Runtime missing problem  - is an unchecked error thrown when a class was present at compile time but missing at runtime.
@@ -320,7 +322,7 @@ public class Main {
 
 If `Test.class` is not present in classpath → `ClassNotFoundException`
 
-------------------------------------------------------------------------
+
 
 ### 2️⃣ NoClassDefFoundError
 
@@ -355,7 +357,6 @@ If `Test.class` is deleted after compilation → `NoClassDefFoundError`
   Extends `Exception`           |  Extends `Error`
   Example: `Class.forName()`    |  Example: Missing `.class` file
 
-------------------------------------------------------------------------
 ```
 
 What are the advantages of using C++?
