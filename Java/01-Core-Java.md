@@ -1,3 +1,18 @@
+## The latest version of Java (as of 2025) ? - Important Features
+- Java SE 25 (JDK 25) — released on September 16, 2025 
+
+__Features :__
+
+- #1  Java 25 (JDK 25) is the latest Long-Term Support (LTS) release in 2025.
+- #2  Pattern Matching for primitives enhances instanceof and switch expressions.
+- #3 Compact source files and instance main methods reduce boilerplate code.
+- #4 Flexible constructor bodies allow statements before super() or this() calls.
+- #5 Structured Concurrency simplifies multithreaded task management.
+- #6 Scoped Values provide a safer alternative to ThreadLocal for sharing data.
+- #7 Compact Object Headers reduce object memory footprint, improving JVM efficiency.
+- #8 Ahead-of-Time (AOT) Method Profiling and enhanced Java Flight Recorder (JFR) improve startup performance and profiling capabilities.
+
+
 ## What is an Identifier in Java ?
 
 - An identifier is the name given to a variable, method, class, interface, package, or object in Java.
