@@ -76,6 +76,7 @@ public class Main {
 - `name, age` → Data
 - `study()` → Behavior
 
+- OOP built on four main principles: `Encapsulation`, `Abstraction`, `Inheritance`, and `Polymorphism`.
 
 What are the advantages of using C++?
 What is a class?
