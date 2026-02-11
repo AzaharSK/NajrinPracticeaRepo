@@ -447,7 +447,8 @@ public class Main {
 
 
 ```
-- Class = blueprint, Object = real-world entity.
+- `Class` => blueprint,
+- `Object` => real-world entity.
 - Memory is allocated only when an object is created.
 - You can create multiple objects from a single class.
 - Objects hold state and can perform behavior.
