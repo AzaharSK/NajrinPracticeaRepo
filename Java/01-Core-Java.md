@@ -41,3 +41,42 @@ const        goto
 
 <img width="938" height="493" alt="image" src="https://github.com/user-attachments/assets/c4cb98ca-851c-4655-a65c-513f0d3439e5" />
 <img width="989" height="836" alt="image" src="https://github.com/user-attachments/assets/f48ad646-41dc-4779-ac6c-dd9ff529bf91" />
+
+
+## What is object-oriented programming?
+Object-Oriented Programming (OOP) is a programming paradigm based on the concept of __objects__, which contain:
+```
+Data (variables / fields)
+Behavior (methods / functions)
+```
+In OOP, programs are designed by creating __classes__ and __objects__ that model real-world entities.
+
+```
+class Student {
+    String name;     // data
+    int age;
+
+    void study() {   // behavior
+        System.out.println("Studying...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();  // object creation
+        s1.name = "Rahul";
+        s1.age = 20;
+        s1.study();
+    }
+}
+```
+```
+Student → Class
+s1 → Object
+name, age → Data
+study() → Behavior
+```
+
+What are the advantages of using C++?
+What is a class?
+What is an object?
