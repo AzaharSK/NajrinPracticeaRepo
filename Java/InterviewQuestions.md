@@ -1,3 +1,17 @@
+Java SE 25 (JDK 25) — released on September 16, 2025 - Important Features
+OOPs,
+Exception handling
+Multi-threading
+Serialization
+Collections Frame Work
+Generics
+Garbage Collection.pdf
+Internationalization (I18N)
+JVM Architecture
+
+
+
+
 ✂️ Spring AOP
 
 What is AOP?
