@@ -57,6 +57,11 @@ const        goto
 <img width="938" height="493" alt="image" src="https://github.com/user-attachments/assets/c4cb98ca-851c-4655-a65c-513f0d3439e5" />
 <img width="989" height="836" alt="image" src="https://github.com/user-attachments/assets/f48ad646-41dc-4779-ac6c-dd9ff529bf91" />
 
+## What are the Short-circuit operators in java
+- Short-circuit operators are `logical operators` that stop evaluating the expression as soon as the result is determined.
+- Java has two short-circuit operators:
+    - __Logical AND__ → `&&`
+    - __Logical OR__ → `||`
 
 ## What is difference in between == operator and .equal() method in java ?
 - `==` compares object references (memory location), while `ob.equals()` compares the actual content of the String. For String comparison, `.equals()` should be used.
@@ -110,7 +115,36 @@ System.out.println(a instanceof Dog);   // false
 - Works only with objects (not primitives)
 - Returns `false` if object is `null`
 
-  
+
+## What are tpes of type-casting supported in JAVA
+- Type casting is the process of converting one data type into another data type.
+- In Java, there are two types of type casting:
+
+        - Widening Casting ( __Implicit__ )
+        - Narrowing Casting (__Explicit__)
+
+  - Java also supports object casting through `upcasting` and `downcasting` of objects relared through inheritance.
+    
+<img width="1422" height="279" alt="image" src="https://github.com/user-attachments/assets/2fe3428b-bf34-4f5a-b310-a3193dcb03ac" />
+
+```java
+
+///////////////////// Widening Casting / Implicit casting  /////////////////////////////////////
+int num = 10;
+double d = num;   // automatic casting
+System.out.println(d);   // 10.0
+
+//✅ No data loss
+//✅ No need to write cast manually
+
+///////////////////// Narrowing Casting / Explicit casting  /////////////////////////////////////
+int x = 130;
+byte b = (byte) x;   // Need explicitely casting
+
+System.out.println(b);  // -126
+
+// Data loss may occur: Converting a larger data type into a smaller data type., Because byte range is -128 to 127 → overflow happens.
+```
 ## What is object-oriented programming?
 Object-Oriented Programming (OOP) is a programming paradigm based on the concept of __objects__, which contain:
 ```
