@@ -511,8 +511,8 @@ public class Test {
 - But if a class contains `only static members` (variables or methods), you don’t need to create an object to use it.
 - You can call these methods directly using the class name, without creating objects.
 
-__Utility / Helper Classes :__ Many classes are designed only to provide functionality, like Math or Collections in Java. These classes usually have static methods.
-__Abstract classes and interfaces:__ These exist without objects and are used as templates for other classes. i.e for inherit or implementation.
+- __Utility / Helper Classes :__ Many classes are designed only to provide functionality, like Math or Collections in Java. These classes usually have static methods.
+- __Abstract classes and interfaces:__ These exist without objects and are used as templates for other classes. i.e for inherit or implementation.
 
 ## 10. What happens when an object is created?
 - Constructor called, Memory allocated in heap, each object has its own state/memory.
