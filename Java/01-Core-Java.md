@@ -414,6 +414,8 @@ class Car {
     }
 }
 ```
+- Logical entity	Physical entity
+- No memory allocated
 
 ## Object:
 
@@ -440,6 +442,77 @@ anotherCar.drive();   // Output: Honda is driving
 ```
 - `Class` => blueprint,
 - `Object` => real-world entity.
-- Memory is allocated only when an object is created.
+  
+- Objects are Physical entity , Memory is allocated only when an object is created.
 - You can create multiple objects from a single class.
 - Objects hold state and can perform behavior.
+
+##  Local Variables in Java: 
+- Local Variables declared inside a method, constructor, or block, They exist only during method execution.
+- Their scope is limited to that method/block.
+- They do not get default values — you must initialize them before use.
+
+```java
+public void greet(String name) {
+        // local variable
+        String message = "Hello, " + name;   // message in greet() → local variable (only exists while greet() is running)
+        System.out.println(message);
+    }
+```
+
+## Instance Variables in Java:
+- Instance Variables(class data member) are declared inside a class but outside methods, constructor, or block.. Each object gets its own copy.
+- They store the state of an object
+- If not initialized explicitly, they get default values (e.g., 0 for int, null for objects, false for boolean).
+
+- **Student.java**
+```java
+// This file contains only the Student class
+public class Student {
+    // Instance variables
+    String name;
+    int age;
+
+    // Method to display student details
+    public void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+```
+- **Test.java**
+```java
+// This file contains the main method
+public class Test {
+    public static void main(String[] args) {
+
+        // Create objects of Student
+        Student s1 = new Student();
+        s1.name = "Alice";
+        s1.age = 20;
+
+        Student s2 = new Student();
+        s2.name = "Bob";
+        s2.age = 22;
+
+        s1.display();
+        s2.display();
+    }
+}
+```
+- `name` and `age` → instance variables
+- Each object (s1, s2) has its own copy of these variables.
+- Can be accessed using object reference (s1.name, s2.age).
+- If you create `100 objects`, there are `100 copies` of `instance variables` in memory (one per object).
+- Default values (name = null , age = 0 ) are automatically assigned as not initialized.
+
+## Can a class exist without an object?
+- Yes. A class can exist without creating objects (e.g., utility class with static methods).
+
+## 10. What happens when an object is created?
+- Constructor called, Memory allocated in heap, each object has its own state/memory.
+- Instance variables initialized
+
+## Where are objects stored in memory?
+- `Object` → `Heap`
+- `Reference` variable → Stack (if local)
