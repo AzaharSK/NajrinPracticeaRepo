@@ -4,6 +4,10 @@ The `super` keyword in Java is used to refer to the `immediate parent` class obj
 
 It is mainly used in inheritance.
 
+- ✅ Parent constructor call - from inside child class constructor.
+- ✅ Parent variable access  - When parent and child class have the same variable name (same identifier).
+- ✅ Parent method call  - When method is overridden in child class.(same identifier).
+
 
 ```java
 class Base {
