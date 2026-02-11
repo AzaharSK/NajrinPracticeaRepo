@@ -424,28 +424,19 @@ class Car {
 - __Identity:__ Each object has a unique memory address/reference.
 
 ```java
+// Creating an object of Car class
+Car myCar = new Car();
+Car anotherCar = new Car();
 
-// Using the class to create objects
+myCar.color = "Red";
+myCar.model = "Toyota";
 
-public class Main {
-    public static void main(String[] args) {
+anotherCar.color = "Blue";
+anotherCar.model = "Honda";
 
-        // Creating an object of Car
-        Car myCar = new Car();
-        myCar.color = "Red";
-        myCar.model = "Toyota";
-
-        Car anotherCar = new Car();
-        anotherCar.color = "Blue";
-        anotherCar.model = "Honda";
-
-        // Accessing object behavior
-        myCar.drive();        // Output: Toyota is driving
-        anotherCar.drive();   // Output: Honda is driving
-    }
-}
-
-
+// Accessing object behavior
+myCar.drive();        // Output: Toyota is driving
+anotherCar.drive();   // Output: Honda is driving
 ```
 - `Class` => blueprint,
 - `Object` => real-world entity.
