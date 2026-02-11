@@ -181,6 +181,135 @@ public class Main {
 
 - OOP built on four main principles: `Encapsulation`, `Abstraction`, `Inheritance`, and `Polymorphism`.
 
+
+## `new` vs `newInstance()` in Java
+
+### 1️⃣ `new` Operator
+
+-   `new` is an **operator** used to create objects.
+-   Used when we **know the class name at compile time**.
+-   Object creation is **direct and type-safe**.
+-   Constructor can have parameters.
+-   If `.class` file is missing at runtime → `NoClassDefFoundError`
+    (Unchecked).
+
+### ✅ Example
+
+``` java
+class Test {
+    void display() {
+        System.out.println("Object created using new");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Test t = new Test();   // Direct object creation
+        t.display();
+    }
+}
+```
+
+------------------------------------------------------------------------
+
+### 2️⃣ `newInstance()` Method
+
+-   `newInstance()` is a **method of `Class` class**.
+-   Used to create objects **dynamically at runtime**.
+-   Used when **class name is not known at compile time**.
+-   Requires **no-argument constructor** (otherwise throws exception).
+-   Throws checked exceptions like:
+    -   `ClassNotFoundException`
+    -   `InstantiationException`
+    -   `IllegalAccessException`
+
+⚠ Note: `Class.newInstance()` is deprecated (Java 9+).\
+Modern approach uses:
+
+``` java
+getDeclaredConstructor().newInstance()
+```
+
+### ✅ Example (Dynamic Object Creation)
+
+``` java
+class Test {
+    public Test() {
+        System.out.println("Object created using newInstance()");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+
+        Class<?> clazz = Class.forName("Test");
+        Object obj = clazz.getDeclaredConstructor().newInstance();
+
+        System.out.println(obj.getClass().getName());
+    }
+}
+```
+
+------------------------------------------------------------------------
+
+## 📊 Difference Between `new` and `newInstance()`
+
+  --------------------------------------------------------------------------
+  `new`                    `newInstance()`
+  ------------------------ -------------------------------------------------
+  Operator                 Method of `Class`
+
+  Compile-time object      Runtime object creation
+  creation                 
+
+  Class name must be known Class name can be dynamic
+
+  Any constructor allowed  Requires no-arg constructor
+
+  Throws                   Throws checked exceptions
+  `NoClassDefFoundError`   
+  (unchecked)              
+
+  Type-safe                Returns `Object` (needs casting)
+  --------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+## 🎯 When to Use What?
+
+### ✅ Use `new` when:
+
+-   You know the class at compile time
+-   Normal application development
+-   You want better performance and type safety
+
+Example:
+
+``` java
+Car car = new Car();
+```
+
+### ✅ Use `newInstance()` when:
+
+-   Class name comes from:
+    -   Configuration file
+    -   Database
+    -   User input
+    -   Framework (Spring, Hibernate, JDBC drivers)
+-   You need dynamic loading
+
+Example:
+
+``` java
+String className = "com.example.Car";
+Class<?> clazz = Class.forName(className);
+Object obj = clazz.getDeclaredConstructor().newInstance();
+```
+
+------------------------------------------------------------------------
+
+
+
 What are the advantages of using C++?
 What is a class?
 What is an object?
