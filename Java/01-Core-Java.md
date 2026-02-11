@@ -58,6 +58,54 @@ const        goto
 <img width="989" height="836" alt="image" src="https://github.com/user-attachments/assets/f48ad646-41dc-4779-ac6c-dd9ff529bf91" />
 
 
+## What is difference in between == operator and .equal() method in java ?
+- `==` compares object references (memory location), while `ob.equals()` compares the actual content of the String. For String comparison, `.equals()` should be used.
+
+```sql
+---------------------------------------------------------------------------------------------------
+== Operator	                                    | .equals() Method
+--------------------------------------------------------------------------------------------------
+Compares memory reference (address)	            | Compares actual content (value)
+Checks if two references point to same object	| Checks if values inside objects are equal
+Works for primitive & objects	                | Mainly used for objects
+---------------------------------------------------------------------------------------------------
+
+```
+
+```java
+String s1 = new String("Java");
+String s2 = new String("Java");
+
+System.out.println(s1 == s2);   // false   // Two different objects are created in heap with diffrent refs memory address
+
+System.out.println(s1.equals(s2));   // true  // Content same
+```
+
+## what is instance of operator in Java ?
+- The instanceof operator is used to check whether an object is an instance of a specific class, subclass, or interface.
+- It returns boolean type:
+    `true` → if the object belongs to that type
+    `false` → otherwise
+
+```java
+
+class Animal { }
+class Dog extends Animal { }
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+
+        System.out.println(d instanceof Dog);      // true
+        System.out.println(d instanceof Animal);   // true
+    }
+}
+
+// Example 2: Returns False
+
+Animal a = new Animal();
+System.out.println(a instanceof Dog);   // false
+```
 ## What is object-oriented programming?
 Object-Oriented Programming (OOP) is a programming paradigm based on the concept of __objects__, which contain:
 ```
