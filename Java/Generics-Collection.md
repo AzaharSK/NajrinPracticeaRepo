@@ -21,7 +21,7 @@ class Test<T> {
 ```
 - `<T>` means this is a generic class/type.
 -  Since `T` is a generic `type` parameter, `T data` can store any type depending on how the object is created.
-- `T``type` parameter, will be replaced with a specific type, such as `Integer`, `String`, or even a custom class.
+- `<T>`type` parameter, will be replaced with a specific type, such as `Integer`, `String`, or even a custom class.
  when you create an object of this class.
 - This shows the flexibility of generics: the same class can work with any type.
 
