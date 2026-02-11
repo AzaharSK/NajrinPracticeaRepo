@@ -1,8 +1,12 @@
+## What is an Identifier in Java ?
+
+- An identifier is the name given to a variable, method, class, interface, package, or object in Java.
+- It is used to identify something in a program.
+
 ## What are reserved words ? How many reserved words in java ?
 
 Reserved words (also called keywords) are words that have a special predefined meaning in Java.
-
-You `cannot use` them as identifier:
+You `cannot use` them as `identifier` like below:
 
 - Variable names
 - Class names
@@ -11,7 +15,6 @@ You `cannot use` them as identifier:
 - Package names
 
 Because the `Java compiler` already understands them `as part of the java language syntax`.
-
 
 ### Java has 52 reserved words (keywords).
 
@@ -29,3 +32,12 @@ switch       synchronized this         throw        throws
 transient    try          void         volatile     while
 const        goto
 ```
+
+## Data Types Supported in Java (With Size)
+
+- Java data types are divided into 2 categories:
+    - **Primitive Data Types (8 types)**
+    -  **Non-Primitive (Reference) Data Types**
+
+<img width="938" height="493" alt="image" src="https://github.com/user-attachments/assets/c4cb98ca-851c-4655-a65c-513f0d3439e5" />
+<img width="989" height="836" alt="image" src="https://github.com/user-attachments/assets/f48ad646-41dc-4779-ac6c-dd9ff529bf91" />
