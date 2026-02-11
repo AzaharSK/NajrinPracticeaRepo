@@ -41,7 +41,140 @@ System.out.println(stringTest.get()); // Output: Hello
 - `Test<String>` creates a Test object that stores a `String`.
 - This class is a generic wrapper around a single data member. It allows you to store and retrieve values of any type safely, without casting.
 
+## SWAP 
+
+```java
+    // Wrapper class
+    static class Ref<T> {
+        public T value;
+        public Ref(T value) { this.value = value; }
+    }
+```
+
+```java
+    // Generic swap method
+    public static <T> void swap(Ref<T> a, Ref<T> b) {
+        T tmp = a.value;
+        a.value = b.value;
+        b.value = tmp;
+    }
+
+```
+```java
+// --- Swap integers ---
+Ref<Integer> intA = new Ref<>(3);
+Ref<Integer> intB = new Ref<>(7);
+
+System.out.println("Before swap: " + intA.value + ", " + intB.value);  // Before swap: 3, 7
+swap(intA, intB);
+System.out.println("After swap: " + intA.value + ", " + intB.value); // After swap: 7, 3
+
+// --- Swap characters ---
+Ref<Character> charA = new Ref<>('g');
+Ref<Character> charB = new Ref<>('e');
+
+System.out.println("Before swap: " + charA.value + ", " + charB.value); // Before swap: g, e
+swap(charA, charB);
+System.out.println("After swap: " + charA.value + ", " + charB.value);  // After swap: e, g
+
+// --- Swap strings ---
+Ref<String> strA = new Ref<>("Hello");
+Ref<String> strB = new Ref<>("World");
+
+System.out.println("Before swap: " + strA.value + ", " + strB.value);  // Before swap: Hello, World
+swap(strA, strB);
+System.out.println("After swap: " + strA.value + ", " + strB.value);  // After swap: World, Hello
+
+```
+
+### Generic + Varargs in Java :
+- `varargs:`- which lets a method accept a variable number of arguments of the same type `<T>`
+
+```java
+public static <T> void printAllGeneric(T... args) {
+    for (T arg : args) {
+        System.out.print(arg + " ");
+    }
+    System.out.println();
+}
+
+public static void main(String[] args) {
+    printAllGeneric(1, 2, 3);           // Integer
+    printAllGeneric("A", "B", "C");     // String
+    printAllGeneric(1.1, 2.2, 3.3);     // Double
+}
+```
+- Here, all arguments must be of the same type T, but you can instantiate with different types at different calls.
+
+## Understand Inheritance and Polymorphism with Java Generics using your Test<T> class.
+
+✅`Generic base class:` 
+```java
+class Test<T> {
+    private T data;
+
+    public Test(T newdata) {
+        this.data = newdata;
+    }
+
+    public T get() {
+        return data;
+    }
+
+    public void showType() {
+        System.out.println("Type: " + data.getClass().getSimpleName());
+    }
+}
+```
+✅ Subclass keeps Generic Type
+
+```java
+class Child<T> extends Test<T> {
+
+    public Child(T data) {
+        super(data);
+    }
+
+    public void display() {
+        System.out.println("Value: " + get());
+    }
+}
+```
+```java
+Child<Integer> obj1 = new Child<>(10);
+obj1.display();        // Value: 10
+obj1.showType();       // Type: Integer
+
+Child<String> obj2 = new Child<>("Hello");
+obj2.display();      // Value: Hello
+obj2.showType();     // Type: String
+```
+
+# Runtime polymorphism (method overriding) with Generics:
+
+```java
+class AdvancedTest<T> extends Test<T> {
+
+    public AdvancedTest(T data) {
+        super(data);
+    }
+
+    @Override
+    public T get() {
+        System.out.println("Overridden get() called");
+        return super.get();
+    }
+}
+```
+```java
+Test<Integer> obj = new AdvancedTest<>(100);  
+System.out.println(obj.get());  // Overridden get() called 100
+```
+
+
 ## Collection vs Collections :
+
+
 
 - `Collection` → Interface (root for List, Set, Queue)
 - `Collections` → Utility class with static methods (sort, reverse, shuffle)
