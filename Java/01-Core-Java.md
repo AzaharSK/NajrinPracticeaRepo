@@ -252,26 +252,7 @@ public class Main {
 
 ------------------------------------------------------------------------
 
-## 📊 Difference Between `new` and `newInstance()`
-
-  --------------------------------------------------------------------------
-  `new`                    `newInstance()`
-  ------------------------ -------------------------------------------------
-  Operator                 Method of `Class`
-
-  Compile-time object      Runtime object creation
-  creation                 
-
-  Class name must be known Class name can be dynamic
-
-  Any constructor allowed  Requires no-arg constructor
-
-  Throws                   Throws checked exceptions
-  `NoClassDefFoundError`   
-  (unchecked)              
-
-  Type-safe                Returns `Object` (needs casting)
-  --------------------------------------------------------------------------
+<img width="882" height="376" alt="image" src="https://github.com/user-attachments/assets/8b7cf7a9-3304-40f2-b817-d94978b105a4" />
 
 ------------------------------------------------------------------------
 
