@@ -124,7 +124,10 @@ public static void main(String[] args) {
 ## Understand Inheritance and Polymorphism with Java Generics using your Test<T> class.
 
 ## Generics Inheritance:
-
+```java
+class Base<T> {}
+class Derived<T> extends Base<T> {}
+```
 ✅`Generic base class:` 
 ```java
 class Test<T> {
