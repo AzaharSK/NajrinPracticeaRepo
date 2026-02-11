@@ -1,7 +1,7 @@
 ## Generics in Java:
 - Generics were introduced in Java 5.
-- They allow writing code and algorithms that work with any primitive wrapper or user-defined type—independent of a particular data type.
-- Generics Types are duduced in compile time by java compiler, provide type safety, ensuring errors are caught at compile-time, avoiding ClassCastException at runtime.
+- This provides a way of writing code and algorithms that work with any primitive wrapper or user-defined type—independent of a particular data type.
+- Generics data-Types are duduced in compile time by java compiler, provide type safety, ensuring errors are caught at compile-time, avoiding ClassCastException at runtime.
 - They can be used to define classes, interfaces, and methods, making code reusable and type-independent.
 - Promotes code reusability: the same class or method can operate on multiple data types.
 - Eliminates the need for explicit casting of objects.
