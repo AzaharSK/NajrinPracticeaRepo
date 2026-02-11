@@ -291,6 +291,72 @@ Object obj = clazz.getDeclaredConstructor().newInstance();
 
 <img width="1516" height="986" alt="image" src="https://github.com/user-attachments/assets/0b842410-4731-4b39-b2f1-a8ff2895eeb0" />
 
+## Difference between ClassNotFoundException vs NoClassdefFoundError in java
+- `ClassNotFoundException` → Loading problem  - is a checked exception thrown when Java tries to dynamically load a class that is not found in the classpath.
+- `NoClassDefFoundError` → Runtime missing problem  - is an unchecked error thrown when a class was present at compile time but missing at runtime.
+
+### 1️⃣ ClassNotFoundException
+
+-   It is a **Checked Exception**.
+-   Occurs when Java **tries to load a class dynamically at runtime**.
+-   Happens mainly with:
+    -   `Class.forName()`
+    -   `ClassLoader.loadClass()`
+-   Must be handled using **try-catch** or `throws`.
+
+### ✅ Example
+
+``` java
+public class Main {
+    public static void main(String[] args) {
+        try {
+            Class.forName("Test");   // Class not found in classpath
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+If `Test.class` is not present in classpath → `ClassNotFoundException`
+
+------------------------------------------------------------------------
+
+### 2️⃣ NoClassDefFoundError
+
+-   It is an **Unchecked Error** (subclass of `Error`).
+-   Occurs when:
+    -   Class was available at compile time
+    -   But **missing at runtime**
+-   JVM throws it automatically.
+-   Usually caused by configuration or deployment issues.
+
+### ✅ Example
+
+``` java
+class Test { }
+
+public class Main {
+    public static void main(String[] args) {
+        Test t = new Test();
+    }
+}
+```
+
+If `Test.class` is deleted after compilation → `NoClassDefFoundError`
+
+```sql
+
+  ClassNotFoundException        |  NoClassDefFoundError
+  ------------------------------- --------------------------------------
+  Checked Exception             |  Unchecked Error
+  Occurs during dynamic loading |  Occurs when class missing at runtime
+  Must be handled               |  No need to handle
+  Extends `Exception`           |  Extends `Error`
+  Example: `Class.forName()`    |  Example: Missing `.class` file
+
+------------------------------------------------------------------------
+```
 
 What are the advantages of using C++?
 What is a class?
