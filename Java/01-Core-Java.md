@@ -252,7 +252,7 @@ public class Main {
 
 ------------------------------------------------------------------------
 
-<img width="882" height="376" alt="image" src="https://github.com/user-attachments/assets/8b7cf7a9-3304-40f2-b817-d94978b105a4" />
+<img width="982" height="576" alt="image" src="https://github.com/user-attachments/assets/8b7cf7a9-3304-40f2-b817-d94978b105a4" />
 
 ------------------------------------------------------------------------
 
