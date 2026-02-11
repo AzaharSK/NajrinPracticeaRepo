@@ -191,7 +191,9 @@ Test<Integer> obj = new AdvancedTest<>(100);
 System.out.println(obj.get());  // Overridden get() called 100
 ```
 
-
+-------------------------------------------------------------------------------------------
+##  Interface using Generics
+ 
 ✅ 1️⃣ Generic Interface:
 
 ```java
