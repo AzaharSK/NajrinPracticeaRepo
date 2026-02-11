@@ -262,6 +262,14 @@ public class Stack<E> extends Vector<E>
 public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Serializable {}
 
 ```
+- __Because of using Generics below All are valid__
+
+```java
+// Used Generics Data type E
+LinkedList<int>
+LinkedList<char>
+LinkedList<string>
+```
 
 ## Java Collection Hierarchy
 
