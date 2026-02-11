@@ -192,6 +192,48 @@ System.out.println(obj.get());  // Overridden get() called 100
 ```
 
 
+✅ 1️⃣ Generic Interface:
+
+```java
+// Generic Interface
+interface Container<T> {
+    void set(T value);
+    T get();
+}
+```
+- `<T>` makes the interface generic.
+- Any class implementing this interface must specify the type.
+
+✅ 2️⃣ Implementing the Generic Interface (Keep it Generic)
+```java
+class Box<T> implements Container<T> {
+
+    private T value;
+
+    @Override
+    public void set(T value) {
+        this.value = value;
+    }
+
+    @Override
+    public T get() {
+        return value;
+    }
+}
+```
+✅ 3️⃣ Using It
+```java
+// Integer type
+Box<Integer> intBox = new Box<>();
+intBox.set(100);
+System.out.println("Integer value: " + intBox.get());
+
+// String type
+Box<String> strBox = new Box<>();
+strBox.set("Hello");
+System.out.println("String value: " + strBox.get());
+```
+
 ## Collection vs Collections :
 
 
