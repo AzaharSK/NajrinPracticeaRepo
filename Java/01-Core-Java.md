@@ -394,6 +394,60 @@ If `Test.class` is deleted after compilation → `NoClassDefFoundError`
 ```
 <img width="1542" height="610" alt="image" src="https://github.com/user-attachments/assets/6bb0e138-b421-436b-b622-e49262536158" />
 
-What are the advantages of using C++?
-What is a class?
-What is an object?
+
+## Class vs Object difference
+
+## class:
+- A class in Java is a User Defined Composite Data Type that encapsulates multiple data members and related methods into a single unit, acting as a blueprint for creating objects.
+
+```java
+// Class definition (blueprint)
+
+class Car {
+    // Data members (state)
+    String color;
+    String model;
+
+    // Method (behavior)
+    void drive() {
+        System.out.println(model + " is driving");
+    }
+}
+```
+
+## Object:
+
+- An object is an instance of a class. It represents a real-world entity with state (data) and behavior (methods) defined by the class. While the class is the blueprint, the object is the actual thing you can use in your program.
+
+- __State:__ Stored in fields/variables (also called attributes).
+- __Behavior:__ Defined by methods of the class.
+- __Identity:__ Each object has a unique memory address/reference.
+
+```java
+
+// Using the class to create objects
+
+public class Main {
+    public static void main(String[] args) {
+
+        // Creating an object of Car
+        Car myCar = new Car();
+        myCar.color = "Red";
+        myCar.model = "Toyota";
+
+        Car anotherCar = new Car();
+        anotherCar.color = "Blue";
+        anotherCar.model = "Honda";
+
+        // Accessing object behavior
+        myCar.drive();        // Output: Toyota is driving
+        anotherCar.drive();   // Output: Honda is driving
+    }
+}
+
+
+```
+- Class = blueprint, Object = real-world entity.
+- Memory is allocated only when an object is created.
+- You can create multiple objects from a single class.
+- Objects hold state and can perform behavior.
