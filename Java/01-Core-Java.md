@@ -1,8 +1,6 @@
 # Java 
 - Java is a platform-independent, secure, object-oriented programming language widely used for web, enterprise, Android, and cloud-based applications due to its robustness, performance, and strong ecosystem.
 
-## Uses and Advantages of Using Java
-
 ### 🔹 Uses of Java
 
 -   **Web Applications** -- Used in backend development (Spring Boot,
