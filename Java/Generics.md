@@ -239,3 +239,74 @@ System.out.println("String: " + strBox.get());
 
 - `Collection` → Interface (root for List, Set, Queue)
 - `Collections` → Utility class with static methods (sort, reverse, shuffle)
+
+## Why Collections Use Generics?
+
+```java
+
+interface Collection<E> { }
+
+public interface List<E> extends Collection<E> { }
+public interface Set<E> extends Collection<E> { }
+public interface Queue<E> extends Collection<E> { }
+
+
+public class ArrayList<E> extends AbstractList<E> implements List<E> {}
+public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable { }
+public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>, Deque<E>, Cloneable, Serializable { }
+
+
+public interface Deque<E> extends Queue<E>
+public class Stack<E> extends Vector<E>
+
+public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Serializable {}
+
+```
+
+## Java Collection Hierarchy
+
+```swift
+                           Iterable<E>
+                                ↑
+                        ----------------
+                        |              |
+                 Collection<E>        (Map - separate hierarchy)
+                        ↑
+        -----------------------------------------
+        |                |                     |
+     List<E>           Set<E>               Queue<E>
+        |                |                     |
+        |                |                  Deque<E>
+        |                |                     ↑
+        |                |                 LinkedList<E>
+        |                |
+   ----------------      |
+   |              |      |
+AbstractList<E>  AbstractSet<E>
+   |              |
+   |              |
+-----------       |
+|         |       |
+ArrayList Vector  HashSet<E>
+            ↑
+          Stack<E>
+
+```
+
+## Map Collection
+
+```java
+public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Cloneable, Serializable { }
+public class HashMap<K, V> extends AbstractMap<K, V> implements Map<K, V>, Cloneable, Serializable { }
+
+``
+
+```swift
+                           Map<K, V>   (Interface)
+                                ↑
+                ------------------------------------
+                |                                  |
+        AbstractMap<K, V>                 Dictionary<K, V>
+                |                                  |
+             HashMap<K, V>                  Hashtable<K, V>
+```
