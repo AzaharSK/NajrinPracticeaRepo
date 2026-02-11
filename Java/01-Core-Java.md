@@ -51,7 +51,7 @@ Behavior (methods / functions)
 ```
 In OOP, programs are designed by creating __classes__ and __objects__ that model real-world entities.
 
-```
+```Java
 class Student {
     String name;     // data
     int age;
@@ -70,12 +70,12 @@ public class Main {
     }
 }
 ```
-```
-Student → Class
-s1 → Object
-name, age → Data
-study() → Behavior
-```
+
+- `Student` → Class
+- `s1` → Object
+- `name, age` → Data
+- `study()` → Behavior
+
 
 What are the advantages of using C++?
 What is a class?
