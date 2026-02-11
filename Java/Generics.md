@@ -197,9 +197,9 @@ System.out.println(obj.get());  // Overridden get() called 100
 ```java
 // Generic Interface
 interface Container<T> {
-    void set(T value);
     T get();
 }
+
 ```
 - `<T>` makes the interface generic.
 - Any class implementing this interface must specify the type.
@@ -210,8 +210,8 @@ class Box<T> implements Container<T> {
 
     private T value;
 
-    @Override
-    public void set(T value) {
+    // Constructor to initialize value
+    public Box(T value) {
         this.value = value;
     }
 
@@ -220,18 +220,15 @@ class Box<T> implements Container<T> {
         return value;
     }
 }
+
 ```
 ✅ 3️⃣ Using It
 ```java
-// Integer type
-Box<Integer> intBox = new Box<>();
-intBox.set(100);
-System.out.println("Integer value: " + intBox.get());
+Box<Integer> intBox = new Box<>(100);
+System.out.println("Integer: " + intBox.get());
 
-// String type
-Box<String> strBox = new Box<>();
-strBox.set("Hello");
-System.out.println("String value: " + strBox.get());
+Box<String> strBox = new Box<>("Hello");
+System.out.println("String: " + strBox.get());
 ```
 
 ## Collection vs Collections :
