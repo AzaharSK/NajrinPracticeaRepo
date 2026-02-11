@@ -107,6 +107,18 @@ public static void main(String[] args) {
 ```
 - Here, all arguments must be of the same type T, but you can instantiate with different types at different calls.
 
+```java
+public static <T> void printAllGeneric(T... args) {
+    for (T arg : args) {
+        System.out.print(arg + " ");
+    }
+    System.out.println("\nInferred Type: " + args.getClass().getComponentType().getSimpleName());
+}
+
+public static void main(String[] args) {
+    printAllGeneric(1, "Hello", 3.5);  // 1 Hello 3.5 Inferred Type: Object
+}
+```
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Understand Inheritance and Polymorphism with Java Generics using your Test<T> class.
