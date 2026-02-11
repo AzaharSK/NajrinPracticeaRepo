@@ -289,6 +289,7 @@ Object obj = clazz.getDeclaredConstructor().newInstance();
 
 ------------------------------------------------------------------------
 
+<img width="1516" height="986" alt="image" src="https://github.com/user-attachments/assets/0b842410-4731-4b39-b2f1-a8ff2895eeb0" />
 
 
 What are the advantages of using C++?
