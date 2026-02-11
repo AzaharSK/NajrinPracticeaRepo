@@ -516,3 +516,5 @@ public class Test {
 ## Where are objects stored in memory?
 - `Object` → `Heap`
 - `Reference` variable → Stack (if local)
+
+<img width="1500" height="620" alt="image" src="https://github.com/user-attachments/assets/fd236ddf-7fb2-4f64-b56e-940c27510d4b" />
