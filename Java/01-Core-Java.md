@@ -106,6 +106,11 @@ public class Main {
 Animal a = new Animal();
 System.out.println(a instanceof Dog);   // false
 ```
+- Used mainly in inheritance and polymorphism
+- Works only with objects (not primitives)
+- Returns `false` if object is `null`
+
+  
 ## What is object-oriented programming?
 Object-Oriented Programming (OOP) is a programming paradigm based on the concept of __objects__, which contain:
 ```
