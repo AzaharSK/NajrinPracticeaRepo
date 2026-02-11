@@ -143,7 +143,8 @@ byte b = (byte) x;   // Need explicitely casting
 
 System.out.println(b);  // -126
 
-// Data loss may occur: Converting a larger data type into a smaller data type., Because byte range is -128 to 127 → overflow happens.
+// Converting a larger data type into a smaller data type.  Data loss may occur
+// Because byte range is -128 to 127 → overflow happens.
 ```
 ## What is object-oriented programming?
 Object-Oriented Programming (OOP) is a programming paradigm based on the concept of __objects__, which contain:
