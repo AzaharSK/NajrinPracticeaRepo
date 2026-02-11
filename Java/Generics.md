@@ -41,6 +41,7 @@ System.out.println(stringTest.get()); // Output: Hello
 - `Test<String>` creates a Test object that stores a `String`.
 - This class is a generic wrapper around a single data member. It allows you to store and retrieve values of any type safely, without casting.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------
 ## SWAP 
 
 ```java
@@ -86,8 +87,8 @@ swap(strA, strB);
 System.out.println("After swap: " + strA.value + ", " + strB.value);  // After swap: World, Hello
 
 ```
-
-### Generic + Varargs in Java :
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Generic + Varargs in Java :
 - `varargs:`- which lets a method accept a variable number of arguments of the same type `<T>`
 
 ```java
@@ -106,7 +107,11 @@ public static void main(String[] args) {
 ```
 - Here, all arguments must be of the same type T, but you can instantiate with different types at different calls.
 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Understand Inheritance and Polymorphism with Java Generics using your Test<T> class.
+
+## Generics Inheritance:
 
 ✅`Generic base class:` 
 ```java
@@ -126,7 +131,7 @@ class Test<T> {
     }
 }
 ```
-✅ Subclass keeps Generic Type
+✅ `Subclass keeps Generic Type`
 
 ```java
 class Child<T> extends Test<T> {
@@ -150,7 +155,7 @@ obj2.display();      // Value: Hello
 obj2.showType();     // Type: String
 ```
 
-# Runtime polymorphism (method overriding) with Generics:
+### Runtime polymorphism (method overriding) with Generics:
 
 ```java
 class AdvancedTest<T> extends Test<T> {
