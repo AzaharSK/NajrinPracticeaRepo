@@ -120,8 +120,8 @@ System.out.println(a instanceof Dog);   // false
 - Type casting is the process of converting one data type into another data type.
 - In Java, there are two types of type casting:
 
-        - Widening Casting ( __Implicit__ )
-        - Narrowing Casting (__Explicit__)
+        - Widening / Implicit automatic Casting
+        - Narrowing / Explicit manual Casting
 
   - Java also supports object casting through `upcasting` and `downcasting` of objects relared through inheritance.
     
