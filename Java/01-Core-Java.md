@@ -84,8 +84,8 @@ System.out.println(s1.equals(s2));   // true  // Content same
 ## what is instance of operator in Java ?
 - The instanceof operator is used to check whether an object is an instance of a specific class, subclass, or interface.
 - It returns boolean type:
-    `true` → if the object belongs to that type
-    `false` → otherwise
+    - `true` → if the object belongs to that type
+    - `false` → otherwise
 
 ```java
 
