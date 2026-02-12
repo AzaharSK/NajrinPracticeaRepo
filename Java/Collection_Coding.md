@@ -498,3 +498,59 @@ public class Test {
     }
 }
 ```
+
+------------------------------------------
+
+## Min Sum Pair + Max Sum Pair ==>  Two element with minimum sum and maximum sum in a List
+
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        List<Integer> nums = new ArrayList<>(
+                Arrays.asList(7, 2, 9, 4, 1, 5));
+
+        if (nums.size() < 2) {
+            System.out.println("Error: Array must have at least two elements.");
+            return;
+        }
+
+        // Make a copy to preserve original list
+        List<Integer> sortedNums = new ArrayList<>(nums);
+
+        // Sort ascending
+        Collections.sort(sortedNums);
+
+        System.out.println("Sorted List: " + sortedNums);
+        // Sorted List: [1, 2, 4, 5, 7, 9]
+
+        // 🔹 Minimum Sum Pair (first two elements)
+        int minFirst = sortedNums.get(0);
+        int minSecond = sortedNums.get(1);
+
+        System.out.println("Two elements with minimum sum: " 
+                + minFirst + " and " + minSecond);
+        // Two elements with minimum sum: 1 and 2
+
+        System.out.println("Min Sum: " + (minFirst + minSecond));
+        // Min Sum: 3
+
+
+        // 🔹 Maximum Sum Pair (last two elements)
+        int n = sortedNums.size();
+        int maxFirst = sortedNums.get(n - 1);
+        int maxSecond = sortedNums.get(n - 2);
+
+        System.out.println("Two elements with maximum sum: " 
+                + maxFirst + " and " + maxSecond);
+        // Two elements with maximum sum: 9 and 7
+
+        System.out.println("Max Sum: " + (maxFirst + maxSecond));
+        // Max Sum: 16
+    }
+}
+
+````
