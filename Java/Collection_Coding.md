@@ -134,8 +134,8 @@ public class UserInput {
 }
 
 ```
-Test.java
-```
+`Test.java`
+```java
 import java.util.*;
 
 public class Test {
