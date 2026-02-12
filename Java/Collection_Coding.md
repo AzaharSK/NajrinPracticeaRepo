@@ -248,8 +248,120 @@ List<Integer> superset = Arrays.asList(5, 3, 7, 1, 9);
 
 if (isSubset(subset, superset)) {  // True
 } else { // Flase  }
----
+```
 
+---------------------------------
 
+## Find below for List Numbers
+- `Inegers`: 5 , 3, 7, 1, 9   ==Convert==>   ArrayList: [ 5 , 3, 7, 1, 9]
+- ✅ Sum
+- ✅ Average
+- ✅ Maximum
+- ✅ Minimum
 
+```java
+import java.util.*;
 
+public class Test {
+
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter numbers separated by comma:");
+        String input = scanner.nextLine();
+
+        String[] items = input.split(",");
+
+        List<Integer> numbers = new ArrayList<>();
+
+        for (String item : items) {
+            numbers.add(Integer.parseInt(item.trim()));
+        }
+
+        System.out.println("Final Numbers List: " + numbers);
+
+        if (numbers.isEmpty()) {
+            System.out.println("List is empty.");
+            return;
+        }
+
+        // ✅ Sum
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+
+        // ✅ Average
+        double average = (double) (sum / numbers.size());
+
+        // ✅ Max and Min
+        int max = Collections.max(numbers);
+        int min = Collections.min(numbers);
+
+        // Output
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + average);
+        System.out.println("Maximum: " + max);
+        System.out.println("Minimum: " + min);
+    }
+}
+```
+
+## Sorting  Application:
+### numbers sorting
+```java
+import java.util.*;
+
+public class Test {
+    public static void main(String[] args) {
+
+        List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9));
+
+        Collections.sort(numbers);  // Ascending order
+        System.out.println("Sorted List (Ascending): " + numbers);  // Modifies original list 'numbers' // OutPut: Sorted List (Ascending): [1, 3, 5, 7, 9]
+
+        Collections.sort(numbers, Collections.reverseOrder());
+        System.out.println("Sorted List (Descending): " + numbers);   //  Modifies original list 'numbers' //  Sorted List (Descending): [9, 7, 5, 3, 1]
+    }
+}
+```
+### String sorting
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        List<String> names = new ArrayList<>(
+                Arrays.asList("Banana", "Apple", "Mango", "Cherry"));
+
+        System.out.println("Original: " + names);
+        // Original: [Banana, Apple, Mango, Cherry]
+
+        // 1️⃣ Ascending (Default - Lexicographical Order)
+        Collections.sort(names);
+        System.out.println("Ascending: " + names);
+        // Ascending: [Apple, Banana, Cherry, Mango]
+
+        // 2️⃣ Descending
+        Collections.sort(names, Collections.reverseOrder());
+        System.out.println("Descending: " + names);
+        // Descending: [Mango, Cherry, Banana, Apple]
+
+        // 3️⃣ Case-Insensitive Sorting
+        List<String> names2 = new ArrayList<>(
+                Arrays.asList("banana", "Apple", "mango", "Cherry"));
+
+        names2.sort(String.CASE_INSENSITIVE_ORDER);
+        System.out.println("Case-Insensitive Sort: " + names2);
+        // Case-Insensitive Sort: [Apple, banana, Cherry, mango]
+
+        // 4️⃣ Sort by Length
+        names2.sort(Comparator.comparingInt(String::length));
+        System.out.println("Sorted by Length: " + names2);
+        // Sorted by Length: [Apple, mango, banana, Cherry]
+    }
+}
+````
