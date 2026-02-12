@@ -709,3 +709,83 @@ public class Test {
     }
 }
 ```
+--------------------------------------------------
+## Sort and Merge Two Arrays
+
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        List<Integer> arr1 = Arrays.asList(5, 2, 8, 1);
+        List<Integer> arr2 = Arrays.asList(3, 8, 6, 1);
+
+        // TreeSet automatically sorts + removes duplicates
+        Set<Integer> unique = new TreeSet<>(arr1);
+
+        unique.addAll(arr2);
+
+        // Convert back to List (like vector)
+        List<Integer> merged = new ArrayList<>(unique);
+
+        System.out.println("Merged & Sorted:");
+        System.out.println(merged);
+        // Output: [1, 2, 3, 5, 6, 8]
+    }
+}
+
+```
+
+------------------------------------
+
+## Union of two List: Using TreeSet (Sorted)
+
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        List<Integer> arr1 = Arrays.asList(5, 1, 3, 7);
+        List<Integer> arr2 = Arrays.asList(2, 3, 6, 7);
+
+        // TreeSet automatically sorts + removes duplicates
+        Set<Integer> union = new TreeSet<>();
+
+        union.addAll(arr1);
+        union.addAll(arr2);
+
+        System.out.println("Sorted Union:");
+        System.out.println(union);
+        // Output: [1, 2, 3, 5, 6, 7]
+    }
+}
+```
+
+##  Intersection Using TreeSet (Sorted)
+
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        List<Integer> arr1 = Arrays.asList(5, 1, 3, 7);
+        List<Integer> arr2 = Arrays.asList(2, 3, 6, 7);
+
+        Set<Integer> set1 = new TreeSet<>(arr1);
+        Set<Integer> set2 = new TreeSet<>(arr2);
+
+        // Keep only common elements
+        set1.retainAll(set2);
+
+        System.out.println("Sorted Intersection:");
+        System.out.println(set1);
+        // Output: [3, 7]
+    }
+}
+```
