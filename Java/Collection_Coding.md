@@ -1,3 +1,13 @@
+## Which Collection When ?
+
+- ✅ 1️⃣ Fast Searching :                     HashSet/HashMap     set.contains(5);  // Very fast  O(1)
+- ✅ 2️⃣ Fast Random Access (get by index):   ArrayList           numbers.get(3);  // Very fast O(1)
+- ✅ 3️⃣ Fast Insert / Remove in Middle :     LinkedList          list.add("A") / list.add(2, "B");  // Practical performance not always better than ArrayList.  O(n)
+- ✅ 4️⃣ Remove by Value Fastest:             HashSet/HashMap     set.remove("Banana"); // Very fast ,Because lookup is O(1).
+- ✅ 5️⃣ Automatic Sorting Needed:            TreeSet/TreeMap     tree.add(5)  // maintain sorted order automatically during insertion. O(log n)
+- ✅ 5️⃣ QUeue FIFO (First In → First Out) :  ArrayDeque          queue.offer(10) & queue.poll() // offer() / poll() /peek() → Very fast O(1) 
+
+
 ## convert User Input into ArrayList:
 - `Inegers`: 5 , 3, 7, 1, 9   ==Convert==>   ArrayList: [ 5 , 3, 7, 1, 9]
 - `Strings`: "Apple" , "Bananan", "Mango", "Apple"   ==Convert==>   ArrayList: ["Apple", "Bananan", "Mango", "Apple"]
@@ -171,3 +181,23 @@ System.out.println("Unique elements: " + uniqueSet);
 ----------------------------------
 
 ## Iterate a list<int> one by one element
+
+```java
+List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9));
+for (Integer num : numbers) {
+    System.out.println(num);
+}
+```
+```java
+// even shorter way:
+numbers.forEach(System.out::println);
+```
+
+```java
+// OLD style
+for (int i = 0; i < numbers.size(); i++) {
+    System.out.println(numbers.get(i));
+}
+```
+
+------------------------------------------------------------
