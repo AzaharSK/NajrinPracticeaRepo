@@ -289,10 +289,10 @@ List<Integer> numbersList = UserInput.getNumbersFromUser();
 List<Integer> numbersList = Arrays.asList(1, 2, 3, 2, 4, 1, 5);
 
 // HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates And insertion Order is preserved 
-Set<Integer> uniqueSet = new LinkedHashSet<>(numbersList); // [5, 3, 7, 1, 9]
+Set<Integer> uniqueSet = new LinkedHashSet<>(numbersList); //  // [1, 3, 5, 7, 9] 
 
 // HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates But Order is NOT preserved 
-Set<Integer> uniqueSet = new HashSet<>(numbersList);  // [1, 3, 5, 7, 9]
+Set<Integer> uniqueSet = new HashSet<>(numbersList);  //[5, 3, 7, 1, 9]
 
 System.out.println("Unique elements: " + uniqueSet);
 ```
@@ -302,10 +302,10 @@ ArrayList<Integer> numbersList = UserInput.getNumbersFromUser();
 ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9, 3, 5, 7));
 
 // HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates And insertion Order is preserved 
-Set<Integer> uniqueSet = new LinkedHashSet<>(numbersList); // [5, 3, 7, 1, 9]
+Set<Integer> uniqueSet = new LinkedHashSet<>(numbersList); //  [1, 3, 5, 7, 9] 
 
 // HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates But Order is NOT preserved 
-Set<Integer> uniqueSet = new HashSet<>(numbersList);  // [1, 3, 5, 7, 9]
+Set<Integer> uniqueSet = new HashSet<>(numbersList);  //[5, 3, 7, 1, 9]
 
 System.out.println("Unique elements: " + uniqueSet);
 ```
