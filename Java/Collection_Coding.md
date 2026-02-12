@@ -10,17 +10,14 @@
 
 ## convert User Input into ArrayList:
 - `Inegers`: 5 , 3, 7, 1, 9   ==Convert==>   ArrayList: [ 5 , 3, 7, 1, 9]
-- `Strings`: "Apple" , "Bananan", "Mango", "Apple"   ==Convert==>   ArrayList: ["Apple", "Bananan", "Mango", "Apple"]
 
-- `UserInput.java`
 ```java
 import java.util.*;
 
-public class UserInput {
+public class Test {
 
-    // Method to take user input and return ArrayList<Integer>
-    public static ArrayList<Integer> getNumbersFromUser() {
-
+    public static void main(String[] args) {
+        
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter numbers separated by comma:");
@@ -28,19 +25,26 @@ public class UserInput {
 
         String[] items = input.split(",");
 
-        ArrayList<Integer> numbers = new ArrayList<>();
+        List<Integer> numbers = new ArrayList<>();
 
         for (String item : items) {
             numbers.add(Integer.parseInt(item.trim()));
         }
 
-        System.out.println("ArrayList: " + numbers);
-        return numbers;
+        System.out.println("Final Numbers List: " + numbers);
     }
+}
+```
+## convert User Input into ArrayList:
+- `Strings`: "Apple" , "Bananan", "Mango", "Apple"   ==Convert==>   ArrayList: ["Apple", "Bananan", "Mango", "Apple"]
 
-    // Method to take user input and return ArrayList<String>
-    public static ArrayList<String> getWordsFromUser() {
+```java
+import java.util.*;
 
+public class Test {
+
+    public static void main(String[] args) {
+        
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter words separated by comma:");
@@ -55,99 +59,10 @@ public class UserInput {
         }
 
         System.out.println("ArrayList: " + words);
-        return words;
     }
 }
 
 ```
-- `Test.java`
-```java
-import java.util.*;
-
-public class Test {
-
-    public static void main(String[] args) {
-
-        ArrayList<String> wordsList = UserInput.getWordsFromUser();
-        System.out.println("Final Words List: " + wordsList);
-
-        ArrayList<Integer> numbersList = UserInput.getNumbersFromUser();
-        System.out.println("Final Numbers List: " + numbersList);
-    }
-}
-
-```
-
-## Comvert UserInput ino List:
-- `Inegers`: 5 , 3, 7, 1, 9 ==Convert==> List: [ 5 , 3, 7, 1, 9]
-- `Strings`: "Apple" , "Bananan", "Mango", "Apple" ==Convert==> List: ["Apple", "Bananan", "Mango", "Apple"]
-
-`UserInput.java`
-```java
-import java.util.*;
-
-public class UserInput {
-
-    // Method to take user input and return List<Integer>
-    public static List<Integer> getNumbersFromUser() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter numbers separated by comma:");
-        String input = scanner.nextLine();
-
-        String[] items = input.split(",");
-
-        List<Integer> numbers = new ArrayList<>();
-
-        for (String item : items) {
-            numbers.add(Integer.parseInt(item.trim()));
-        }
-
-        System.out.println("List: " + numbers);
-        return numbers;
-    }
-
-    // Method to take user input and return List<String>
-    public static List<String> getWordsFromUser() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter words separated by comma:");
-        String input = scanner.nextLine();
-
-        String[] items = input.split(",");
-
-        List<String> words = new ArrayList<>();
-
-        for (String item : items) {
-            words.add(item.trim());
-        }
-
-        System.out.println("List: " + words);
-        return words;
-    }
-}
-
-```
-`Test.java`
-```java
-import java.util.*;
-
-public class Test {
-
-    public static void main(String[] args) {
-
-        List<String> wordsList = UserInput.getWordsFromUser();
-        System.out.println("Final Words List: " + wordsList);
-
-        List<Integer> numbersList = UserInput.getNumbersFromUser();
-        System.out.println("Final Numbers List: " + numbersList);
-    }
-}
-```
-
-
 ---------------------------------------------------
 ## Iterate a list<int> one by one element
 
