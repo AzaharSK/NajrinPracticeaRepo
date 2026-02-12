@@ -308,6 +308,8 @@ public class Test {
 }
 ```
 
+------------------------------------------------------
+
 ## Sorting  Application:
 ### numbers sorting
 
@@ -369,3 +371,130 @@ public class Test {
     }
 }
 ````
+
+------------------------------------------------------
+
+## Sort Application: Two List of numbers contain the same elements i.e. one is a permutation of another?
+
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        List<Integer> v1 = new ArrayList<>(Arrays.asList(3, 1, 2, 4));
+        List<Integer> v2 = new ArrayList<>(Arrays.asList(4, 2, 1, 3));
+
+        if (v1.size() != v2.size()) {
+            System.out.println(false);
+            return;
+        }
+
+        // Sort both lists
+        Collections.sort(v1);
+        Collections.sort(v2);
+
+        // Compare lists
+        boolean result = v1.equals(v2);
+
+        System.out.println("Are both lists permutations of each other? " + result);
+        // Output: Are both lists permutations of each other? true
+    }
+}
+
+```
+------------------------------------------------------
+
+## Sort Application: Find 3rd Smallest elm using sorting
+
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        List<Integer> nums = new ArrayList<>(Arrays.asList(7, 2, 9, 4, 1, 5));
+
+        if (nums.size() < 3) {
+            System.out.println("List has less than 3 elements.");
+            return;
+        }
+
+        // Make a copy to preserve original list
+        List<Integer> sortedNums = new ArrayList<>(nums);
+
+        // Sort the copied list
+        Collections.sort(sortedNums);
+
+        System.out.println("Smallest: " + sortedNums.get(0));         // Smallest: 1
+        System.out.println("Second Smallest: " + sortedNums.get(1));  // Second Smallest: 2
+        System.out.println("Third Smallest: " + sortedNums.get(2));   // Third Smallest: 4
+    }
+}
+```
+------------------------------------------------------
+
+## Sort Application: Find 3rd largest elm using sorting
+
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        List<Integer> nums = new ArrayList<>(Arrays.asList(7, 2, 9, 4, 1, 5));
+
+        if (nums.size() < 3) {
+            System.out.println("List has less than 3 elements.");
+            return;
+        }
+
+        // Make a copy to preserve original list
+        List<Integer> sortedNums = new ArrayList<>(nums);
+
+        // Reverse sorting (Descending order)
+        Collections.sort(sortedNums, Collections.reverseOrder());
+
+        System.out.println("Largest: " + sortedNums.get(0));         // Largest: 9
+        System.out.println("Second Largest: " + sortedNums.get(1));  // Second Largest: 7
+        System.out.println("Third Largest: " + sortedNums.get(2));   // Third Largest: 5
+    }
+}
+```
+------------------------------------------------------
+## Sort Application: Find Kth Largest elm in array
+
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        List<Integer> nums = new ArrayList<>(
+                Arrays.asList(7, 2, 9, 4, 1, 5));
+
+        int k = 2; // Change this value for different K
+
+        if (nums.size() < k) {
+            System.out.println("List has less than " + k + " elements.");
+            return;
+        }
+
+        // Make a copy to preserve original list
+        List<Integer> sortedNums = new ArrayList<>(nums);
+
+        // Reverse sort (Descending order)
+        Collections.sort(sortedNums, Collections.reverseOrder());
+
+        System.out.println("Sorted (Descending): " + sortedNums);
+        // Sorted (Descending): [9, 7, 5, 4, 2, 1]
+
+        System.out.println(k + "th Largest Element: " + sortedNums.get(k - 1));
+        // If k = 2 → 2th Largest Element: 7
+    }
+}
+```
