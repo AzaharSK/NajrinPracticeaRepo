@@ -660,3 +660,31 @@ public class Test {
     }
 }
 ```
+
+------------
+
+
+##  Even-odd sorter: Even First, Then Odd
+- [ 9, 2, 3, 6, 1, 8, 5, 4, 7 ] ===>  Output: [2, 4, 6, 8, 1, 3, 5, 7, 9]
+  
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        List<Integer> nums = new ArrayList<>(Arrays.asList(9, 2, 3, 6, 1, 8, 5, 4, 7));
+
+        // Even first, then odd — ascending inside each group
+        nums.sort(
+                Comparator
+                        .comparingInt((Integer x) -> x % 2)  // Even (0) first, Odd (1) after
+                        .thenComparingInt(x -> x)            // Sort ascending within group
+        );
+
+        System.out.println(nums);
+        // Output: [2, 4, 6, 8, 1, 3, 5, 7, 9]
+    }
+}
+```
