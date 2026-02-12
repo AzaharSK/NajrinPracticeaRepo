@@ -554,3 +554,39 @@ public class Test {
 }
 
 ````
+-------------------------------------------------------
+
+## 2-SUM : Given a sorted array, find two numbers that sum up to a target value.
+
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        List<Integer> nums = Arrays.asList(1, 2, 4, 5, 7, 9);
+        int target = 11;
+
+        Set<Integer> seen = new HashSet<>();
+        boolean found = false;
+
+        for (int num : nums) {
+
+            int complement = target - num;
+            if (seen.contains(complement)) {
+                System.out.println("Pair found: " + complement + " and " + num);
+                // Pair found: 2 and 9
+                found = true;
+                break;
+            }
+
+            seen.add(num);
+        }
+
+        if (!found) {
+            System.out.println("No pair found.");
+        }
+    }
+}
+```
