@@ -320,10 +320,12 @@ public class Test {
         List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9));
 
         Collections.sort(numbers);  // Ascending order
-        System.out.println("Sorted List (Ascending): " + numbers);  // Modifies original list 'numbers' // OutPut: Sorted List (Ascending): [1, 3, 5, 7, 9]
+        System.out.println("Sorted List (Ascending): " + numbers); // Modifies original list 'numbers' 
+        // OutPut: Sorted List (Ascending): [1, 3, 5, 7, 9]
 
         Collections.sort(numbers, Collections.reverseOrder());
-        System.out.println("Sorted List (Descending): " + numbers);   //  Modifies original list 'numbers' //  Sorted List (Descending): [9, 7, 5, 3, 1]
+        System.out.println("Sorted List (Descending): " + numbers); // Modifies original list 'numbers' 
+        // OutPut: Sorted List (Descending): [9, 7, 5, 3, 1]
     }
 }
 ```
