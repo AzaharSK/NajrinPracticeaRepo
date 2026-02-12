@@ -590,3 +590,73 @@ public class Test {
     }
 }
 ```
+
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        int[] nums = {1, 2, 4, 5, 7, 9};  // Sorted array
+        int target = 11;
+
+        int left = 0;
+        int right = nums.length - 1;
+
+        boolean found = false;
+
+        while (left < right) {
+            int sum = nums[left] + nums[right];
+
+            if (sum == target) {
+                System.out.println("Pair found: "  + nums[left] + " and " + nums[right]); // Pair found: 2 and 9
+                found = true;
+                break;
+            }
+            else if (sum < target) { left++; }  // Need bigger sum 
+            else { right--;  } // Need smaller sum
+        }
+
+        if (!found) {
+            System.out.println("No pair found.");
+        }
+    }
+}
+```
+------------------------
+
+## Two Pointer approach Application : Move Zeros to End:
+- `Problem:` Move all zeroes in an array to the end while maintaining the relative order of the non-zero elements.
+- `Solution:` Use two indexes, one to track the position of non-zero elements and one to traverse the array.
+
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        int[] arr = {0, 1, 0, 3, 12, 0, 5, 0};
+
+        int nonZeroIndex = 0;  // Position to place next non-zero element
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] != 0) {
+
+                // Swap arr[i] with arr[nonZeroIndex]
+                int temp = arr[i];
+                arr[i] = arr[nonZeroIndex];
+                arr[nonZeroIndex] = temp;
+
+                nonZeroIndex++;
+            }
+        }
+
+        System.out.println("After moving zeros to end:");
+        System.out.println(Arrays.toString(arr));
+        // Output: [1, 3, 12, 5, 0, 0, 0, 0]
+    }
+}
+```
