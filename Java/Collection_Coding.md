@@ -308,6 +308,27 @@ public class Test {
 }
 ```
 
+## Remove elements of set2 from set1
+
+```java
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        Set<Integer> set1 = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5));
+        Set<Integer> set2 = new HashSet<>(Arrays.asList(3, 4));
+
+        // Remove elements of set2 from set1
+        set1.removeAll(set2);
+
+        System.out.println("After removing set2 from set1:");
+        System.out.println(set1); // Output: [1, 2, 5]
+    }
+}
+
+```
 ------------------------------------------------------
 
 ## Sorting  Application:
