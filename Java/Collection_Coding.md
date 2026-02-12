@@ -68,20 +68,6 @@ public class Test {
 
 ```
 
-```java
-ArrayList<Integer> numbersList = UserInput.getNumbersFromUser();
-ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9, 3, 5, 7));
-
-// HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates And insertion Order is preserved 
-Set<Integer> uniqueSet = new LinkedHashSet<>(numbersList); // [5, 3, 7, 1, 9]
-
-// HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates But Order is NOT preserved 
-Set<Integer> uniqueSet = new HashSet<>(numbersList);  // [1, 3, 5, 7, 9]
-
-System.out.println("Unique elements: " + uniqueSet);
-```
-
-
 ## Comvert UserInput ino List:
 - `Inegers`: 5 , 3, 7, 1, 9 ==Convert==> List: [ 5 , 3, 7, 1, 9]
 - `Strings`: "Apple" , "Bananan", "Mango", "Apple" ==Convert==> List: ["Apple", "Bananan", "Mango", "Apple"]
@@ -151,6 +137,11 @@ public class Test {
 }
 ```
 
+
+---------------------------------------------------
+## Remove duplicate elements from `List` or `ArrayList`
+
+- `List`
 ```java
 List<Integer> numbersList = UserInput.getNumbersFromUser();
 List<Integer> numbersList = Arrays.asList(1, 2, 3, 2, 4, 1, 5);
@@ -163,3 +154,20 @@ Set<Integer> uniqueSet = new HashSet<>(numbersList);  // [1, 3, 5, 7, 9]
 
 System.out.println("Unique elements: " + uniqueSet);
 ```
+`ArrayList`
+```java
+ArrayList<Integer> numbersList = UserInput.getNumbersFromUser();
+ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9, 3, 5, 7));
+
+// HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates And insertion Order is preserved 
+Set<Integer> uniqueSet = new LinkedHashSet<>(numbersList); // [5, 3, 7, 1, 9]
+
+// HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates But Order is NOT preserved 
+Set<Integer> uniqueSet = new HashSet<>(numbersList);  // [1, 3, 5, 7, 9]
+
+System.out.println("Unique elements: " + uniqueSet);
+```
+
+----------------------------------
+
+## Iterate a list<int> one by one element
