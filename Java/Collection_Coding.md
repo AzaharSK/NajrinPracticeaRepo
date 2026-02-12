@@ -289,4 +289,33 @@ public static boolean hasDuplicates(List<Integer> numbers) {
 List<Integer> numbers = Arrays.asList(5, 3, 7, 1, 9, 3);
 boolean hasDulicateX = hasDuplicates(numbers);
 ```
-    
+
+---------
+
+
+## check if Array (Unsorted) is Subset of another array (Unsorted) 
+
+```java
+public static boolean isSubset(List<Integer> subset, List<Integer> superset) {
+        // Create a HashSet from superset for fast lookup
+        Set<Integer> supersetSet = new HashSet<>(superset);
+
+        // Check if each element of subset exists in superset
+        for (int elem : subset) {
+            if (!supersetSet.contains(elem)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+List<Integer> subset = Arrays.asList(3, 7, 1);
+List<Integer> superset = Arrays.asList(5, 3, 7, 1, 9);
+
+if (isSubset(subset, superset)) {  // True
+} else { // Flase  }
+---
+
+
+
+
