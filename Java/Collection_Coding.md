@@ -230,3 +230,63 @@ if (queue.isEmpty()) {
 ```
 
 ------------------------------
+## FindElement present or not ?
+```java
+List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9));
+boolean found = numbers.contains(key);   // key = 7 check if number exists  , return True or False
+```
+---------------------------------
+## Count ElementOccurenceFrequency in array java collection 
+```java
+List<Integer> numbers = Arrays.asList(5, 3, 7, 1, 9, 3, 5, 3);
+int freqCount = Collections.frequency(numbers, key); // key =3
+
+// System.out.println("3 occurs " + freqCount + " times");
+```
+
+----------
+
+## Find Max Repeating Element in a List of numbers
+
+```java
+public static int findMaxRepeatingElement(List<Integer> numbers) {
+        int maxCount = 0;
+        int maxRepeatingElement = numbers.get(0);
+
+        for (int key : numbers) {
+            int count = Collections.frequency(numbers, key);
+            if (count > maxCount) {
+                maxCount = count;
+                maxRepeatingElement = key;
+            }
+        }
+
+        return maxRepeatingElement;
+    }
+
+List<Integer> numbers = Arrays.asList(5, 3, 7, 3, 1, 3, 5, 9);
+int result = findMaxRepeatingElement(numbers);
+
+// System.out.println("Max repeating element: " + result);
+```
+----
+## Find if array/list Has any Duplicates.
+
+```java
+// Method to check if a list has duplicates
+public static boolean hasDuplicates(List<Integer> numbers) {
+
+    // HashSet stores only unique elements
+    Set<Integer> unique = new HashSet<>(numbers);
+
+    // If size is same, no duplicates
+    if (unique.size() == numbers.size())
+        return false;
+     else
+        return true;
+}
+
+List<Integer> numbers = Arrays.asList(5, 3, 7, 1, 9, 3);
+boolean hasDulicateX = hasDuplicates(numbers);
+```
+    
