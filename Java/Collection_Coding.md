@@ -149,37 +149,6 @@ public class Test {
 
 
 ---------------------------------------------------
-## Remove duplicate elements from `List` or `ArrayList`
-
-- `List`
-```java
-List<Integer> numbersList = UserInput.getNumbersFromUser();
-List<Integer> numbersList = Arrays.asList(1, 2, 3, 2, 4, 1, 5);
-
-// HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates And insertion Order is preserved 
-Set<Integer> uniqueSet = new LinkedHashSet<>(numbersList); // [5, 3, 7, 1, 9]
-
-// HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates But Order is NOT preserved 
-Set<Integer> uniqueSet = new HashSet<>(numbersList);  // [1, 3, 5, 7, 9]
-
-System.out.println("Unique elements: " + uniqueSet);
-```
-`ArrayList`
-```java
-ArrayList<Integer> numbersList = UserInput.getNumbersFromUser();
-ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9, 3, 5, 7));
-
-// HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates And insertion Order is preserved 
-Set<Integer> uniqueSet = new LinkedHashSet<>(numbersList); // [5, 3, 7, 1, 9]
-
-// HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates But Order is NOT preserved 
-Set<Integer> uniqueSet = new HashSet<>(numbersList);  // [1, 3, 5, 7, 9]
-
-System.out.println("Unique elements: " + uniqueSet);
-```
-
-----------------------------------
-
 ## Iterate a list<int> one by one element
 
 ```java
@@ -290,8 +259,58 @@ List<Integer> numbers = Arrays.asList(5, 3, 7, 1, 9, 3);
 boolean hasDulicateX = hasDuplicates(numbers);
 ```
 
----------
+-----------------------------------------------------------------
+## Find Duplicates in array
 
+```java
+ public static Set<Integer> findDuplicates(List<Integer> numbers) {
+        Set<Integer> seen = new HashSet<>();
+        Set<Integer> duplicates = new HashSet<>();
+
+        for (int num : numbers) {
+            if (!seen.add(num)) { // add() returns false if element already exists
+                duplicates.add(num);
+            }
+        }
+
+        return duplicates;
+    }
+
+List<Integer> numbers = Arrays.asList(5, 3, 7, 3, 1, 3, 5, 9);
+Set<Integer> duplicates = findDuplicates(numbers);
+// System.out.println("Duplicates in array: " + duplicates);
+```
+---------------------------------------------------------------
+## Remove duplicate elements from `List` or `ArrayList`
+
+- `List`
+```java
+List<Integer> numbersList = UserInput.getNumbersFromUser();
+List<Integer> numbersList = Arrays.asList(1, 2, 3, 2, 4, 1, 5);
+
+// HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates And insertion Order is preserved 
+Set<Integer> uniqueSet = new LinkedHashSet<>(numbersList); // [5, 3, 7, 1, 9]
+
+// HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates But Order is NOT preserved 
+Set<Integer> uniqueSet = new HashSet<>(numbersList);  // [1, 3, 5, 7, 9]
+
+System.out.println("Unique elements: " + uniqueSet);
+```
+`ArrayList`
+```java
+ArrayList<Integer> numbersList = UserInput.getNumbersFromUser();
+ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9, 3, 5, 7));
+
+// HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates And insertion Order is preserved 
+Set<Integer> uniqueSet = new LinkedHashSet<>(numbersList); // [5, 3, 7, 1, 9]
+
+// HashSet does NOT allow duplicate elements, converting time, it Remove all duplicates But Order is NOT preserved 
+Set<Integer> uniqueSet = new HashSet<>(numbersList);  // [1, 3, 5, 7, 9]
+
+System.out.println("Unique elements: " + uniqueSet);
+```
+
+----------------------------------
 
 ## check if Array (Unsorted) is Subset of another array (Unsorted) 
 
