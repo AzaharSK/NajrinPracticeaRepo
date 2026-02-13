@@ -4,7 +4,7 @@
 - [Convert User Input Integers into ArrayList](#convert-User-Input-Integers-into-ArrayList)
 - [Convert User Input Strings into ArrayList](#convert-User-Input-Strings-into-ArrayList)
 - [Iterate a list one by one element](#Iterate-a-list-one-by-one-element)
-- [Check Empty collection or not ?](#Check-Empty-collection-or-not-?)
+- [Check Empty collection or not ?](#Check-Empty-collection-or-not)
 - 
 ## Which Collection When
 ```sql
@@ -122,7 +122,7 @@ if (queue.isEmpty()) {
 ```
 
 ------------------------------
-## FindElement present or not ?
+## FindElement present or not
 ```java
 List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9));
 boolean found = numbers.contains(key);   // key = 7 check if number exists  , return True or False
