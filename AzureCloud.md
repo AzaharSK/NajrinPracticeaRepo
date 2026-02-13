@@ -45,3 +45,5 @@ Multiple micro-services [user-service, order-service, payment-service ] deployed
 
 ## App service plan : Scale up/down 
 <img width="1808" height="954" alt="image" src="https://github.com/user-attachments/assets/e0b5ac0d-fd40-4042-8a9c-e6d3968354dc" />
+
+<img width="1808" height="954" alt="image" src="https://github.com/user-attachments/assets/a9488fee-efd1-4755-a06c-604476ea9eca" />
