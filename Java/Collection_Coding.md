@@ -121,12 +121,92 @@ if (queue.isEmpty()) {
 }
 ```
 
+## Add by value , by index , remove by value, by index
+
+```java
+ArrayList<String> list = new ArrayList<>();
+
+list.add("Banana");
+list.remove("Banana");   // removes first occurrence
+
+int index = 1 
+list.add(index, "Orange");   // add @[index=1] shifts elements right 
+list.remove(index);          // removes "Orange"
+```
+
+```java
+import java.util.*;
+
+public class ArrayListOperations {
+    public static void main(String[] args) {
+
+        ArrayList<String> list = new ArrayList<>();
+
+        // ADD BY VALUE (append at end)
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Mango");
+
+        // ADD BY INDEX (insert at position)
+        list.add(1, "Orange");   // shifts elements right
+
+        System.out.println("After Adding : " + list);
+        // [Apple, Orange, Banana, Mango]
+
+
+        // REMOVE BY VALUE
+        list.remove("Banana");   // removes first occurrence
+
+        System.out.println("After Remove Value : " + list);
+        // [Apple, Orange, Mango]
+
+
+        // REMOVE BY INDEX
+        list.remove(0);          // removes "Apple"
+
+        System.out.println("After Remove Index : " + list);
+        // [Orange, Mango]
+    }
+}
+
+```
+<img width="1085" height="360" alt="image" src="https://github.com/user-attachments/assets/910a3a90-9b63-4b7d-a853-dc76bf9a8e09" />
+
 ------------------------------
-## FindElement present or not
+## Find key Element present or not
 ```java
 List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9));
 boolean found = numbers.contains(key);   // key = 7 check if number exists  , return True or False
 ```
+
+## Find postion of Key
+
+```java
+ List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9));
+ boolean found = numbers.contains(key);
+ if (found) { int position = numbers.indexOf(key); }
+```
+- Full examples
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 3, 7, 1, 9));
+
+        int key = 7;
+        boolean found = numbers.contains(key);
+        if (found) {
+            int position = numbers.indexOf(key);
+            System.out.println("Found at index: " + position);
+        } else {
+            System.out.println("Not found");
+        }
+    }
+}
+```
+
 ---------------------------------
 ## Count ElementOccurenceFrequency in array java collection 
 ```java
@@ -136,7 +216,6 @@ int freqCount = Collections.frequency(numbers, key); // key =3
 // System.out.println("3 occurs " + freqCount + " times");
 ```
 
-----------
 
 ## Find Max Repeating Element in a List of numbers
 
@@ -796,4 +875,49 @@ public class Test {
         // Output: [3, 7]
     }
 }
+```
+
+------------------
+
+## Reverse Array in-place using XOR swap (no extra variable)
+
+```java
+/*
+XOR swap
+a = a ^ b
+b = a ^ b
+a = a ^ b
+*/
+
+public class ReverseXOR {
+
+    public static void reverse(int[] arr) {
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+
+            // XOR swap
+            arr[left] = arr[left] ^ arr[right];
+            arr[right] = arr[left] ^ arr[right];
+            arr[left] = arr[left] ^ arr[right];
+
+            left++;
+            right--;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        int[] arr = {1, 2, 3, 4, 5, 6};
+
+        reverse(arr);
+
+        for (int n : arr)
+            System.out.print(n + " ");
+    }
+}
+
+// 6 5 4 3 2 1
 ```
