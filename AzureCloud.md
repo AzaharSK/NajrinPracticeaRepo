@@ -15,3 +15,7 @@
 ## Created App-services
 <img width="1752" height="1099" alt="image" src="https://github.com/user-attachments/assets/a835ab18-69b6-4118-80ce-934b1ce99b20" />
 
+## Home screen:
+<img width="1839" height="1033" alt="image" src="https://github.com/user-attachments/assets/5478358e-2f35-49da-b613-9b4972bdc55b" />
+
+<img width="1741" height="903" alt="image" src="https://github.com/user-attachments/assets/8f702615-bbcb-4213-b2ab-ff2c3373a583" />
