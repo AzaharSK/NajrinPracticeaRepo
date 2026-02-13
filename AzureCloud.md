@@ -1,3 +1,20 @@
+## Azure WebApp :
+- Azure Web Apps is a PaaS service that allows developers to deploy and run web applications and APIs without managing infrastructure, offering built-in scaling, security, monitoring, and CI/CD integration.
+- It comes with pre-installed latest java-runtime eco-system, e.g Preconfigured tomcat , Nginx, Automatic scalling and Automatic load balancer
+- Azure automatically provides: OS updates, security patches, JVM installation, all required web server configuration.
+- E-commerce site traffic increases → Azure automatically adds instances.
+- Traffic automatically distributed across instances (No need for Nginx / HAProxy configuration)
+- Monitoring matrics & App service Logging
+- Azure automatically provides HTTPS certificate for www.mycompany.com
+  
+```
+Frontend → React/Angular
+Backend → Azure Web App (Spring Boot API)
+
+Enterprise Java Application like Banking / ERP system running WAR on Tomcat
+
+Multiple micro-services [user-service, order-service, payment-service ] deployed independently on azure AppService instance, Instead of buying server or VPS → deploy in minutes
+```
 ## Create Resorece:
 <img width="1788" height="957" alt="image" src="https://github.com/user-attachments/assets/fa2f6115-a79d-4540-b919-dd0156fa0d0f" />
 
