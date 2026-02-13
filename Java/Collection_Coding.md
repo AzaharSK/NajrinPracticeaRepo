@@ -482,6 +482,19 @@ public class Test {
 
 ------------------------------------------------------
 
+## 🇳🇱  sorting of an array of 0s, 1s, and 2s ( Dutch National Flag)
+- [2, 0, 2, 1, 1, 0] ==sorting==> [0, 0, 1, 1, 2, 2]
+
+```java
+List<Integer> nums = new ArrayList<>(Arrays.asList(2, 0, 2, 1, 1, 0));
+
+// Sort using collections
+Collections.sort(nums);
+
+System.out.println(nums);  // [0, 0, 1, 1, 2, 2]
+```
+------------------------------------------------------
+
 ## Sort Application: Two List of numbers contain the same elements i.e. one is a permutation of another?
 
 ```java
@@ -940,4 +953,71 @@ public class ReverseXOR {
 }
 
 // 6 5 4 3 2 1
+```
+-----------------------------------
+
+## Rotate Array Right by k steps:
+```
+// Rotate Array Right by 3 steps #--> start of original array
+Original : #1 2 3 4 5 6 7
+Step 1   : 7 #1 2 3 4 5 6
+Step 2   : 6 7 #1 2 3 4 5
+Step 3   : 5 6 7 #1 2 3 4
+
+// Rotate Array Left by 2 steps #--> last of original array
+Original : 1 2 3 4 5 6 7#
+Step 1   : 2 3 4 5 6 7# 1
+Step 2   : 3 4 5 6 7# 1 2
+```
+
+```java
+ List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
+
+ int k = 3;
+// using built-in utility: rotates right when k is positive.
+Collections.rotate(list, k);
+// [5, 6, 7, 1, 2, 3, 4]
+
+// Left Rotation pass k = -2 (negative)
+Collections.rotate(list, -2);
+// [3, 4, 5, 6, 7, 1, 2]
+
+```
+
+-----------------------
+
+##
+
+```boolean
+nums = {3, 0, 1}
+Full range XOR   : 0^1^2^3
+Array XOR        : 3^0^1
+Final XOR        : (0 ^ 1 ^ 2 ^ 3) ^ (3 ^ 0 ^ 1) =  2 (remaining)
+```
+
+```java
+public class Test {
+
+    public static void main(String[] args) {
+
+        int[] nums = {3, 0, 1};   // missing number = 2
+
+        int A = 0, B = 0;
+        int n = nums.length;
+
+        // XOR from 0 to n
+        for (int i = 0; i <= n; i++) {
+            A ^= i;
+        }
+
+        // XOR array elements
+        for (int num : nums) {
+            B ^= num;
+        }
+
+        int missing = A ^ B;
+
+        System.out.println("Missing number = " + missing);  // Missing number = 2
+    }
+}
 ```
