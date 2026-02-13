@@ -1,4 +1,9 @@
-## Which Collection When ?
+## Table of Contents
+
+- [Which Collection When](#Which-Collection-Whene)
+- [Convert User Input into ArrayList](#convert-User-Input-into-ArrayList)
+  
+## Which Collection When
 ```sql
 - ✅ 1️⃣ Fast Searching :                     HashSet/HashMap     set.contains(5);  // Very fast  O(1)
 - ✅ 2️⃣ Fast Random Access (get by index):   ArrayList           numbers.get(3);  // Very fast O(1)
