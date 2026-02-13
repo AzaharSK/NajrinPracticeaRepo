@@ -955,3 +955,65 @@ public class Test {
     }
 }
 ```
+
+## 1234 => One Thousand Two Hundred Thirty Four
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class SimpleConverter {
+
+    static Map<Integer, String> map = new HashMap<>();
+
+    // Static block runs once -> fills dictionary automatically
+    static {
+        String[] ones = {
+                "", "One", "Two", "Three", "Four", "Five",
+                "Six", "Seven", "Eight", "Nine", "Ten",
+                "Eleven", "Twelve", "Thirteen", "Fourteen",
+                "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"
+        };
+
+        String[] tens = {
+                "", "", "Twenty", "Thirty", "Forty",
+                "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
+        };
+
+        // Fill map using loop
+        for (int i = 1; i < ones.length; i++)
+            map.put(i, ones[i]);
+
+        for (int i = 2; i < tens.length; i++)
+            map.put(i * 10, tens[i]);
+    }
+
+    public static void main(String[] args) {
+        int number = 1234;
+        System.out.println(number + " => " + convertToWords(number));
+    }
+
+    public static String convertToWords(int n) {
+        String result = "";
+
+        if (n >= 1000) {
+            result += map.get(n / 1000) + " Thousand ";
+            n %= 1000;
+        }
+
+        if (n >= 100) {
+            result += map.get(n / 100) + " Hundred ";
+            n %= 100;
+        }
+
+        if (n > 0) {
+            if (n <= 19)
+                result += map.get(n);
+            else
+                result += map.get((n / 10) * 10) + " " + map.getOrDefault(n % 10, "");
+        }
+
+        return result.trim();
+    }
+}
+```
