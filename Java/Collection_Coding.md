@@ -611,6 +611,26 @@ public class Test {
 
 ## Min Sum Pair + Max Sum Pair ==>  Two element with minimum sum and maximum sum in a List
 
+- `Input:` [7, 2, 9, 4, 1, 5]
+- Output:  MinSum = 1 + 2 = 3  AND Maxsum = 9+7 = 15
+- Steps:
+```java
+  //  At First sort array:  [1, 2, 4, 5, 7, 9] 
+ 
+ // 🔹 Minimum Sum Pair (first two elements)
+    int minFirst = sortedNums.get(0);  //1
+    int minSecond = sortedNums.get(1); //2
+    
+    int MinSum = minFirst + minSecond;
+
+// 🔹 Maximum Sum Pair (last two elements)
+    int n = sortedNums.size();
+    int maxFirst = sortedNums.get(n - 1); // 9
+    int maxSecond = sortedNums.get(n - 2); // 7
+    
+    int Maxsum = maxFirst + maxSecond
+```
+
 ```java
 import java.util.*;
 
