@@ -17,5 +17,8 @@
 
 ## Home screen:
 <img width="1839" height="1033" alt="image" src="https://github.com/user-attachments/assets/5478358e-2f35-49da-b613-9b4972bdc55b" />
-
 <img width="1741" height="903" alt="image" src="https://github.com/user-attachments/assets/8f702615-bbcb-4213-b2ab-ff2c3373a583" />
+
+## Check Logs
+<img width="1612" height="1099" alt="image" src="https://github.com/user-attachments/assets/7defe388-550a-48a7-b5a3-f8998c943bb1" />
+<img width="1149" height="970" alt="image" src="https://github.com/user-attachments/assets/59bdbb0f-156f-4504-9027-85f0b3ef8369" />
