@@ -4,7 +4,8 @@
 - [Convert User Input Integers into ArrayList](#convert-User-Input-Integers-into-ArrayList)
 - [Convert User Input Strings into ArrayList](#convert-User-Input-Strings-into-ArrayList)
 - [Iterate a list one by one element](#Iterate-a-list-one-by-one-element)
-  
+- [Check Empty collection or not ?](#Check-Empty-collection-or-not-?)
+- 
 ## Which Collection When
 ```sql
 - ✅ 1️⃣ Fast Searching :                     HashSet/HashMap     set.contains(5);  // Very fast  O(1)
