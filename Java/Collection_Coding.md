@@ -989,7 +989,8 @@ Collections.rotate(list, -2);
 ## Find the Missing Number in Array/List
 
 ```boolean
-nums = {3, 0, 1}
+Input: nums = [3, 0, 1]  output: Missing number in nums[] = 2
+
 Full range XOR   : 0^1^2^3
 Array XOR        : 3^0^1
 Final XOR        : (0 ^ 1 ^ 2 ^ 3) ^ (3 ^ 0 ^ 1) =  2 (remaining)
