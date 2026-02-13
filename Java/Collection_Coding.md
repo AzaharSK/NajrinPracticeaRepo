@@ -3,6 +3,7 @@
 - [Which Collection When](#Which-Collection-Whene)
 - [Convert User Input Integers into ArrayList](#convert-User-Input-Integers-into-ArrayList)
 - [Convert User Input Strings into ArrayList](#convert-User-Input-Strings-into-ArrayList)
+- [Iterate a list one by one element](#Iterate-a-list-one-by-one-element)
   
 ## Which Collection When
 ```sql
