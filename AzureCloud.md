@@ -4,3 +4,14 @@
 ## Choose Web Apps:
 <img width="1672" height="884" alt="image" src="https://github.com/user-attachments/assets/55e0a527-8f24-450b-a6da-bc7d579be7fa" />
 
+<img width="1236" height="822" alt="image" src="https://github.com/user-attachments/assets/3513fd7c-f09d-4909-ba08-2afd3e630866" />
+
+<img width="1259" height="1133" alt="image" src="https://github.com/user-attachments/assets/7ac2422f-6e15-4584-8550-796fe7617408" />
+
+## Review instance
+<img width="923" height="1109" alt="image" src="https://github.com/user-attachments/assets/943aacba-39a3-4281-8b64-a5cde8f5f44d" />
+<img width="1194" height="990" alt="image" src="https://github.com/user-attachments/assets/03029cdc-0ff8-4d0d-9634-a75a9740bcef" />
+
+## Created App-services
+<img width="1752" height="1099" alt="image" src="https://github.com/user-attachments/assets/a835ab18-69b6-4118-80ce-934b1ce99b20" />
+
