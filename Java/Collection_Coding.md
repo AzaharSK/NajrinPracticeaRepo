@@ -199,7 +199,7 @@ public class Main {
         boolean found = numbers.contains(key);
         if (found) {
             int position = numbers.indexOf(key);
-            System.out.println("Found at index: " + position);
+            System.out.println("Found at index: " + position); // Found at index: 2
         } else {
             System.out.println("Not found");
         }
