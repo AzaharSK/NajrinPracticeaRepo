@@ -986,7 +986,7 @@ Collections.rotate(list, -2);
 
 -----------------------
 
-##
+## Find the Missing Number in Array/List
 
 ```boolean
 nums = {3, 0, 1}
