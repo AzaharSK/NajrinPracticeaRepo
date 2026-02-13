@@ -93,7 +93,7 @@ for (int i = 0; i < numbers.size(); i++) {
 ```
 
 ------------------------------------------------------------
-## Check Empty collection or not ?
+## Check Empty collection or not
 - Almost all collections and map interface  has `isEmpty()` to check collection empty or not ? It return `True` or `False`
 - supported in all these class `ArrayList, List, LinkedList, Vector, HashSet, TreeSet, Queue, ArrayDeque, LinkedList, PriorityQueue, HashMap, TreeMap, Hashtable, Stack class`
 ```java
