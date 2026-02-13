@@ -1,7 +1,8 @@
 ## Table of Contents
 
 - [Which Collection When](#Which-Collection-Whene)
-- [Convert User Input into ArrayList](#convert-User-Input-into-ArrayList)
+- [Convert User Input Integers into ArrayList](#convert-User-Input-Integers-into-ArrayList)
+- [Convert User Input Strings into ArrayList](#convert-User-Input-Strings-into-ArrayList)
   
 ## Which Collection When
 ```sql
@@ -13,7 +14,7 @@
 - ✅ 5️⃣ QUeue FIFO (First In → First Out) :  ArrayDeque          queue.offer(10) & queue.poll() // offer() / poll() /peek() → Very fast O(1) 
 ```
 
-## convert User Input into ArrayList:
+## convert User Input Integers into ArrayList:
 - `Inegers`: 5 , 3, 7, 1, 9   ==Convert==>   ArrayList: [ 5 , 3, 7, 1, 9]
 
 ```java
@@ -40,7 +41,7 @@ public class Test {
     }
 }
 ```
-## convert User Input into ArrayList:
+## convert User Input Strings into ArrayList:
 - `Strings`: "Apple" , "Bananan", "Mango", "Apple"   ==Convert==>   ArrayList: ["Apple", "Bananan", "Mango", "Apple"]
 
 ```java
