@@ -459,7 +459,8 @@ Password: dummy
 
 <img width="1268" height="683" alt="2026-02-14_23-06" src="https://github.com/user-attachments/assets/41985fa1-5378-4c78-84e7-9628741ec753" />
 <img width="1163" height="704" alt="sql" src="https://github.com/user-attachments/assets/e47dc665-b1d1-4f06-a128-580be20a5009" />
-```bash
+`
+``bash
 todouser
 Najrin@123
 ```
