@@ -330,3 +330,15 @@ Gtk-Message: 14:59:53.413: Failed to load module "appmenu-gtk-module"
 <img width="623" height="199" alt="image" src="https://github.com/user-attachments/assets/98370267-72df-4d62-b2da-2edf7f252865" />
 <img width="880" height="177" alt="image" src="https://github.com/user-attachments/assets/7e3b83e0-66b7-4415-82c4-e4abba3db1ac" />
 
+## Azure
+<img width="1845" height="952" alt="image" src="https://github.com/user-attachments/assets/2a9e813b-9ee9-4687-8e6b-eb302abc5419" />
+<img width="1810" height="578" alt="image" src="https://github.com/user-attachments/assets/e17b8016-15be-4ef4-8f8d-88645cb94dff" />
+<img width="1816" height="1112" alt="image" src="https://github.com/user-attachments/assets/d5b50780-54ec-4519-8d85-acd725a10096" />
+<img width="1812" height="1062" alt="image" src="https://github.com/user-attachments/assets/0cd46a80-af0d-4845-aa6b-58618fc164c7" />
+<img width="1809" height="977" alt="image" src="https://github.com/user-attachments/assets/b3bef271-bed2-405e-a1bb-4c7ac623ea71" />
+<img width="1820" height="1118" alt="image" src="https://github.com/user-attachments/assets/8968e8e1-9943-4248-bb56-e2c5c6f775ac" />
+
+
+
+
+
