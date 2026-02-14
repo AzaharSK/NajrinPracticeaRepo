@@ -29,3 +29,4 @@ drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 07-hello-world-rest-api
 
 pom.xml--> rightClick--->n  mavenbuild
 <img width="1808" height="954" alt="image" src="https://github.com/user-attachments/assets/263310e3-b33d-4f3b-9e29-4fa3227a88fd" />
+<img width="1794" height="1127" alt="image" src="https://github.com/user-attachments/assets/31815fd2-7690-42dc-915f-e245c307c402" />
