@@ -346,5 +346,12 @@ GET https://helloworldnajrin.azurewebsites.net/hello-world-bean
 
 
 
+## Modify src c deply new updated version
+```bash
+mvn clean install -DskipTests
+mvn azure-webapp:deploy
+
+```
+<img width="727" height="178" alt="image" src="https://github.com/user-attachments/assets/d080c04a-ce2a-4679-a882-4efd42080648" />
 
 
