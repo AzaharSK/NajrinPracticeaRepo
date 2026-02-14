@@ -418,4 +418,26 @@ No default schema selected; type \use <schema> to set one.
 Unknown report: databases
 ```
 
+- `OR`
+## Test the connection
+```bash
+$ mysql -h 127.0.0.1 -P 3306 -u todos-user -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 5.7.44 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> 
+```
+```bash
 <img width="1249" height="702" alt="Screenshot-12" src="https://github.com/user-attachments/assets/9a673c93-d3b1-45d7-8cbd-aeb740edecdf" />
+
+- Run this file as Java App
