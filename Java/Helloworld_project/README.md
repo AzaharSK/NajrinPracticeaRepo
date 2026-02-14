@@ -454,3 +454,8 @@ Password: dummy
 <img width="1159" height="418" alt="2026-02-14_22-26" src="https://github.com/user-attachments/assets/a933cb74-fab0-47e0-97be-04810b5cadf5" />
 <img width="1277" height="467" alt="2026-02-14_22-29" src="https://github.com/user-attachments/assets/e4033bed-076a-461a-8659-f867b88e651f" />
 <img width="1260" height="647" alt="2026-02-14_22-40" src="https://github.com/user-attachments/assets/92c7ad7c-a8f6-4a0d-a223-9956cad159fe" />
+
+## Create SQL Server
+
+<img width="1268" height="683" alt="2026-02-14_23-06" src="https://github.com/user-attachments/assets/41985fa1-5378-4c78-84e7-9628741ec753" />
+
