@@ -33,7 +33,7 @@ pom.xml--> rightClick--->n  mavenbuild
 <img width="1374" height="1161" alt="image" src="https://github.com/user-attachments/assets/c02bcb06-85ca-4292-bb39-bcc2cb731b3b" />
 
 ```bash
-01-hello-world-rest-api$ mvn azure-webapp:config
+/01-hello-world-rest-api$ mvn azure-webapp:config
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ------< com.in28minutes.rest.webservices:01-hello-world-rest-api >------
@@ -45,43 +45,46 @@ Please choose which part to config
 1. Application
 2. Runtime
 3. DeploymentSlot
-Enter index to use: 1
-Define value for appName(Default: 01-hello-world-rest-api-1771053610324): 
+Enter index to use: 
+Invalid index.
+Enter index to use: 1   
+Define value for appName(Default: 01-hello-world-rest-api-Najrin-1771053610324): 
 Define value for resourceGroup(Default: 01-hello-world-rest-api-1771053610324-rg): 
 Define value for region(Default: southindia): 
-Define value for pricingTier(Default: P1v2): 
+Define value for pricingTier(Default: F1): 
 1. b1
 2. b2
 3. b3
 4. d1
-5. f1
-6. p1v2 [*]
+5. f1 [*]
+6. p1v2
 7. p2v2
 8. p3v2
 9. s1
 10. s2
 11. s3
-Enter index to use: 5
+Enter index to use: 
 Please confirm webapp properties
-AppName : 01-hello-world-rest-api-1771053610324
+AppName : 01-hello-world-rest-api-Najrin-1771053610324
 ResourceGroup : 01-hello-world-rest-api-1771053610324-rg
 Region : southindia
 PricingTier : Free_F1
 OS : Linux
-RuntimeStack : JAVA 8-jre8
+RuntimeStack : JAVA 11-java11
 Deploy to slot : false
 Confirm (Y/N)? : Y
 [INFO] Saving configuration to pom.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  04:28 min
-[INFO] Finished at: 2026-02-14T13:15:17+05:30
+[INFO] Total time:  29.903 s
+[INFO] Finished at: 2026-02-14T13:32:21+05:30
 [INFO] ------------------------------------------------------------------------
-Feb 14, 2026 1:15:17 PM com.microsoft.applicationinsights.core.dependencies.http.impl.execchain.RetryExec execute
+Feb 14, 2026 1:32:21 PM com.microsoft.applicationinsights.core.dependencies.http.impl.execchain.RetryExec execute
 INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://dc.services.visualstudio.com:443: Socket closed
-Feb 14, 2026 1:15:17 PM com.microsoft.applicationinsights.core.dependencies.http.impl.execchain.RetryExec execute
+Feb 14, 2026 1:32:21 PM com.microsoft.applicationinsights.core.dependencies.http.impl.execchain.RetryExec execute
 INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://rt.services.visualstudio.com:443: Socket closed
-Feb 14, 2026 1:15:17 PM com.microsoft.applicationinsights.core.dependencies.http.impl.execchain.RetryExec execute
+Feb 14, 2026 1:32:21 PM com.microsoft.applicationinsights.core.dependencies.http.impl.execchain.RetryExec execute
 INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://dc.services.visualstudio.com:443: Socket closed
+
 ```
