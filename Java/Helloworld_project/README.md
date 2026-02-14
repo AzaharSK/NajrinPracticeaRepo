@@ -88,3 +88,44 @@ Feb 14, 2026 1:32:21 PM com.microsoft.applicationinsights.core.dependencies.http
 INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://dc.services.visualstudio.com:443: Socket closed
 
 ```
+
+```bash
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+
+sudo mkdir -p /etc/apt/keyrings
+curl -sLS https://packages.microsoft.com/keys/microsoft.asc |
+  gpg --dearmor | sudo tee /etc/apt/keyrings/microsoft.gpg > /dev/null
+sudo chmod go+r /etc/apt/keyrings/microsoft.gpg
+
+AZ_DIST=$(lsb_release -cs)
+echo "Types: deb
+URIs: https://packages.microsoft.com/repos/azure-cli/
+Suites: ${AZ_DIST}
+Components: main
+Architectures: $(dpkg --print-architecture)
+Signed-by: /etc/apt/keyrings/microsoft.gpg" | sudo tee /etc/apt/sources.list.d/azure-cli.sources
+
+sudo apt-get update
+sudo apt-get install azure-cli
+
+```
+```bash
+ az --version
+azure-cli                         2.83.0
+
+core                              2.83.0
+telemetry                          1.1.0
+
+Dependencies:
+msal                            1.35.0b1
+azure-mgmt-resource               23.3.0
+
+Python location '/opt/az/bin/python3'
+Config directory '/lhome/azahask/.azure'
+Extensions directory '/lhome/azahask/.azure/cliextensions'
+
+Python (Linux) 3.13.11 (main, Jan 27 2026, 07:21:51) [GCC 11.4.0]
+
+Legal docs and information: aka.ms/AzureCliLegal
+```
