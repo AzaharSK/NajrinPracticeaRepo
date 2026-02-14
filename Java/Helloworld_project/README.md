@@ -324,5 +324,14 @@ Gtk-Message: 14:59:53.413: Failed to load module "appmenu-gtk-module"
 [INFO] ------------------------------------------------------------------------
 ```
 
+## REST EndPOints available in src code:
+<img width="1483" height="609" alt="image" src="https://github.com/user-attachments/assets/6ee6ed32-9a25-4e51-873b-c636d5c81114" />
+<img width="696" height="95" alt="image" src="https://github.com/user-attachments/assets/d32e1e87-f61c-46fb-9163-7e15d9834ae7" />
+<img width="623" height="199" alt="image" src="https://github.com/user-attachments/assets/98370267-72df-4d62-b2da-2edf7f252865" />
+<img width="880" height="177" alt="image" src="https://github.com/user-attachments/assets/7e3b83e0-66b7-4415-82c4-e4abba3db1ac" />
+
+
+
+
 <img width="916" height="121" alt="image" src="https://github.com/user-attachments/assets/32f73d7f-eb00-4ecd-8e2d-104777f83091" />
 
