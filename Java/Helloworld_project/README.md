@@ -129,3 +129,32 @@ Python (Linux) 3.13.11 (main, Jan 27 2026, 07:21:51) [GCC 11.4.0]
 
 Legal docs and information: aka.ms/AzureCliLegal
 ```
+
+
+```bash
+az login --use-device-code
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code I7DBYCUC9 to authenticate.
+
+```
+
+<img width="1425" height="786" alt="image" src="https://github.com/user-attachments/assets/9af24a63-ec27-4e5a-9ed9-be66a7cb08f5" />
+
+```bash
+az account show
+{
+  "environmentName": "AzureCloud",
+  "homeTenantId": "049c681e-8862-4679-80f0-02ec174c200b",
+  "id": "d8489a1f-c93d-42ee-8068-72ae05f9915b",
+  "isDefault": true,
+  "managedByTenants": [],
+  "name": "Azure subscription 1",
+  "state": "Enabled",
+  "tenantDefaultDomain": "azaharsk2025gmail.onmicrosoft.com",
+  "tenantDisplayName": "Default Directory",
+  "tenantId": "049c681e-8862-4679-80f0-02ec174c200b",
+  "user": {
+    "name": "azahar.sk.2025@gmail.com",
+    "type": "user"
+  }
+}
+```
