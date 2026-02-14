@@ -26,7 +26,7 @@ sudo apt-get install azure-cli
 
 ```
 ```bash
- az --version
+$ az --version
 azure-cli                         2.83.0
 
 core                              2.83.0
@@ -352,6 +352,12 @@ GET https://helloworldnajrin.azurewebsites.net/hello-world-bean
 
 ## Docker log
 <img width="1855" height="323" alt="image" src="https://github.com/user-attachments/assets/b56158f0-298a-4df6-9f76-3379808c46e1" />
+
+## log in local PC
+```bash
+$   az webapp log tail --name helloworldnajrin --resource-group helloworldnajrin-rg
+```
+<img width="1746" height="856" alt="image" src="https://github.com/user-attachments/assets/2b229a0c-53fd-4e12-aa56-f8c4b484183f" />
 
 
 
