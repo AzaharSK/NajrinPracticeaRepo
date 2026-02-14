@@ -437,7 +437,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 mysql> 
 ```
-```bash
+
 <img width="1249" height="702" alt="Screenshot-12" src="https://github.com/user-attachments/assets/9a673c93-d3b1-45d7-8cbd-aeb740edecdf" />
 
-- Run this file as Java App
+- `Run this file as Java App`
