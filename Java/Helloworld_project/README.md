@@ -374,12 +374,17 @@ mvn azure-webapp:deploy
 
 ## Docker
 ```bash
+$ sudo apt-get install  ./mysql-apt-config_0.8.36-1_all.deb
+$ sudo apt-get update
+$ sudo apt-get install mysql-shell
+
+
 $ sudo snap install docker
 $ sudo docker pull mysql:latest
 
 $ sudo docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --env MYSQL_DATABASE=todos --name mysql --publish 3306:3306 mysql:5.7
 
-
+// sudo docker container list
 $ sudo docker ps
 CONTAINER ID   IMAGE       COMMAND                  CREATED          STATUS          PORTS                                                    NAMES
 1658f475bb32   mysql:5.7   "docker-entrypoint.s…"   39 seconds ago   Up 38 seconds   0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp, 33060/tcp   mysql
@@ -387,3 +392,30 @@ CONTAINER ID   IMAGE       COMMAND                  CREATED          STATUS     
 ```
 ## PORT:
 <img width="720" height="544" alt="image" src="https://github.com/user-attachments/assets/ca1dde49-28ad-4215-b539-fa800f57391f" />
+
+
+```sql
+// command: \connect todos-user@localhost:3306
+
+Mistu@ubuntu:~$ mysqlsh
+MySQL Shell 8.4.8
+
+Copyright (c) 2016, 2026, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+ MySQL  SQL >  \connect todos-user@localhost:3306
+Creating a session to 'todos-user@localhost:3306'
+Please provide the password for 'todos-user@localhost:3306': **********
+Save password for 'todos-user@localhost:3306'? [Y]es/[N]o/Ne[v]er (default No): v
+Fetching global names for auto-completion... Press ^C to stop.
+Error during auto-completion cache update: Access denied; you need (at least one of) the PROCESS privilege(s) for this operation
+Your MySQL connection id is 3
+Server version: 5.7.44 MySQL Community Server (GPL)
+No default schema selected; type \use <schema> to set one.
+ MySQL  localhost:3306 ssl  SQL > \show databases
+Unknown report: databases
+```
+
+<img width="1249" height="702" alt="Screenshot-12" src="https://github.com/user-attachments/assets/9a673c93-d3b1-45d7-8cbd-aeb740edecdf" />
