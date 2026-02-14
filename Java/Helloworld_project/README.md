@@ -331,6 +331,10 @@ Gtk-Message: 14:59:53.413: Failed to load module "appmenu-gtk-module"
 <img width="880" height="177" alt="image" src="https://github.com/user-attachments/assets/7e3b83e0-66b7-4415-82c4-e4abba3db1ac" />
 
 ## Azure
+```
+GET https://helloworldnajrin.azurewebsites.net/hello-world-bean
+```
+
 <img width="1845" height="952" alt="image" src="https://github.com/user-attachments/assets/2a9e813b-9ee9-4687-8e6b-eb302abc5419" />
 <img width="1810" height="578" alt="image" src="https://github.com/user-attachments/assets/e17b8016-15be-4ef4-8f8d-88645cb94dff" />
 <img width="1816" height="1112" alt="image" src="https://github.com/user-attachments/assets/d5b50780-54ec-4519-8d85-acd725a10096" />
