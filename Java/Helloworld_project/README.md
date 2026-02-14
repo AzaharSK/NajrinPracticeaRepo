@@ -365,7 +365,6 @@ $   az webapp log tail --name helloworldnajrin --resource-group helloworldnajrin
 ```bash
 mvn clean install -DskipTests  OR mvn clean package -DskipTests
 mvn azure-webapp:deploy
-
 ```
 <img width="727" height="178" alt="image" src="https://github.com/user-attachments/assets/d080c04a-ce2a-4679-a882-4efd42080648" />
 
