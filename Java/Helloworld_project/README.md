@@ -341,6 +341,7 @@ GET https://helloworldnajrin.azurewebsites.net/hello-world-bean
 <img width="1812" height="1062" alt="image" src="https://github.com/user-attachments/assets/0cd46a80-af0d-4845-aa6b-58618fc164c7" />
 <img width="1809" height="977" alt="image" src="https://github.com/user-attachments/assets/b3bef271-bed2-405e-a1bb-4c7ac623ea71" />
 <img width="1820" height="1118" alt="image" src="https://github.com/user-attachments/assets/8968e8e1-9943-4248-bb56-e2c5c6f775ac" />
+<img width="1775" height="885" alt="image" src="https://github.com/user-attachments/assets/e1358e53-3a9d-442f-9ab9-b665db242c52" />
 <img width="1812" height="1038" alt="image" src="https://github.com/user-attachments/assets/297a5db2-2b8a-49bd-90e0-467552c73ad9" />
 
 
