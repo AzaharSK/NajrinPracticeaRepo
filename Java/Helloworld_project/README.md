@@ -1,93 +1,8 @@
 ## This My Hello World Project 
 - Ref: https://github.com/in28minutes/deploy-spring-boot-to-azure
   
-```bash
-sudo snap install eclipse --classic
-sudo apt install default-jre
-```
-```bash
-mkdir javaproject
-cd javaproject/
-~/javaproject$ git clone https://github.com/in28minutes/deploy-spring-boot-to-azure.git
-~/javaproject$ cd deploy-spring-boot-to-azure/
-~/javaproject/deploy-spring-boot-to-azure$ ls -l
-total 44
-drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 01-hello-world-rest-api
-drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 02-todo-web-application-h2
-drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 03-todo-web-application-mysql
-drwxrwxr-x 4 azahask domainusers  4096 Feb 13 23:27 04-spring-boot-react-full-stack-h2
-drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 05-todo-rest-api-h2-containerized
-drwxrwxr-x 4 azahask domainusers  4096 Feb 13 23:27 06-todo-rest-api-mysql-containerized
-drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 07-hello-world-rest-api
--rw-rw-r-- 1 azahask domainusers 15849 Feb 13 23:27 README.md
-```
-# Eclipise --> File --> import ---> maven --> existing maven projects
-<img width="1808" height="954" alt="image" src="https://github.com/user-attachments/assets/ccea0b68-0efa-4086-a18f-9c84bdc61f16" />
 
-
-<img width="1833" height="1071" alt="image" src="https://github.com/user-attachments/assets/1811e955-5c76-4ee3-86b4-6c4e3021e7e3" />
-
-pom.xml--> rightClick--->n  mavenbuild
-<img width="1808" height="954" alt="image" src="https://github.com/user-attachments/assets/263310e3-b33d-4f3b-9e29-4fa3227a88fd" />
-<img width="1794" height="1127" alt="image" src="https://github.com/user-attachments/assets/31815fd2-7690-42dc-915f-e245c307c402" />
-<img width="1374" height="1161" alt="image" src="https://github.com/user-attachments/assets/c02bcb06-85ca-4292-bb39-bcc2cb731b3b" />
-
-```bash
-/01-hello-world-rest-api$ mvn azure-webapp:config
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] ------< com.in28minutes.rest.webservices:01-hello-world-rest-api >------
-[INFO] Building hello-world-rest-api 0.0.1-SNAPSHOT
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- azure-webapp-maven-plugin:1.7.0:config (default-cli) @ 01-hello-world-rest-api ---
-Please choose which part to config
-1. Application
-2. Runtime
-3. DeploymentSlot
-Enter index to use: 
-Invalid index.
-Enter index to use: 1   
-Define value for appName(Default: 01-hello-world-rest-api-Najrin-1771053610324): 
-Define value for resourceGroup(Default: 01-hello-world-rest-api-1771053610324-rg): 
-Define value for region(Default: southindia): 
-Define value for pricingTier(Default: F1): 
-1. b1
-2. b2
-3. b3
-4. d1
-5. f1 [*]
-6. p1v2
-7. p2v2
-8. p3v2
-9. s1
-10. s2
-11. s3
-Enter index to use: 
-Please confirm webapp properties
-AppName : 01-hello-world-rest-api-Najrin-1771053610324
-ResourceGroup : 01-hello-world-rest-api-1771053610324-rg
-Region : southindia
-PricingTier : Free_F1
-OS : Linux
-RuntimeStack : JAVA 11-java11
-Deploy to slot : false
-Confirm (Y/N)? : Y
-[INFO] Saving configuration to pom.
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  29.903 s
-[INFO] Finished at: 2026-02-14T13:32:21+05:30
-[INFO] ------------------------------------------------------------------------
-Feb 14, 2026 1:32:21 PM com.microsoft.applicationinsights.core.dependencies.http.impl.execchain.RetryExec execute
-INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://dc.services.visualstudio.com:443: Socket closed
-Feb 14, 2026 1:32:21 PM com.microsoft.applicationinsights.core.dependencies.http.impl.execchain.RetryExec execute
-INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://rt.services.visualstudio.com:443: Socket closed
-Feb 14, 2026 1:32:21 PM com.microsoft.applicationinsights.core.dependencies.http.impl.execchain.RetryExec execute
-INFO: I/O exception (java.net.SocketException) caught when processing request to {s}->https://dc.services.visualstudio.com:443: Socket closed
-
-```
+## Setup Azure CLI:
 
 ```bash
 sudo apt-get update
@@ -158,3 +73,236 @@ az account show
   }
 }
 ```
+
+## Set up Eclipise Development IDE
+
+```bash
+sudo snap install eclipse --classic
+sudo apt install default-jre
+```
+
+```bash
+mkdir javaproject
+cd javaproject/
+~/javaproject$ git clone https://github.com/in28minutes/deploy-spring-boot-to-azure.git
+~/javaproject$ cd deploy-spring-boot-to-azure/
+~/javaproject/deploy-spring-boot-to-azure$ ls -l
+total 44
+drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 01-hello-world-rest-api
+drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 02-todo-web-application-h2
+drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 03-todo-web-application-mysql
+drwxrwxr-x 4 azahask domainusers  4096 Feb 13 23:27 04-spring-boot-react-full-stack-h2
+drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 05-todo-rest-api-h2-containerized
+drwxrwxr-x 4 azahask domainusers  4096 Feb 13 23:27 06-todo-rest-api-mysql-containerized
+drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 07-hello-world-rest-api
+-rw-rw-r-- 1 azahask domainusers 15849 Feb 13 23:27 README.md
+```
+# Eclipise --> File --> import ---> maven --> existing maven projects
+<img width="1808" height="954" alt="image" src="https://github.com/user-attachments/assets/ccea0b68-0efa-4086-a18f-9c84bdc61f16" />
+
+
+<img width="1833" height="1071" alt="image" src="https://github.com/user-attachments/assets/1811e955-5c76-4ee3-86b4-6c4e3021e7e3" />
+
+pom.xml--> rightClick--->n  mavenbuild
+<img width="1808" height="954" alt="image" src="https://github.com/user-attachments/assets/263310e3-b33d-4f3b-9e29-4fa3227a88fd" />
+<img width="1856" height="1146" alt="image" src="https://github.com/user-attachments/assets/3e8d315d-ee4a-495e-9f14-ed6713591d49" />
+
+### __Maven plugin config:__
+- groupId: com.microsoft.azure
+- artifactId: azure-webapp-maven-plugin
+- version: 2.13.0
+
+### __Azure cloud config:__
+- resourceGroup: helloworldnajrin-rg
+- appName: helloworldnajrin
+  
+- pricingTier: B1
+- region: westeurope
+- server.port=80
+
+### __Runtime config:__
+- os:  Linux
+- javaVersion: 17
+- webContainer: Java SE
+- 
+```xml
+      <plugin> 
+        <groupId>com.microsoft.azure</groupId>  
+        <artifactId>azure-webapp-maven-plugin</artifactId>  
+        <version>2.13.0</version>
+          <configuration>
+              <schemaVersion>V2</schemaVersion>
+              <resourceGroup>helloworldnajrin-rg</resourceGroup>
+              <appName>helloworldnajrin</appName>
+              <pricingTier>B1</pricingTier>
+              <region>westeurope</region>
+              <appSettings>
+                  <property>
+                      <name>JAVA_OPTS</name>
+                      <value>-Dserver.port=80</value>
+                  </property>
+              </appSettings>
+              <runtime>
+                  <os>Linux</os>
+                  <javaVersion>Java 17</javaVersion>
+                  <webContainer>Java SE</webContainer>
+              </runtime>
+              <deployment>
+                  <resources>
+                      <resource>
+                          <directory>${project.basedir}/target</directory>
+                          <includes>
+                              <include>*.jar</include>
+                          </includes>
+                      </resource>
+                  </resources>
+              </deployment>
+          </configuration>
+      </plugin>
+```
+
+```bash
+mvn azure-webapp:config
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------< com.in28minutes.rest.webservices:01-hello-world-rest-api >------
+[INFO] Building hello-world-rest-api 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- azure-webapp-maven-plugin:2.13.0:config (default-cli) @ 01-hello-world-rest-api ---
+Please choose which part to config [Application]:
+* 1: Application
+  2: Runtime
+  3: DeploymentSlot
+Enter your choice: 1
+Define value for appName [helloworldnajrin]: 
+Define value for resourceGroup [helloworldnajrin-rg]: 
+Define value for region [westeurope]: 
+Define value for pricingTier [B1]:
+   1: D1
+   2: B3
+   3: P1v2
+   4: P1v3
+   5: P2v2
+   6: P2v3
+   7: P3v2
+   8: P3v3
+*  9: B1
+  10: B2
+  11: F1
+  12: S1
+  13: S2
+  14: S3
+  15: EP3
+  16: EP2
+  17: EP1
+  18: Y1
+  19: FC1
+Enter your choice: 
+Please confirm webapp properties
+AppName : helloworldnajrin
+ResourceGroup : helloworldnajrin-rg
+Region : westeurope
+PricingTier : B1
+OS : Linux
+Java Version: Java 17
+Web server stack: Java SE
+Deploy to slot : false
+Confirm (Y/N) [Y]: Y
+[INFO] Saving configuration to pom.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  19.085 s
+[INFO] Finished at: 2026-02-14T15:25:25+05:30
+[INFO] ------------------------------------------------------------------------
+```
+```bash
+01-hello-world-rest-api$ mvn azure-webapp:config
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------< com.in28minutes.rest.webservices:01-hello-world-rest-api >------
+[INFO] Building hello-world-rest-api 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- azure-webapp-maven-plugin:2.13.0:config (default-cli) @ 01-hello-world-rest-api ---
+Please choose which part to config [Application]:
+* 1: Application
+  2: Runtime
+  3: DeploymentSlot
+Enter your choice: 2
+[WARNING] The plugin may not work if you change the os of an existing webapp.
+Define value for OS [Linux]:
+  1: Windows
+* 2: Linux
+  3: Docker
+Enter your choice: 
+Define value for javaVersion [Java 17]:
+* 1: Java 17
+  2: Java 11
+  3: Java 8
+Enter your choice: 
+[INFO] Skip web container selection for "jar" project.
+Please confirm webapp properties
+AppName : helloworldnajrin
+ResourceGroup : helloworldnajrin-rg
+Region : westeurope
+PricingTier : B1
+OS : Linux
+Java Version: Java 17
+Web server stack: Java SE
+Deploy to slot : false
+Confirm (Y/N) [Y]: Y
+[INFO] Saving configuration to pom.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  14.606 s
+[INFO] Finished at: 2026-02-14T15:26:09+05:30
+[INFO] ------------------------------------------------------------------------
+```
+
+```bash
+
+01-hello-world-rest-api$ mvn clean package
+
+01-hello-world-rest-api$ az appservice plan list --output table
+AsyncScalingEnabled    ElasticScaleEnabled    FreeOfferExpirationTime     HyperV    IsSpot    IsXenon    Kind    Location     MaximumElasticWorkerCount    MaximumNumberOfWorkers    Name                   NumberOfSites    NumberOfWorkers    PerSiteScaling    Reserved    ResourceGroup        Status    TargetWorkerCount    TargetWorkerSizeId    ZoneRedundant
+---------------------  ---------------------  --------------------------  --------  --------  ---------  ------  -----------  ---------------------------  ------------------------  ---------------------  ---------------  -----------------  ----------------  ----------  -------------------  --------  -------------------  --------------------  ---------------
+False                  False                  2026-03-16T09:14:49.166666  False     False     False      linux   West Europe  1                            3                         asp-helloworldnajrin   1                1                  False             True        helloworldnajrin-rg  Ready     0                    0                     False
+
+
+
+mvn azure-webapp:deploy
+
+```
+
+```bash
+01-hello-world-rest-api$ mvn azure-webapp:deploy
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------< com.in28minutes.rest.webservices:01-hello-world-rest-api >------
+[INFO] Building hello-world-rest-api 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- azure-webapp-maven-plugin:2.13.0:deploy (default-cli) @ 01-hello-world-rest-api ---
+Gtk-Message: 14:59:53.413: Failed to load module "appmenu-gtk-module"
+[INFO] Auth type: AZURE_CLI
+[INFO] Username: azahar.sk.2025@gmail.com
+[INFO] Subscription: Azure subscription 1(d8489a1f-c93d-42ee-8068-72ae05f9915b)
+[INFO] Start creating Web App(helloworldnajrin)...
+[INFO] Web App(helloworldnajrin) is successfully created
+[INFO] Trying to deploy external resources to helloworldnajrin...
+[INFO] Successfully deployed the resources to helloworldnajrin
+[INFO] Trying to deploy artifact to helloworldnajrin...
+[INFO] Deploying (/lhome/azahask/javaproject/deploy-spring-boot-to-azure/01-hello-world-rest-api/target/hello-world-rest-api.jar)[jar]  ...
+
+[INFO] Application url: https://helloworldnajrin.azurewebsites.net                                  
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  05:03 min
+[INFO] Finished at: 2026-02-14T15:04:51+05:30
+[INFO] ------------------------------------------------------------------------
+```
+
