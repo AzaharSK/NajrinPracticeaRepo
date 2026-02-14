@@ -99,12 +99,6 @@ drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 07-hello-world-rest-api
 ```
 # Eclipise --> File --> import ---> maven --> existing maven projects
 <img width="1808" height="954" alt="image" src="https://github.com/user-attachments/assets/ccea0b68-0efa-4086-a18f-9c84bdc61f16" />
-
-
-<img width="1833" height="1071" alt="image" src="https://github.com/user-attachments/assets/1811e955-5c76-4ee3-86b4-6c4e3021e7e3" />
-
-pom.xml--> rightClick--->n  mavenbuild
-<img width="1808" height="954" alt="image" src="https://github.com/user-attachments/assets/263310e3-b33d-4f3b-9e29-4fa3227a88fd" />
 <img width="1856" height="1146" alt="image" src="https://github.com/user-attachments/assets/3e8d315d-ee4a-495e-9f14-ed6713591d49" />
 
 ### __Maven plugin config:__
@@ -124,7 +118,7 @@ pom.xml--> rightClick--->n  mavenbuild
 - os:  Linux
 - javaVersion: 17
 - webContainer: Java SE
-- 
+  
 ```xml
       <plugin> 
         <groupId>com.microsoft.azure</groupId>  
@@ -160,8 +154,11 @@ pom.xml--> rightClick--->n  mavenbuild
           </configuration>
       </plugin>
 ```
+`pom.xml--> rightClick---> Run as mavenbuild`
+<img width="1808" height="954" alt="image" src="https://github.com/user-attachments/assets/263310e3-b33d-4f3b-9e29-4fa3227a88fd" />
 
 ```bash
+
 mvn azure-webapp:config
 [INFO] Scanning for projects...
 [INFO] 
