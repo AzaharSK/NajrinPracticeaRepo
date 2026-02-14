@@ -369,3 +369,21 @@ mvn azure-webapp:deploy
 <img width="727" height="178" alt="image" src="https://github.com/user-attachments/assets/d080c04a-ce2a-4679-a882-4efd42080648" />
 
 
+
+###############################################################################################################################
+
+## Docker
+```bash
+$ sudo snap install docker
+$ sudo docker pull mysql:latest
+
+$ sudo docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --env MYSQL_DATABASE=todos --name mysql --publish 3306:3306 mysql:5.7
+
+
+$ sudo docker ps
+CONTAINER ID   IMAGE       COMMAND                  CREATED          STATUS          PORTS                                                    NAMES
+1658f475bb32   mysql:5.7   "docker-entrypoint.s…"   39 seconds ago   Up 38 seconds   0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp, 33060/tcp   mysql
+
+```
+## PORT:
+<img width="720" height="544" alt="image" src="https://github.com/user-attachments/assets/ca1dde49-28ad-4215-b539-fa800f57391f" />
