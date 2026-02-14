@@ -154,6 +154,27 @@ drwxrwxr-x 3 azahask domainusers  4096 Feb 13 23:27 07-hello-world-rest-api
           </configuration>
       </plugin>
 ```
+
+## By default spring does not add swagger API docs , you need to enable it
+- Modern Springdoc — recommended - Spring Boot 3+
+- Add dependency:
+```xml
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    <version>2.5.0</version>
+</dependency>
+```
+- open src/main/resources/application.properties
+- Add below lines:
+
+```java
+logging.level.org.springframework = debug
+
+server.port=${PORT:8080}
+server.forward-headers-strategy=framework
+```
+
 `pom.xml--> rightClick---> Run as mavenbuild`
 <img width="1808" height="954" alt="image" src="https://github.com/user-attachments/assets/263310e3-b33d-4f3b-9e29-4fa3227a88fd" />
 
@@ -302,4 +323,6 @@ Gtk-Message: 14:59:53.413: Failed to load module "appmenu-gtk-module"
 [INFO] Finished at: 2026-02-14T15:04:51+05:30
 [INFO] ------------------------------------------------------------------------
 ```
+
+<img width="916" height="121" alt="image" src="https://github.com/user-attachments/assets/32f73d7f-eb00-4ecd-8e2d-104777f83091" />
 
