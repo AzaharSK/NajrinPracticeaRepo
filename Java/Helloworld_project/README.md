@@ -344,6 +344,15 @@ GET https://helloworldnajrin.azurewebsites.net/hello-world-bean
 <img width="1775" height="885" alt="image" src="https://github.com/user-attachments/assets/e1358e53-3a9d-442f-9ab9-b665db242c52" />
 <img width="1812" height="1038" alt="image" src="https://github.com/user-attachments/assets/297a5db2-2b8a-49bd-90e0-467552c73ad9" />
 
+## Kudu console
+<img width="1812" height="1062" alt="image" src="https://github.com/user-attachments/assets/3fa65ec4-3b16-4513-9508-057af555052b" />
+<img width="1812" height="1062" alt="image" src="https://github.com/user-attachments/assets/78253085-e61d-4f5f-a2dc-db9c08439f82" />
+<img width="1740" height="723" alt="image" src="https://github.com/user-attachments/assets/f2d59ec5-5b76-4ad7-81f8-7ce37991573f" />
+<img width="1812" height="1062" alt="image" src="https://github.com/user-attachments/assets/824e55b2-58e0-4559-8c0b-fd268bbc12c5" />
+
+## Docker log
+<img width="1855" height="323" alt="image" src="https://github.com/user-attachments/assets/b56158f0-298a-4df6-9f76-3379808c46e1" />
+
 
 
 ## Modify src c deply new updated version
