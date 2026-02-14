@@ -348,7 +348,7 @@ GET https://helloworldnajrin.azurewebsites.net/hello-world-bean
 
 ## Modify src c deply new updated version
 ```bash
-mvn clean install -DskipTests
+mvn clean install -DskipTests  OR mvn clean package -DskipTests
 mvn azure-webapp:deploy
 
 ```
