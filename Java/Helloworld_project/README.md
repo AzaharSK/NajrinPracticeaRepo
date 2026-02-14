@@ -330,8 +330,3 @@ Gtk-Message: 14:59:53.413: Failed to load module "appmenu-gtk-module"
 <img width="623" height="199" alt="image" src="https://github.com/user-attachments/assets/98370267-72df-4d62-b2da-2edf7f252865" />
 <img width="880" height="177" alt="image" src="https://github.com/user-attachments/assets/7e3b83e0-66b7-4415-82c4-e4abba3db1ac" />
 
-
-
-
-<img width="916" height="121" alt="image" src="https://github.com/user-attachments/assets/32f73d7f-eb00-4ecd-8e2d-104777f83091" />
-
