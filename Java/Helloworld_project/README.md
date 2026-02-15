@@ -484,6 +484,6 @@ RDS_DB_NAME:todos
 RDS_USERNAME:todouser
 RDS_PASSWORD:Najrin@123
 ```
-
+<img width="1286" height="676" alt="DB-CONFIG" src="https://github.com/user-attachments/assets/d128042c-35be-48fd-9601-640319c48953" />
 
 
