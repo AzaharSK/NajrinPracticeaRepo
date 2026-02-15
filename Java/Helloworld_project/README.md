@@ -513,14 +513,47 @@ Locally-redundant
 Zonal Resiliency
 No
 ```
+
+<img width="1287" height="686" alt="Firewall" src="https://github.com/user-attachments/assets/42218e09-eb09-4220-a350-0d6cc82a5e41" />
+- Restart mySQL server
+
 ## Cloud shell
 ```bash
-sqlcmd -S todoapp-sql-server-najrin.database.windows.net  \
-       -d todos \
-       -U todouser\
-       -P 'Najrin@123'
+ mysql --host todoapp-sql-server-najrin.mysql.database.azure.com --user todouser -p
 ```
-<img width="1305" height="695" alt="sqlDB-version" src="https://github.com/user-attachments/assets/67d9181c-751e-4110-bd0c-b7207126cb95" />
+<img width="1294" height="667" alt="shell" src="https://github.com/user-attachments/assets/733c50ad-8c83-4f43-8f29-b558656ad9d2" />
+
+```sql
+MySQL [(none)]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.023 sec)
+
+MySQL [(none)]> CREATE DATABASE todos;
+Query OK, 1 row affected (0.040 sec)
+
+MySQL [(none)]> USE todos;
+Database changed
+MySQL [todos]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| todos              |
++--------------------+
+5 rows in set (0.022 sec)
+
+MySQL [todos]>
+```
 
 ## Check  DB has any row?
 <img width="1211" height="660" alt="sql-q1" src="https://github.com/user-attachments/assets/b3eeec33-8cf7-4a7a-a411-2cd33bbcc6a0" />
