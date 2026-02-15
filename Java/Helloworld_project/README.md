@@ -485,5 +485,16 @@ RDS_USERNAME:todouser
 RDS_PASSWORD:Najrin@123
 ```
 <img width="1286" height="676" alt="DB-CONFIG" src="https://github.com/user-attachments/assets/d128042c-35be-48fd-9601-640319c48953" />
+<img width="943" height="608" alt="db2" src="https://github.com/user-attachments/assets/f7d6c89d-09da-4e51-a2d9-0985db93f2b5" />
+<img width="1295" height="655" alt="DB-N" src="https://github.com/user-attachments/assets/52ce1892-0c97-459d-bc40-bcc11ffdd2f1" />
+<img width="1295" height="655" alt="DB-N" src="https://github.com/user-attachments/assets/53881686-9ac3-48c7-8417-a5e141e10bc7" />
 
+## Cloud shell
+```bash
+sqlcmd -S todoapp-sql-server-najrin.database.windows.net  \
+       -d todos \
+       -U todouser\
+       -P 'Najrin@123'
+```
+<img width="1305" height="695" alt="sqlDB-version" src="https://github.com/user-attachments/assets/67d9181c-751e-4110-bd0c-b7207126cb95" />
 
