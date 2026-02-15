@@ -79,6 +79,7 @@ az account show
 ```bash
 sudo snap install eclipse --classic
 sudo apt install default-jre
+sudo apt install maven
 ```
 
 ```bash
