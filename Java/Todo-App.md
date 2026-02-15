@@ -170,7 +170,13 @@ todo-fullstack/
     </dependencies>
 </project>
 ```
-## entity/Role.java
+
+-------------------------------------------
+
+##  Entity Layer :
+
+
+__entity/Role.java__
 
 ```java
 package com.todo.entity;
@@ -180,7 +186,8 @@ public enum Role {
     ROLE_USER
 }
 ```
-## entity/User.java
+__entity/User.java__
+
 ```java
 package com.todo.entity;
 
@@ -206,8 +213,7 @@ public class User {
 }
 ```
 
-
-## entity/Todo.java
+__entity/Todo.java__
 
 ```java
 package com.todo.entity;
@@ -232,6 +238,68 @@ public class Todo {
 }
 
 ```
+------------------------------------
+## DTO LAYER
+
+__dto/LoginRequest.java__
+
+```java
+package com.todo.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+@Data
+public class LoginRequest {
+    @NotBlank
+    private String username;
+
+    @NotBlank
+    private String password;
+}
+```
+
+__dto/RegisterRequest.java__
+
+```java
+package com.todo.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+@Data
+public class RegisterRequest {
+
+    @NotBlank
+    private String username;
+
+    @NotBlank
+    private String password;
+}
+```
+
+__dto/TodoDto.java__
+
+```java
+package com.todo.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+@Data
+public class TodoDto {
+
+    @NotBlank
+    private String title;
+
+    private String description;
+    private boolean completed;
+}
+
+```
+
+
+
 
 ## package com.todo.repository;
 
@@ -254,53 +322,248 @@ package com.todo.security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
-import java.util.Date;
-import java.security.Key;
+import org.springframework.stereotype.Component;
 
+import java.security.Key;
+import java.util.Date;
+
+@Component
 public class JwtUtil {
 
-    private static final String SECRET = "verysecretkeyverysecretkey123456";
-    private static final Key key = Keys.hmacShaKeyFor(SECRET.getBytes());
+    private final String SECRET = "verysecretkeyverysecretkeyverysecretkey123";
+    private final long EXPIRATION = 1000 * 60 * 60 * 24;
 
-    public static String generateToken(String username) {
+    private final Key key = Keys.hmacShaKeyFor(SECRET.getBytes());
+
+    public String generateToken(String username, String role) {
+
         return Jwts.builder()
                 .setSubject(username)
-                .setExpiration(new Date(System.currentTimeMillis() + 86400000))
+                .claim("role", role)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
                 .signWith(key)
                 .compact();
     }
 
-    public static String extractUsername(String token) {
-        return Jwts.parserBuilder().setSigningKey(key)
-                .build().parseClaimsJws(token)
-                .getBody().getSubject();
+    public String extractUsername(String token) {
+        return getClaims(token).getSubject();
+    }
+
+    public String extractRole(String token) {
+        return getClaims(token).get("role", String.class);
+    }
+
+    public boolean isValid(String token) {
+        try {
+            getClaims(token);
+            return true;
+        } catch (JwtException e) {
+            return false;
+        }
+    }
+
+    private Claims getClaims(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
     }
 }
 
 ```
+
+__security/JwtFilter.java__
+
+```java
+
+package com.todo.security;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.http.HttpHeaders;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import java.io.IOException;
+
+@Component
+@RequiredArgsConstructor
+public class JwtFilter extends OncePerRequestFilter {
+
+    private final JwtUtil jwtUtil;
+    private final CustomUserDetailsService userDetailsService;
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request,
+                                    HttpServletResponse response,
+                                    FilterChain filterChain)
+            throws ServletException, IOException {
+
+        try {
+
+            String header = request.getHeader(HttpHeaders.AUTHORIZATION);
+
+            // No token → continue (public endpoints may still work)
+            if (header == null || !header.startsWith("Bearer ")) {
+                filterChain.doFilter(request, response);
+                return;
+            }
+
+            String token = header.substring(7);
+
+            // Invalid token → continue but no auth
+            if (!jwtUtil.isValid(token)) {
+                filterChain.doFilter(request, response);
+                return;
+            }
+
+            String username = jwtUtil.extractUsername(token);
+
+            // If already authenticated, skip
+            if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+
+                UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+
+                UsernamePasswordAuthenticationToken authToken =
+                        new UsernamePasswordAuthenticationToken(
+                                userDetails,
+                                null,
+                                userDetails.getAuthorities()
+                        );
+
+                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
+                SecurityContextHolder.getContext().setAuthentication(authToken);
+            }
+
+        } catch (Exception ex) {
+            // Important: clear context if token parsing fails
+            SecurityContextHolder.clearContext();
+        }
+
+        filterChain.doFilter(request, response);
+    }
+}
+```
+
 
 ## security/SecurityConfig.java
 
 ```java
 package com.todo.security;
 
-import org.springframework.context.annotation.*;
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+
+import jakarta.servlet.http.HttpServletResponse;
 
 @Configuration
 @EnableMethodSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
 
-    @Bean
-    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    private final JwtFilter jwtFilter;
 
-        http.csrf(csrf -> csrf.disable())
+    // ================= PASSWORD ENCODER =================
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    // ================= AUTH MANAGER =================
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();
+    }
+
+    // ================= 401 HANDLER =================
+    @Bean
+    public AuthenticationEntryPoint unauthorizedHandler() {
+        return (request, response, ex) ->
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized: Invalid or missing token");
+    }
+
+    // ================= 403 HANDLER =================
+    @Bean
+    public AccessDeniedHandler accessDeniedHandler() {
+        return (request, response, ex) ->
+                response.sendError(HttpServletResponse.SC_FORBIDDEN, "Forbidden: You don't have permission");
+    }
+
+    // ================= SECURITY FILTER CHAIN =================
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
+        http
+            // Disable CSRF for REST API
+            .csrf(csrf -> csrf.disable())
+
+            // Stateless session (JWT)
+            .sessionManagement(session ->
+                    session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            )
+
+            // Exception handling
+            .exceptionHandling(ex -> ex
+                    .authenticationEntryPoint(unauthorizedHandler())
+                    .accessDeniedHandler(accessDeniedHandler())
+            )
+
+            // Authorization rules
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**").permitAll()
-                .anyRequest().authenticated()
-            );
+
+                    // PUBLIC ENDPOINTS
+                    .requestMatchers("/api/auth/**").permitAll()
+                    .requestMatchers("/h2-console/**").permitAll()
+
+                    // ADMIN ONLY
+                    .requestMatchers("/api/admin/**").hasRole("ADMIN")
+
+                    // TODOS — logged in users
+                    .requestMatchers(HttpMethod.GET, "/api/todos/**").hasAnyRole("USER","ADMIN")
+                    .requestMatchers(HttpMethod.POST, "/api/todos/**").hasAnyRole("USER","ADMIN")
+                    .requestMatchers(HttpMethod.PUT, "/api/todos/**").hasAnyRole("USER","ADMIN")
+                    .requestMatchers(HttpMethod.DELETE, "/api/todos/**").hasAnyRole("USER","ADMIN")
+
+                    // everything else
+                    .anyRequest().authenticated()
+            )
+
+            // Add JWT filter
+            .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+
+        // For H2 console
+        http.headers(headers -> headers.frameOptions(frame -> frame.disable()));
 
         return http.build();
     }
