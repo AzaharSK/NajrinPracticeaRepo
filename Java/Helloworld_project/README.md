@@ -462,10 +462,28 @@ Password: dummy
 <img width="1163" height="704" alt="sql" src="https://github.com/user-attachments/assets/e47dc665-b1d1-4f06-a128-580be20a5009" />
 
 ```bash
-todouser
-Najrin@123
+// Azure SQL server details
+Admin: todouser
+Password: Najrin@123
 ```
 
 <img width="1166" height="687" alt="sql2" src="https://github.com/user-attachments/assets/f689b6c8-eea7-4fb6-a7b9-afa0245f4469" />
+<img width="1270" height="608" alt="todo1" src="https://github.com/user-attachments/assets/d7994563-8366-45eb-9d17-5e6f8771b51e" />
+<img width="1298" height="667" alt="sql-server" src="https://github.com/user-attachments/assets/b43d4941-6d7b-4736-ba9f-e5afefa7cf99" />
+
+## Edit src/main/resources/application.properties
+```java
+
+#spring.datasource.url=jdbc:mysql://${RDS_HOSTNAME:localhost}:${RDS_PORT:3306}/${RDS_DB_NAME:todos}?serverTimezone=UTC
+#spring.datasource.username=${RDS_USERNAME:todouser}
+#spring.datasource.password=${RDS_PASSWORD:dummytodos}
+
+RDS_HOSTNAME: todoapp-sql-server-najrin.database.windows.net
+RDS_PORT:3306
+RDS_DB_NAME:todos
+RDS_USERNAME:todouser
+RDS_PASSWORD:Najrin@123
+```
+
 
 
