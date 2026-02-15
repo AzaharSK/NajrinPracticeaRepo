@@ -498,3 +498,6 @@ sqlcmd -S todoapp-sql-server-najrin.database.windows.net  \
 ```
 <img width="1305" height="695" alt="sqlDB-version" src="https://github.com/user-attachments/assets/67d9181c-751e-4110-bd0c-b7207126cb95" />
 
+## Check  DB has any row?
+<img width="1211" height="660" alt="sql-q1" src="https://github.com/user-attachments/assets/b3eeec33-8cf7-4a7a-a411-2cd33bbcc6a0" />
+
