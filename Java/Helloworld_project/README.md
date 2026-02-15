@@ -465,3 +465,6 @@ todouser
 Najrin@123
 ```
 
+<img width="1166" height="687" alt="sql2" src="https://github.com/user-attachments/assets/f689b6c8-eea7-4fb6-a7b9-afa0245f4469" />
+
+
