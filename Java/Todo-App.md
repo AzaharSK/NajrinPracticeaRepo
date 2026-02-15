@@ -571,45 +571,300 @@ public class SecurityConfig {
 
 ```
 
-## controller/AuthController.java
+-----------------------------------------------------------
+
+## 🧩 SERVICE LAYER :
+
+__service/AuthService.java__
 
 ```java
-package com.todo.controller;
+package com.todo.service;
 
-import org.springframework.web.bind.annotation.*;
-import com.todo.entity.*;
-import com.todo.repository.*;
+import com.todo.dto.LoginRequest;
+import com.todo.dto.RegisterRequest;
+import com.todo.entity.Role;
+import com.todo.entity.User;
+import com.todo.repository.UserRepository;
 import com.todo.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+@Service
+@RequiredArgsConstructor
+public class AuthService {
+
+    private final UserRepository userRepo;
+    private final PasswordEncoder encoder;
+    private final JwtUtil jwt;
+
+    public String register(RegisterRequest req) {
+
+        if (userRepo.findByUsername(req.getUsername()).isPresent())
+            throw new RuntimeException("Username already exists");
+
+        User user = new User();
+        user.setUsername(req.getUsername());
+        user.setPassword(encoder.encode(req.getPassword()));
+        user.setRole(Role.ROLE_USER);
+
+        userRepo.save(user);
+
+        return "User registered successfully";
+    }
+
+    public String login(LoginRequest req) {
+
+        User user = userRepo.findByUsername(req.getUsername())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (!encoder.matches(req.getPassword(), user.getPassword()))
+            throw new RuntimeException("Invalid password");
+
+        return jwt.generateToken(user.getUsername(), user.getRole().name());
+    }
+}
+
+```
+
+__service/UserService.java (ADMIN ONLY OPERATIONS)__
+
+```java
+package com.todo.service;
+
+import com.todo.entity.User;
+import com.todo.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class UserService {
+
+    private final UserRepository repo;
+
+    // ADMIN: View all users
+    public List<User> getAllUsers() {
+        return repo.findAll();
+    }
+
+    // ADMIN: Delete user
+    public void deleteUser(Long id) {
+
+        User user = repo.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        repo.delete(user);
+    }
+
+    // ADMIN: Change role
+    public User changeRole(Long id, String role) {
+
+        User user = repo.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        user.setRole(Enum.valueOf(com.todo.entity.Role.class, role));
+
+        return repo.save(user);
+    }
+}
+```
+
+__service/TodoService.java (OWNERSHIP SECURITY 🔥)__
+
+```java
+package com.todo.service;
+
+import com.todo.dto.TodoDto;
+import com.todo.entity.Todo;
+import com.todo.entity.User;
+import com.todo.repository.TodoRepository;
+import com.todo.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class TodoService {
+
+    private final TodoRepository todoRepo;
+    private final UserRepository userRepo;
+
+    private User currentUser() {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        return userRepo.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
+    // CREATE
+    public Todo create(TodoDto dto) {
+
+        Todo todo = new Todo();
+        todo.setTitle(dto.getTitle());
+        todo.setDescription(dto.getDescription());
+        todo.setCompleted(false);
+        todo.setUser(currentUser());
+
+        return todoRepo.save(todo);
+    }
+
+    // READ MY TODOS
+    public List<Todo> myTodos() {
+        return todoRepo.findByUserId(currentUser().getId());
+    }
+
+    // UPDATE (only owner)
+    public Todo update(Long id, TodoDto dto) {
+
+        Todo todo = todoRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Todo not found"));
+
+        if (!todo.getUser().getId().equals(currentUser().getId()))
+            throw new RuntimeException("You cannot edit others todos");
+
+        todo.setTitle(dto.getTitle());
+        todo.setDescription(dto.getDescription());
+        todo.setCompleted(dto.isCompleted());
+
+        return todoRepo.save(todo);
+    }
+
+    // DELETE (only owner)
+    public void delete(Long id) {
+
+        Todo todo = todoRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Todo not found"));
+
+        if (!todo.getUser().getId().equals(currentUser().getId()))
+            throw new RuntimeException("You cannot delete others todos");
+
+        todoRepo.delete(todo);
+    }
+}
+```
+
+----------------------------------------------------------------------
+
+
+## 🌐 CONTROLLERS
+
+```java
+controller/AuthController.java
+package com.todo.controller;
+
+import com.todo.dto.LoginRequest;
+import com.todo.dto.RegisterRequest;
+import com.todo.service.AuthService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class AuthController {
 
-    private final UserRepository userRepo;
-    private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    private final AuthService service;
 
     @PostMapping("/register")
-    public String register(@RequestBody User user) {
-        user.setPassword(encoder.encode(user.getPassword()));
-        user.setRole(Role.ROLE_USER);
-        userRepo.save(user);
-        return "User Registered";
+    public String register(@Valid @RequestBody RegisterRequest req) {
+        return service.register(req);
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody User user) {
-        User dbUser = userRepo.findByUsername(user.getUsername())
-                .orElseThrow();
-        if (encoder.matches(user.getPassword(), dbUser.getPassword())) {
-            return JwtUtil.generateToken(user.getUsername());
-        }
-        throw new RuntimeException("Invalid credentials");
+    public String login(@Valid @RequestBody LoginRequest req) {
+        return service.login(req);
     }
 }
 ```
+
+## controller/UserController.java (ADMIN PROTECTED)
+
+```java
+package com.todo.controller;
+
+import com.todo.entity.User;
+import com.todo.service.UserService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/admin/users")
+@RequiredArgsConstructor
+@PreAuthorize("hasRole('ADMIN')")
+public class UserController {
+
+    private final UserService service;
+
+    @GetMapping
+    public List<User> allUsers() {
+        return service.getAllUsers();
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        service.deleteUser(id);
+    }
+
+    @PutMapping("/{id}/role")
+    public User changeRole(@PathVariable Long id, @RequestParam String role) {
+        return service.changeRole(id, role);
+    }
+}
+```
+
+__controller/TodoController.java__
+
+```
+package com.todo.controller;
+
+import com.todo.dto.TodoDto;
+import com.todo.entity.Todo;
+import com.todo.service.TodoService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/todos")
+@RequiredArgsConstructor
+public class TodoController {
+
+    private final TodoService service;
+
+    @PostMapping
+    public Todo create(@Valid @RequestBody TodoDto dto) {
+        return service.create(dto);
+    }
+
+    @GetMapping
+    public List<Todo> myTodos() {
+        return service.myTodos();
+    }
+
+    @PutMapping("/{id}")
+    public Todo update(@PathVariable Long id, @RequestBody TodoDto dto) {
+        return service.update(id, dto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        service.delete(id);
+    }
+}
+
+```
+
 
 ## application.yml
 ```
