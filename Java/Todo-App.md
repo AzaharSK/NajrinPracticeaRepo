@@ -465,25 +465,11 @@ public class TodoDto {
 }
 
 ```
+---------------------------------------
 
+## Security layer
 
-
-
-## package com.todo.repository;
-
-```java
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import com.todo.entity.User;
-import java.util.Optional;
-
-public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> findByUsername(String username);
-}
-
-```
-
-## security/JwtUtil.java
+__security/JwtUtil.java__
 
 ```
 package com.todo.security;
