@@ -238,6 +238,174 @@ public class Todo {
 }
 
 ```
+
+__entity/RefreshToken.java__
+
+```java
+package com.todo.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.Instant;
+
+@Entity
+@Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class RefreshToken {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String token;
+
+    private Instant expiryDate;
+
+    private boolean revoked;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
+}
+```
+
+__entity/BlacklistedToken.java__
+
+```java
+package com.todo.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.Instant;
+
+@Entity
+@Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class BlacklistedToken {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String token;
+    private Instant expiryDate;
+}
+```
+
+---------------------------
+
+## Repository layer:
+
+__repository/UserRepository.java__
+
+```java
+package com.todo.repository;
+
+import com.todo.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    Optional<User> findByUsername(String username);
+
+    Optional<User> findByEmail(String email);
+
+    Boolean existsByUsername(String username);
+
+    Boolean existsByEmail(String email);
+
+}
+
+```
+
+__repository/RoleRepository.java__
+- Used during signup (assign ROLE_USER / ROLE_ADMIN)
+
+```java
+package com.todo.repository;
+
+import com.todo.model.Role;
+import com.todo.model.ERole;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface RoleRepository extends JpaRepository<Role, Long> {
+
+    Optional<Role> findByName(ERole name);
+
+}
+
+```
+
+__repository/TodoRepository.java__
+
+```java
+package com.todo.repository;
+
+import com.todo.model.Todo;
+import com.todo.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface TodoRepository extends JpaRepository<Todo, Long> {
+
+    List<Todo> findByUser(User user);
+
+    List<Todo> findByUserAndCompleted(User user, boolean completed);
+
+}
+
+
+```
+__repository/RefreshTokenRepository.java__
+- Stores refresh tokens (Remember Me + OAuth flow)
+
+```java
+package com.todo.repository;
+
+import com.todo.model.RefreshToken;
+import com.todo.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface RefreshTokenRepository extends JpaRepository<RefreshToken, Long> {
+
+    Optional<RefreshToken> findByToken(String token);
+
+    void deleteByUser(User user);
+
+}
+```
+
+__repository/BlacklistedTokenRepository.java__
+- Used for Logout + Token Revocation (VERY IMPORTANT for security)
+
+```java
+
+package com.todo.repository;
+
+import com.todo.model.BlacklistedToken;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BlacklistedTokenRepository extends JpaRepository<BlacklistedToken, Long> {
+
+    boolean existsByToken(String token);
+
+```
+
+<img width="1136" height="736" alt="image" src="https://github.com/user-attachments/assets/3eee413c-4f1f-4935-9ecc-eeead68e4607" />
+
+
 ------------------------------------
 ## DTO LAYER
 
@@ -865,21 +1033,213 @@ public class TodoController {
 
 ```
 
+------------------------------------
 
-## application.yml
+## src/main/java/com/todo/TodoApplication.java
+
+```java
+package com.todo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+@SpringBootApplication
+@EntityScan(basePackages = "com.todo.entity")
+@EnableJpaRepositories(basePackages = "com.todo.repository")
+public class TodoApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(TodoApplication.class, args);
+    }
+}
+
+```
+
+## Global Exception Handling:
+__exception/GlobalExceptionHandler.java__
+
+```java
+package com.todo.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    // ========== VALIDATION ERRORS ==========
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<?> handleValidation(MethodArgumentNotValidException ex) {
+
+        Map<String, String> errors = new HashMap<>();
+
+        for (FieldError error : ex.getBindingResult().getFieldErrors()) {
+            errors.put(error.getField(), error.getDefaultMessage());
+        }
+
+        return build(HttpStatus.BAD_REQUEST, "Validation failed", errors);
+    }
+
+    // ========== ACCESS DENIED ==========
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<?> handleAccessDenied(AccessDeniedException ex) {
+        return build(HttpStatus.FORBIDDEN, "You are not allowed to access this resource", null);
+    }
+
+    // ========== RUNTIME ==========
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<?> handleRuntime(RuntimeException ex) {
+        return build(HttpStatus.BAD_REQUEST, ex.getMessage(), null);
+    }
+
+    // ========== GENERIC ==========
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<?> handleGeneric(Exception ex) {
+        return build(HttpStatus.INTERNAL_SERVER_ERROR, "Unexpected server error", null);
+    }
+
+    private ResponseEntity<Map<String, Object>> build(HttpStatus status, String message, Object errors) {
+
+        Map<String, Object> body = new HashMap<>();
+        body.put("timestamp", LocalDateTime.now());
+        body.put("status", status.value());
+        body.put("message", message);
+
+        if (errors != null)
+            body.put("errors", errors);
+
+        return new ResponseEntity<>(body, status);
+    }
+}
+```
+
+------ 
+##  application.yml (H2 for Local, MySQL for Azure)
+
+Spring profiles:
+
+- __dev → H2 database__
+- __prod → Azure MySQL__
+
+src/main/resources/application.yml
 ```
 spring:
+  application:
+    name: todo-app
+
+  profiles:
+    active: dev
+
+---
+# ================= DEV (LOCAL TESTING H2) =================
+spring:
+  config:
+    activate:
+      on-profile: dev
+
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:todo-db
     driver-class-name: org.h2.Driver
     username: sa
+    password: ""
+
   h2:
     console:
       enabled: true
+      path: /h2-console
+
   jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: update
-  ```
+      ddl-auto: validate
+    show-sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: 8080
+
+---
+# ================= PROD (AZURE MYSQL) =================
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    url: ${MYSQL_URL}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+server:
+  port: 80
+
+
+```
+## 🗄️ 4. Flyway Migration (Schema + Upgrade Strategy):
+
+__src/main/resources/db/migration/V1__init.sql__
+
+```sql
+-- ========================
+-- USERS TABLE
+-- ========================
+CREATE TABLE users (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ========================
+-- TODO TABLE
+-- ========================
+CREATE TABLE todo (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description VARCHAR(500),
+    completed BOOLEAN DEFAULT FALSE,
+    user_id BIGINT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_user
+        FOREIGN KEY (user_id)
+        REFERENCES users(id)
+        ON DELETE CASCADE
+);
+
+-- INDEXES (performance)
+CREATE INDEX idx_user_username ON users(username);
+CREATE INDEX idx_todo_user ON todo(user_id);
+
+```
+
+<img width="911" height="551" alt="image" src="https://github.com/user-attachments/assets/677af5ae-29b5-4098-a719-c9171477d6d3" />
 
 
 ## Dockerfile
@@ -978,53 +1338,45 @@ __Create pipeline:__
 
 ##################################################
 
-## 🔹 3. Database Design:
-🧾 User Entity
 
-```java
-@Entity
-@Table(name = "users")
-@Getter @Setter
-public class User {
+<img width="949" height="620" alt="image" src="https://github.com/user-attachments/assets/eac75483-0420-4de5-9076-2aaaa0d66cd0" />
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+<img width="922" height="406" alt="image" src="https://github.com/user-attachments/assets/8de51549-7f68-4df4-956d-bbf00c278718" />
 
-    @Column(unique = true)
-    private String username;
+- 👉 Sequence diagram (interview gold question)
+- 👉 Common interview questions based on this project (very frequently asked)
+- Is  mark Todo as complete/incomplete functionality with
+proper authorization checks included ?
 
-    private String password;
+Followed REST best practices with validation, exception handling, and
+proper HTTP status codes
 
-    @Enumerated(EnumType.STRING)
-    private Role role;
-}
+- Created and managed MySQL databases on Azure using environment-
+based configuration
 
-public enum Role {
-    ROLE_ADMIN,
-    ROLE_USER
-}
-
-```
+- Wrote database migration scripts for schema upgrades and rollbacks
+- Deployed backend and frontend applications to Azure App Service
+- Containerized the application using Docker and Docker Compose, and
+deployed to Azure
+- Implemented CI/CD pipelines, auto-scaling, blue-green, and canary
+deployments using Azure DevOps
 
 
 
-## 📝 Todo Entity:
 
-```java
+🔥 Full JWT filter implementation
 
-@Entity
-public class Todo {
+🔥 Complete Todo CRUD with authorization
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+🔥 Azure DevOps YAML pipeline
 
-    private String title;
-    private String description;
-    private boolean completed;
+🔥 Blue-Green slot configuration
 
-    @ManyToOne
-    private User user;
-}
-```
+🔥 Resume-ready explanation
+
+🔥 GitHub repo template
+
+
+
+
+
