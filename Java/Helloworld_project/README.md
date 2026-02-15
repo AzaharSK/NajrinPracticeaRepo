@@ -489,6 +489,30 @@ RDS_PASSWORD:Najrin@123
 <img width="1295" height="655" alt="DB-N" src="https://github.com/user-attachments/assets/52ce1892-0c97-459d-bc40-bcc11ffdd2f1" />
 <img width="1295" height="655" alt="DB-N" src="https://github.com/user-attachments/assets/53881686-9ac3-48c7-8417-a5e141e10bc7" />
 
+
+```bash
+// Azure Database for MySQL by Microsoft
+
+Subscription : Azure subscription 1
+Resource group : todo-azure-app
+Server name: todoapp-sql-server-najrin
+
+Administrator login: todouser
+Location: South India
+Availability zone: No preference
+High availability: Disabled
+
+MySQL version
+8.0
+Workload type
+Dev/Test
+Compute + storage
+Burstable, B1ms, 1 vCores, 2 GiB RAM, 20 GiB storage, Auto scale IOPS
+Backup redundancy
+Locally-redundant
+Zonal Resiliency
+No
+```
 ## Cloud shell
 ```bash
 sqlcmd -S todoapp-sql-server-najrin.database.windows.net  \
