@@ -79,6 +79,10 @@ v.add(30);
 
 Like arrays, Linked List is a linear data structure.But linked list elements are not stored at the contiguous location, the elements are linked using pointers as shown below. 
 
+
+<img width="899" height="188" alt="image" src="https://github.com/user-attachments/assets/c5a57fb9-3b0b-4392-85a3-291a8b2d7797" />
+<img width="679" height="251" alt="image" src="https://github.com/user-attachments/assets/7b60fa1b-aa64-474e-825e-33ae3a81c0c6" />
+
 -  Linked List not continuous memory, elements/nodes are scattered in memory, Direct index access not possible , but itterative traversal or access is sequential.
 
 ```
@@ -86,9 +90,34 @@ Like arrays, Linked List is a linear data structure.But linked list elements are
     System.out.println(n);
 ```
 
-- `Key Strength of LinkedList:` Add Element to list shifting is not required as It is required in Array/ArrayList/Vector, we can directly add node at the begining and update head refernce.
-- Doubly linked List: can travse both direction ( Left -> right) or (right->left)
-  
-<img width="899" height="188" alt="image" src="https://github.com/user-attachments/assets/c5a57fb9-3b0b-4392-85a3-291a8b2d7797" />
-<img width="679" height="251" alt="image" src="https://github.com/user-attachments/assets/7b60fa1b-aa64-474e-825e-33ae3a81c0c6" />
+- `Key Strength of LinkedList:` Adding Element to list shifting is not required as It is required in Array/ArrayList/Vector, we can directly add node at the begining and update head refernce.  
 
+<img width="745" height="333" alt="image" src="https://github.com/user-attachments/assets/7e9c4537-a162-4295-b1b1-5b83729dbd4b" />
+
+- `Doubly linked List:` can travarse both direction ( Left -> right) or (right->left)
+
+<img width="801" height="401" alt="image" src="https://github.com/user-attachments/assets/cc46dc06-cb5e-4239-9a4e-8b6b408de7fe" />
+
+
+```java
+    /* Linked list Node*/
+    static class Node {
+        int data;
+        Node next;
+
+        // Constructor to create a new node
+        // Next is by default initialized
+        // as null
+        Node(int d) { data = d; }
+    }
+```
+
+```java
+class LinkedList {
+    Node head; // head of list
+    
+}
+```
+
+- A linked list is a collection of nodes where each node contains data and a reference to the next node. The head pointer stores the first node. Traversal is sequential (O(n)),
+- but insertion and deletion are efficient because only pointer manipulation is required.
