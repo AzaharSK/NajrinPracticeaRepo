@@ -123,9 +123,9 @@ class LinkedList {
 - but insertion and deletion are efficient because only pointer manipulation is required.
 
 ## Types of LinkedList:
-Singly Linked List - Has single - `next` reference link
-Doubly Linked List - Has double - `next` and `prev` reference links
-Circular Linked List - is a linked list where the last node does NOT point to null - Used in Circular Queue / Ring Buffer concept - where data Overwriten after reaching max capacity.
+- `Singly Linked List` - Has single - `next` reference link
+- `Doubly Linked List` - Has double - `next` and `prev` reference links
+- `Circular Linked List` - is a linked list where the last node does NOT point to null - Used in Circular Queue / Ring Buffer concept - where data Overwriten after reaching max capacity.
 
 ## LinkedList collection in Java offering fast insertion and deletion but slow random access.
 LinkedList implements 
