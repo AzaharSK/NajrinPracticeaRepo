@@ -73,3 +73,22 @@ v.add(30);
 ### Vector is dynamic but synchronized, making it thread-safe but slower, and mostly legacy.
 
 --------------------------------------------
+
+
+# Linked List:
+
+Like arrays, Linked List is a linear data structure.But linked list elements are not stored at the contiguous location, the elements are linked using pointers as shown below. 
+
+-  Linked List not continuous memory, elements/nodes are scattered in memory, Direct index access not possible , but itterative traversal or access is sequential.
+
+```
+ for(Integer n : list)
+    System.out.println(n);
+```
+
+- `Key Strength of LinkedList:` Add Element to list shifting is not required as It is required in Array/ArrayList/Vector, we can directly add node at the begining and update head refernce.
+- Doubly linked List: can travse both direction ( Left -> right) or (right->left)
+  
+<img width="899" height="188" alt="image" src="https://github.com/user-attachments/assets/c5a57fb9-3b0b-4392-85a3-291a8b2d7797" />
+<img width="679" height="251" alt="image" src="https://github.com/user-attachments/assets/7b60fa1b-aa64-474e-825e-33ae3a81c0c6" />
+
