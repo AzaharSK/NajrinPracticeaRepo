@@ -51,7 +51,8 @@ v.add(20);
 v.add(30);
 ```
 - Default capacity = 10
-- Performance: Slower than ArrayList, and wastes memory
+- Performance: Slower than ArrayList, and wastes memory.
+- Multithreaded legacy system.
 
 <img width="1782" height="833" alt="image" src="https://github.com/user-attachments/assets/19bc1e9f-8899-4df4-8cff-4e63436604be" />
 <img width="1084" height="809" alt="image" src="https://github.com/user-attachments/assets/02e5d819-10b8-44a3-b799-a325a1ba44e4" />
