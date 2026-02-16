@@ -121,3 +121,8 @@ class LinkedList {
 
 - A linked list is a collection of nodes where each node contains data and a reference to the next node. The head pointer stores the first node. Traversal is sequential (O(n)),
 - but insertion and deletion are efficient because only pointer manipulation is required.
+
+## Types of LinkedList:
+Singly Linked List - Has single - `next` reference link
+Doubly Linked List - Has double - `next` and `prev` reference links
+Circular Linked List - is a linked list where the last node does NOT point to null - Used in Circular Queue / Ring Buffer concept - where data Overwriten after reaching max capacity.
