@@ -1,12 +1,6 @@
 ----------------------------------------------------------------------------------------------------
 # INDEX based Random access with Duplicate elements are allowed.
 
-
-<img width="500" height="217" alt="image" src="https://github.com/user-attachments/assets/3833efcf-a83c-478f-ada7-7903a87b60e2" />
-
-<img width="1280" height="1510" alt="image" src="https://github.com/user-attachments/assets/fdfcacc3-18d3-478d-ac6f-9ae730f41a36" />
-
-
 ## Fixed Size Array
 - Continuous memory block
 
@@ -20,8 +14,14 @@ arr[1] = 20;
 - Size cannot change after creation.
 - You can not inser 6th element in this aaray, It will throw excaption "Out-of-bound"
 - Array is not thread safe.
-  
-## ArrayList in Java
+
+
+## Dynamic Array:
+
+<img width="500" height="217" alt="image" src="https://github.com/user-attachments/assets/3833efcf-a83c-478f-ada7-7903a87b60e2" />
+<img width="1280" height="1510" alt="image" src="https://github.com/user-attachments/assets/fdfcacc3-18d3-478d-ac6f-9ae730f41a36" />
+
+## ArrayList:
 
 ArrayList in Java is a `dynamically resizable` array provided in the `java.util package`. Unlike fixed sized arrays, ArrayList's size `can grow (1.5x grow) or shrink dynamically` as elements are added or removed.
 
@@ -44,7 +44,7 @@ list.remove(0);
 ```
 - Resizable automatically.
 
-## Vector 
+## Vector :
 Vector is a legacy dynamic array in java.util that is synchronized (thread-safe) by default.
 
 <img width="523" height="292" alt="image" src="https://github.com/user-attachments/assets/8c21bb32-9aeb-485b-a406-11c59f80cad3" />
