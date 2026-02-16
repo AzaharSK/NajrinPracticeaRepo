@@ -126,3 +126,47 @@ class LinkedList {
 Singly Linked List - Has single - `next` reference link
 Doubly Linked List - Has double - `next` and `prev` reference links
 Circular Linked List - is a linked list where the last node does NOT point to null - Used in Circular Queue / Ring Buffer concept - where data Overwriten after reaching max capacity.
+
+## LinkedList collection in Java offering fast insertion and deletion but slow random access.
+LinkedList implements 
+
+```
+List interface
+Deque interface
+```
+- It is based on a doubly linked list data structure.
+- That means each node contains:
+- `| previous ← data → next |`
+
+
+```java
+import java.util.LinkedList;
+
+public class Demo {
+    public static void main(String[] args) {
+
+        LinkedList<String> list = new LinkedList<>();
+
+        // Add elements
+        list.add("Apple");
+        list.add("Banana");
+        list.addFirst("Mango");
+        list.addLast("Orange");
+
+        System.out.println(list);
+
+        // Access
+        System.out.println(list.get(1));
+
+        // Remove
+        list.removeFirst();
+        list.removeLast();
+
+        System.out.println(list);
+    }
+}
+```
+
+` Usage:`
+- LinkedList is bad for random access - so where random index based access required - LinkedList is not used
+- LinkedList is Good for frequent insert/delete operations - LinkedList is used where frequent user data insert/delete operations required on-demand basis.
