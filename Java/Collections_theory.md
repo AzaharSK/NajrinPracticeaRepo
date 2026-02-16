@@ -1,5 +1,16 @@
 ----------------------------------------------------------------------------------------------------
-# INDEX based Random access with Duplicate elements are allowed.
+# 1️⃣ Ordered Collection: INDEX based
+
+Examples: ArrayList, LinkedList, Vector
+
+__Properties__
+- Maintains insertion order
+- Allows duplicates
+- Index based access
+- Dynamic size
+
+__Use case__
+- When order matters and duplicate data is allowed
 
 ## Fixed Size Array
 - Continuous memory block
