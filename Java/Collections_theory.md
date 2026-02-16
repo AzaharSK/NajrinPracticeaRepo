@@ -169,4 +169,4 @@ public class Demo {
 
 ` Usage:`
 - LinkedList is bad for random access - so where random index based access required - LinkedList is not used
-- LinkedList is Good for frequent insert/delete operations - LinkedList is used where frequent user data insert/delete operations required on-demand basis.
+- LinkedList is used where frequent user data insert/delete operations required on-demand basis.
