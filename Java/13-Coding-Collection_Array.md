@@ -704,37 +704,40 @@ public class Test {
 - `Problem:` Move all zeroes in an array to the end while maintaining the relative order of the non-zero elements.
 - `Solution:` Use two indexes, one to track the position of non-zero elements and one to traverse the array.
 
+```
+[0, 1, 0, 3, 12]
+↓
+count zeros → 2
+remove zeros → [1, 3, 12]
+add zeros → [1, 3, 12, 0, 0]
+```
+
 ```java
+
 import java.util.*;
 
 public class Test {
 
     public static void main(String[] args) {
 
-        int[] arr = {0, 1, 0, 3, 12, 0, 5, 0};
+        List<Integer> list = new ArrayList<>(Arrays.asList(0, 1, 0, 3, 12));
 
-        int nonZeroIndex = 0;  // Position to place next non-zero element
+        // Step 1: count zeros
+        int zeroCount = Collections.frequency(list, 0);
 
-        for (int i = 0; i < arr.length; i++) {
+        // Step 2: remove zeros
+        list.removeAll(Collections.singleton(0));
 
-            if (arr[i] != 0) {
-
-                // Swap arr[i] with arr[nonZeroIndex]
-                int temp = arr[i];
-                arr[i] = arr[nonZeroIndex];
-                arr[nonZeroIndex] = temp;
-
-                nonZeroIndex++;
-            }
+        // Step 3: add zeros at end
+        for (int i = 0; i < zeroCount; i++) {
+            list.add(0);
         }
 
-        System.out.println("After moving zeros to end:");
-        System.out.println(Arrays.toString(arr));
-        // Output: [1, 3, 12, 5, 0, 0, 0, 0]
+        System.out.println(list); // [1, 3, 12, 0, 0]
     }
 }
-```
 
+```
 ------------
 
 
