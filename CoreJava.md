@@ -163,8 +163,84 @@ abstract class B { abstract void display(); }
 
 ## 14. What is a constructor?
 
-Theory:
-Used to initialize objects.
+## What is a Constructor?
+
+**Answer:**
+A **constructor** is a special method in a class that is automatically called when an object is created.
+It is used to **initialize object data members (variables)**.
+
+---
+
+### Key Features
+
+* Same name as the class
+* No return type (not even `void`)
+* Called automatically during object creation
+* Used for initializing values
+
+---
+
+### Example
+
+```java
+class Student {
+    String name;
+
+    // Constructor
+    Student(String n) {
+        name = n;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student("Rahul"); // constructor called
+        System.out.println(s.name);
+    }
+}
+```
+
+---
+
+### Types of Constructors
+
+1. **Default Constructor** – no parameters
+2. **Parameterized Constructor** – accepts values
+
+--
+```
+## constructor-
+> A constructor is a special method that runs automatically when an object is
+created and is used to initialize the object's data members.
+It is mainly used to initialize the instance variables of the class.
+
+## Key Points to Mention in Interview
+
+Constructor name must be same as class name
+
+It does not have a return type
+
+It is called automatically when using the new keyword
+
+Used for object initialization
+
+## Example
+class Employee {
+    String name;
+
+    // Constructor
+    Employee(String name) {
+        this.name = name;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee e = new Employee("John");
+    }
+}
+```
+
 
 Code:
 
