@@ -15,8 +15,8 @@
   - `LinkedHashMap :` Preserve insertion order 
   - `TreeMap :` Automatically sorted at insertion  (Red-Black Balnced BST) ]
 ### 4️⃣ Data Processing Order Collection: 
-  - `LIFO Processing Order :` PriorityQueue, ArrayDeque
-  - `FIFO Processing Order :` Stack
+  - `FIFO (First-In-First-Out) Processing Order :` PriorityQueue, ArrayDeque
+  - `LIFO (Last-In-First-Out) Processing Order :` Stack
 
 ----------------------------------------------------------------------------------------------------
 # 1️⃣ Sequential Collection: INDEX based
