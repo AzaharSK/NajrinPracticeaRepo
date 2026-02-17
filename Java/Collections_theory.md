@@ -399,7 +399,7 @@ ArrayList[2] = Node("R102" -> "Guest B") --> Node("R202" -> "Guest E") --> Node(
 ArrayList[3] = Node("R103" -> "Guest C") --> Node("R203" -> "Guest F") --> Node("R303" -> "Guest I")
 ```
 
-__HashSet Interface:__
+__Hash Set Interface:__
 
 ```java
 Node ( value | link) 
