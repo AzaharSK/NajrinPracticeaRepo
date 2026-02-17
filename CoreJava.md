@@ -31,7 +31,8 @@ class Hello {
 ## 2. Why is Java platform-independent?
 
 Theory:
-Java is platform-independent because it compiles code into bytecode, which runs on any system using the JVM, enabling write once run anywhere.
+Java is platform-independent because it compiles code into bytecode, which runs on any system using the JVM,
+ enabling write once run anywhere.
 
 Code:
 
