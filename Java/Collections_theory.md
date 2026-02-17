@@ -548,7 +548,7 @@ public class Test {
 ```
 ✔ __Last inserted → First removed__
 
-## Stack vs Queue
+## Stack vs Queue :
 
 <img width="355" height="142" alt="image" src="https://github.com/user-attachments/assets/03bba76a-dbf0-423c-aa77-030800385905" />
 <img width="755" height="534" alt="image" src="https://github.com/user-attachments/assets/32d3a8d2-d15e-49d7-9970-9d34eb6e8c6b" />
