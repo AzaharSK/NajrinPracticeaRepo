@@ -370,16 +370,19 @@ ArrayList[3] = Node("R103" -> "Guest C") --> Node("R203" -> "Guest F") --> Node(
 <img width="686" height="386" alt="image" src="https://github.com/user-attachments/assets/a8d652e1-ced1-40fa-b444-3b767884e7e4" />
 
 - 1. Compute hash of key.
-- 2.  Compute bucket index from hash (index = hash & (table.length - 1)).
+- 2.  Compute bucket index from hash
 - 3. Check if key already exists in the bucket:
      - If yes → update value.
      - If no →  create new Node:
+           ```
            - If bucket empty → directly add Node.
            - if collsion occured:
+   
                   - Approach 1: Separate Chaining:  create Linked list for the bucket, for ≤ 8 entries in a bucket and convert to Red-Black Tree for > 8 entries for faster search.
+       
                   - Approach 2: Open Addressing : Double Hashing:  index next bucket as hash(key) + i * hash2(key)
            - If bucket has nodes → add Node at head (or in tree if converted).
-                  
+           ```       
 - 4. Resize check:
           - If size > threshold (lets say 12), the table resizes (doubles array size + Rehash all existing entries into new buckets)
 
