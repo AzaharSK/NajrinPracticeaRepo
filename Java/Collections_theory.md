@@ -374,7 +374,8 @@ ArrayList[3] = Node("R103" -> "Guest C") --> Node("R203" -> "Guest F") --> Node(
 - 3. Check if key already exists in the bucket:
      - If yes → update value.
      - If no →  create new Node:
-           ```
+    
+       ```
            - If bucket empty → directly add Node.
            - if collsion occured:
    
@@ -382,6 +383,7 @@ ArrayList[3] = Node("R103" -> "Guest C") --> Node("R203" -> "Guest F") --> Node(
        
                   - Approach 2: Open Addressing : Double Hashing:  index next bucket as hash(key) + i * hash2(key)
            - If bucket has nodes → add Node at head (or in tree if converted).
+       
            ```       
 - 4. Resize check:
           - If size > threshold (lets say 12), the table resizes (doubles array size + Rehash all existing entries into new buckets)
