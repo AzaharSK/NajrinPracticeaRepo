@@ -339,12 +339,14 @@ Example: Hotel Layout
 
 - `1st Floor:` → R101 R102 R103
 - `2nd Floor:` → R201 R202 R203
-- `3rd Floor: → R301 R302 R303
+- `3rd Floor:` → R301 R302 R303
 
 ## Separate Chaining (Linked List inside each drawer)
+```
 Drawer[1]: [R101 | Guest A] , [R201 | Guest D], [R301 | Guest G]
 Drawer[2]: [R102 | Guest B], [R202 | Guest E], [R302 | Guest H]
 Drawer[3]: [R103 | Guest C], [R203 | Guest F], [R303 | Guest I]
+```
 
 ```
 // Let's asume We have a fixed-size array (say 16 buckets).
