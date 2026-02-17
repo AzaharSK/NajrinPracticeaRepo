@@ -1,9 +1,13 @@
 # Java Collections types
 
-### 1️⃣ Sequential Collection: [ INDEX based : ArrayList, Vector ] , [ NON-Index based : LinkedList ]
-### 2️⃣ Unique Collection : Set [ HashSet - Unpredictable storing order | LinkedHashSet - Preserve insertion order | TreeSet - Automatically sorted at insertion (Red-Black Balnced BST) ]
-### 3️⃣ Key-Value Collection — Separate Hierarchy: Map : [ HashMap - Unpredictable storing order | LinkedHashMap - Preserve insertion order | TreeMap - Automatically sorted at insertion  (Red-Black Balnced BST) ]
-### 4️⃣ Processing Order Collection: [ LIFO Order : PriorityQueue, ArrayDeque ] , [ FIFO Order : Stack ]
+### 1️⃣ Sequential Collection: 
+   - [ INDEX based : ArrayList, Vector ] , [ NON-Index based : LinkedList ]
+### 2️⃣ Unique Collection : Set 
+  - [ HashSet - Unpredictable storing order | LinkedHashSet - Preserve insertion order | TreeSet - Automatically sorted at insertion (Red-Black Balnced BST) ]
+### 3️⃣ Key-Value Collection — Separate Hierarchy: Map :
+  - [ HashMap - Unpredictable storing order | LinkedHashMap - Preserve insertion order | TreeMap - Automatically sorted at insertion  (Red-Black Balnced BST) ]
+### 4️⃣ Processing Order Collection: 
+  - [ LIFO Order : PriorityQueue, ArrayDeque ] , [ FIFO Order : Stack ]
 
 ----------------------------------------------------------------------------------------------------
 # 1️⃣ Sequential Collection: INDEX based
