@@ -240,15 +240,38 @@ System.out.println(set); // [10, 20, 30]
 - All nodes in the `left subtree` of a node contain values strictly less than the node’s value.
 - All nodes in the `right subtree` of a node contain values strictly greater than the node’s value.
 - __`LeftValue < RootValue < RightValue`__
-- 
+
+ <img width="1200" height="600" alt="image" src="https://github.com/user-attachments/assets/09db9a49-707b-426f-86eb-b3b6acfb80a3" />
+
 <img width="1001" height="471" alt="image" src="https://github.com/user-attachments/assets/67acb1ea-f28d-4605-a8af-24eef8f2621e" />
 
 
 <img width="2100" height="1500" alt="image" src="https://github.com/user-attachments/assets/4dcf88d3-9034-412f-8cd4-ef8cbb1772b2" />
-- `Red-Black Tree:` - is a self-balancing binary search tree with a height limit of O(logN), enabling Faster search algo, insertion, and deletion operations in O(logN) time, unlike standard binary search trees which can take O(N) time.
+
+- `Red-Black Tree:` - A Red-Black Tree (RBT) is a self-balancing Binary Search Tree, enabling Faster search algo, insertion, and deletion operations in O(logN) time, unlike standard binary search trees which can take O(N) time.
 
 - `RED-BLCAK color:` Each node has an additional attribute: a color, which can be either red or black.
 - These colors are used to maintain balance during insertions and deletions, ensuring efficient data retrieval and manipulation.
+
+  
+
+1️⃣ Red-Black Tree Rules (Very Important)
+
+After every insertion (or deletion) it automatically fixes itself using recoloring + rotations so that the tree height always stays O(log n). Every time you insert a node, these 5 properties must always hold: 
+
+
+- Every node is either RED or BLACK
+- The root is always BLACK
+- 🔴 New node is ALWAYS inserted as RED , Because inserting BLACK would change black-height of all paths.
+- No two RED nodes can be adjacent (Red node cannot have Red parent or Red child)
+- Every path from node → NULL has same number of BLACK nodes (Black Height property)
+- NULL leaves are considered BLACK
+
+👉 After inserting a node, if any rule breaks → we fix using Recoloring or Rotation
+
+
+<img width="688" height="505" alt="image" src="https://github.com/user-attachments/assets/a43f5b76-d92c-416f-b419-7f894f15aabf" />
+<img width="876" height="760" alt="image" src="https://github.com/user-attachments/assets/072180d3-cc08-44f2-9608-e89e05a155e9" />
 
 -------------------------------------------------------------------
 
