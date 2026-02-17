@@ -408,11 +408,11 @@ ArrayList[2] = Node("Guest B") --> Node("Guest E") --> Node("Guest H")
 ArrayList[3] = Node("Guest C") --> Node("Guest F") --> Node("Guest I")
 ```
 
-
+----------------------------------------------------------------------------------------
 
 ## 4️⃣ Processing Order Collection: FIFO and LIFO order
-- Examples of FIFO order collections:  PriorityQueue, ArrayDeque
-- Examples of LIFO order collections: Stack
+- `FIFO (First-In-First-Out) Processing Order :` PriorityQueue, ArrayDeque
+- `LIFO (Last-In-First-Out) Processing Order :` Stack
 
 __FIFO order collections:  PriorityQueue, ArrayDeque Properties:__
 
@@ -547,6 +547,8 @@ public class Test {
 }
 ```
 ✔ __Last inserted → First removed__
+
+## Stack vs Queue
 
 <img width="355" height="142" alt="image" src="https://github.com/user-attachments/assets/03bba76a-dbf0-423c-aa77-030800385905" />
 <img width="755" height="534" alt="image" src="https://github.com/user-attachments/assets/32d3a8d2-d15e-49d7-9970-9d34eb6e8c6b" />
