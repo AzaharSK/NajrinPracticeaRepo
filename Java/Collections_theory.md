@@ -414,16 +414,140 @@ ArrayList[3] = Node("Guest C") --> Node("Guest F") --> Node("Guest I")
 - Examples of FIFO order collections:  PriorityQueue, ArrayDeque
 - Examples of LIFO order collections: Stack
 
-__LIFO order collections:  PriorityQueue, ArrayDeque Properties:__
+__FIFO order collections:  PriorityQueue, ArrayDeque Properties:__
 
-- FIFO processing
-- Used in scheduling
+- FIFO processing: 👉 First inserted element comes out first, 👉 Like a ticket counter line
 - No random access
 
-Example:
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/64e6da49-bda4-424a-addf-1aa8d3c85a9c" />
+
+
+__Used in:__
+
+- Task scheduling
+- Request processing
+- Printer queue
+- BFS traversal
+
+__ArrayDeque:__
+- ✔ __First inserted__ → __First removed__
 ```java
-Queue<Integer> q = new LinkedList<>();
-q.add(1);
-q.add(2);
-q.poll(); // removes 1
+import java.util.*;
+
+public class Test {
+    public static void main(String[] args) {
+
+        Queue<String> queue = new ArrayDeque<>();
+        queue.add("A");
+        queue.add("B");
+        queue.add("C");
+
+        System.out.println(queue.poll()); // removes A First, then
+        System.out.println(queue.poll()); // removes B ,then
+        System.out.println(queue.poll()); // removes C 
+    }
+}
 ```
+
+## Special FIFO — Sorted FIFO
+
+- It does NOT follow insertion order
+- It follows priority (smallest first)
+
+```java
+import java.util.*;
+
+public class Test {
+
+        public static void main(String[] args) {
+            
+        
+        class Task implements Comparable<Task> {
+    
+            String task_name;
+            int task_priority;
+        
+            public Task(String name, int priority) {
+                this.task_name = name;
+                this.task_priority = priority;
+            }
+        
+            // Define priority logic
+            @Override
+            public int compareTo(Task other) {
+                return this.task_priority - other.task_priority; // smaller value = higher priority
+            }
+        
+            @Override
+            public String toString() {
+                return task_name + " (Priority " + task_priority + ")";
+            }
+        }
+
+
+
+        PriorityQueue<Task> pq = new PriorityQueue<>();
+
+        pq.add(new Task("Fix Production Bug", 1));
+        pq.add(new Task("Code Review", 3));
+        pq.add(new Task("Write Documentation", 4));
+        pq.add(new Task("Team Meeting", 2));
+
+        System.out.println("Processing tasks by priority:");
+        while (!pq.isEmpty()) {
+            System.out.println(pq.poll());
+        }
+    }
+}
+```
+- ✔ __Removed by priority, not insertion order.__
+```
+Processing tasks by priority:
+Fix Production Bug (Priority 1)
+Team Meeting (Priority 2)
+Code Review (Priority 3)
+Write Documentation (Priority 4)
+```
+
+## LIFO — Last In First Out (Stack behavior):
+- 👉 Last inserted element comes out first
+- 👉 Like a plate stack
+<img width="1438" height="479" alt="image" src="https://github.com/user-attachments/assets/1f57e7fc-848b-485c-9719-ab85261f3e3f" />
+
+<img width="1478" height="1238" alt="image" src="https://github.com/user-attachments/assets/54b2aa35-445a-4a5a-8e63-64f638e5bfe2" />
+
+```
+Push: A → B → C → D
+Pop : D → C → B → A
+```
+
+__Used in:__
+
+- Undo operation
+- Recursion/Backtracking
+- Function call stack
+- DFS traversal
+
+```java
+import java.util.*;
+
+public class Test {
+    public static void main(String[] args) {
+
+        Stack<String> stack = new Stack<>();
+
+        stack.push("A");
+        stack.push("B");
+        stack.push("C");
+
+        System.out.println(stack.pop()); // C
+        System.out.println(stack.pop()); // B
+        System.out.println(stack.pop()); // A
+    }
+}
+```
+✔ __Last inserted → First removed__
+
+<img width="355" height="142" alt="image" src="https://github.com/user-attachments/assets/03bba76a-dbf0-423c-aa77-030800385905" />
+<img width="755" height="534" alt="image" src="https://github.com/user-attachments/assets/32d3a8d2-d15e-49d7-9970-9d34eb6e8c6b" />
+
