@@ -364,30 +364,51 @@ ArrayList[3] = Node("R103" -> "Guest C") --> Node("R203" -> "Guest F") --> Node(
 ```
 <img width="686" height="386" alt="image" src="https://github.com/user-attachments/assets/a8d652e1-ced1-40fa-b444-3b767884e7e4" />
 
+```
 - 1. Compute hash of key.
 - 2.  Compute bucket index from hash
 - 3. Check if key already exists in the bucket:
      - If yes → update value.
      - If no →  create new Node:
-    
-       ```
            - If bucket empty → directly add Node.
            - if collsion occured:
    
-                  - Approach 1: Separate Chaining:  create Linked list for the bucket, for ≤ 8 entries in a bucket and convert to Red-Black Tree for > 8 entries for faster search.
+                  - Approach 1: Separate Chaining:
+                               <1a> create Linked list for the bucket, for ≤ 8 entries in a bucket
+                               <1b> convert to Red-Black Tree for > 8 entries for faster search.
        
-                  - Approach 2: Open Addressing : Double Hashing:  index next bucket as hash(key) + i * hash2(key)
+                  - Approach 2: Open Addressing or Double Hashing:  index next bucket as =  HashFuntion1(key) + [i * HashFuntion2(key) ]
            - If bucket has nodes → add Node at head (or in tree if converted).
        
-           ```       
 - 4. Resize check:
           - If size > threshold (lets say 12), the table resizes (doubles array size + Rehash all existing entries into new buckets)
 
 - 5. Iterates over buckets from 0 → (n-1) and within bucket nodes.
         - If bucket converted to tree → iterates tree nodes in order.
-
+```
  
 --------------------------------------------------------------------
+
+
+__Hash Map Inetrface:__
+
+```java
+Node ( key | value | link) 
+ArrayList[1] = Node("R101" -> "Guest A") --> Node("R201" -> "Guest D") --> Node("R301" -> "Guest G")
+ArrayList[2] = Node("R102" -> "Guest B") --> Node("R202" -> "Guest E") --> Node("R302" -> "Guest H")
+ArrayList[3] = Node("R103" -> "Guest C") --> Node("R203" -> "Guest F") --> Node("R303" -> "Guest I")
+```
+
+__HashSet Interface:__
+
+```java
+Node ( value | link) 
+ArrayList[1] = Node("Guest A") --> Node("Guest D") --> Node("Guest G")
+ArrayList[2] = Node("Guest B") --> Node("Guest E") --> Node("Guest H")
+ArrayList[3] = Node("Guest C") --> Node("Guest F") --> Node("Guest I")
+```
+
+
 
 ## 4️⃣ Processing Order Collection: FIFO and LIFO order
 - Examples of FIFO order collections:  PriorityQueue, ArrayDeque
