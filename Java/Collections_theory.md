@@ -1,9 +1,9 @@
 # Java Collections types
 
-## 1️⃣ Ordered Collection: [ INDEX based : ArrayList, Vector ] [ NON-Index based : LinkedList ]
-## 2️⃣ Unique Collection : set
-## 3️⃣ Queue (Processing Order Collection) : PriorityQueue, ArrayDeque
-## 4️⃣ Key-Value Collection — Separate Hierarchy: Map
+### 1️⃣ Ordered Collection: [ INDEX based : ArrayList, Vector ] , [ NON-Index based : LinkedList ]
+### 2️⃣ Unique Collection : Set
+### 3️⃣ Key-Value Collection — Separate Hierarchy: Map
+### 4️⃣ Processing Order Collection: [ LIFO Order : PriorityQueue, ArrayDeque ] , [ FIFO Order : Stack ]
 
 ----------------------------------------------------------------------------------------------------
 # 1️⃣ Ordered Collection: INDEX based
