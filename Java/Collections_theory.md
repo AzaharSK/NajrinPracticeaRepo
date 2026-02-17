@@ -188,3 +188,103 @@ public class Demo {
 ` Usage:`
 - LinkedList is bad for random access - so where random index based access required - LinkedList is not used
 - LinkedList is used where frequent user data insert/delete operations required on-demand basis.
+
+------------------------------------------------------------------------------- 
+
+## 2️⃣ Set (Unique Collection)
+
+- Examples: HashSet, LinkedHashSet, TreeSet
+
+__Properties:__
+
+- No duplicates allowed
+- No index
+- Faster search
+- Used for uniqueness
+
+- `HashSet` ==== > store value in `Unpredictable order` at insertion, Order may change after rehashing.
+- `LinkedHashSet` ====> Manintain The `Insertion order`, Elements appear exactly as inserted
+- `TreeSet` ===> Manintain Automatically `sorted order` at insertion 
+
+__HashSet:__
+```java
+Set<Integer> set = new HashSet<>();
+set.add(30);
+set.add(10);
+set.add(10); // ignored -as it is a duplicate
+set.add(20);
+System.out.println(set); // [20, 30, 10]
+```
+__LinkedHashSet:__
+
+```java
+Set<Integer> set = new LinkedHashSet<>();
+set.add(30);
+set.add(10);
+set.add(10); // ignored -as it is a duplicate
+set.add(20);
+System.out.println(set); // [30, 10, 20]
+```
+__TreeSet:__ : Uses Red-Black Tree (Self-balancing BST), BST = Binary Search Tree
+
+```java
+Set<Integer> set = new TreeSet<>(); 
+set.add(30);
+set.add(10);
+set.add(20);
+System.out.println(set); // [10, 20, 30]
+```
+
+- `Binary Search Tree (BST)` - is a type of binary tree data structure in which each node contains a unique key and satisfies a specific ordering property:
+
+- All nodes in the `left subtree` of a node contain values strictly less than the node’s value.
+- All nodes in the `right subtree` of a node contain values strictly greater than the node’s value.
+- __`LeftValue < RootValue < RightValue`__
+- 
+<img width="1001" height="471" alt="image" src="https://github.com/user-attachments/assets/67acb1ea-f28d-4605-a8af-24eef8f2621e" />
+
+
+<img width="2100" height="1500" alt="image" src="https://github.com/user-attachments/assets/4dcf88d3-9034-412f-8cd4-ef8cbb1772b2" />
+- `Red-Black Tree:` - is a self-balancing binary search tree with a height limit of O(logN), enabling Faster search algo, insertion, and deletion operations in O(logN) time, unlike standard binary search trees which can take O(N) time.
+
+- `RED-BLCAK color:` Each node has an additional attribute: a color, which can be either red or black.
+- These colors are used to maintain balance during insertions and deletions, ensuring efficient data retrieval and manipulation.
+
+-------------------------------------------------------------------
+
+## 3️⃣ Key-Value Collection — Separate Hierarchy: Map type
+
+- Examples: HashMap, LinkedHashMap, TreeMap
+
+__Properties:__
+
+- Stores key-value pairs
+- Keys unique
+- Values duplicate allowed
+- Not part of Collection interface
+
+```java
+Map<Integer,String> map = new HashMap<>();
+map.put(1,"A");
+map.put(1,"B"); // replaces value
+```
+
+----------------------------------------------------------
+
+## 4️⃣ Processing Order Collection: FIFO and LIFO order
+- Examples of FIFO order collections:  PriorityQueue, ArrayDeque
+- Examples of LIFO order collections: Stack
+
+__LIFO order collections:  PriorityQueue, ArrayDeque Properties:__
+
+- FIFO processing
+- Used in scheduling
+- No random access
+
+Example:
+```java
+Queue<Integer> q = new LinkedList<>();
+q.add(1);
+q.add(2);
+q.poll(); // removes 1
+```
