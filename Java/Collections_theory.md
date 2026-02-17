@@ -311,3 +311,77 @@ q.add(1);
 q.add(2);
 q.poll(); // removes 1
 ```
+
+## Hashing :
+
+1️⃣ Concept
+
+- In Java HashMap (or HashSet), each key is stored in a “bucket” inside an array.
+- Array insertion index = Position : which bucket the key belongs to.
+
+To compute the index, we use: HashFunction()
+
+__HashFunction:__
+```java
+index = HashFunction(key, tableSize) {
+ int idx = key.hashCode() % tableSize
+ return idx;
+}
+
+// hashCode ---> Java’s way of converting a key object to an integer.
+// table size ---> the number of buckets (array length).
+
+ArrayList[index] = Node(key1->value1)  // Node(key1->value1) inserted in @index of ArrayList
+```
+
+Example: Hotel Layout
+- Each floor has 3 rooms:
+
+- `1st Floor:` → R101 R102 R103
+- `2nd Floor:` → R201 R202 R203
+- `3rd Floor: → R301 R302 R303
+
+## Separate Chaining (Linked List inside each drawer)
+Drawer[1]: [R101 | Guest A] , [R201 | Guest D], [R301 | Guest G]
+Drawer[2]: [R102 | Guest B], [R202 | Guest E], [R302 | Guest H]
+Drawer[3]: [R103 | Guest C], [R203 | Guest F], [R303 | Guest I]
+
+```
+// Let's asume We have a fixed-size array (say 16 buckets).
+// The hashCode of a key can be any integer (positive or negative, huge numbers).
+
+String key = "R101";
+int tableSize = 10;
+
+index = HashFunction("R101", 16) 
+
+// hashCode = key.hashCode();  // asume hashCode = 101
+// index = hashCode % tableSize;  // 101 % 10 = 1
+
+✅ So "R101" goes into bucket 1.
+
+ArrayList[1] = Node("R101" -> "Guest A") --> Node("R201" -> "Guest D") --> Node("R301" -> "Guest G")
+ArrayList[2] = Node("R102" -> "Guest B") --> Node("R202" -> "Guest E") --> Node("R302" -> "Guest H")
+ArrayList[3] = Node("R103" -> "Guest C") --> Node("R203" -> "Guest F") --> Node("R303" -> "Guest I")
+
+```
+<img width="686" height="386" alt="image" src="https://github.com/user-attachments/assets/a8d652e1-ced1-40fa-b444-3b767884e7e4" />
+
+- 1. Compute hash of key.
+- 2.  Compute bucket index from hash (index = hash & (table.length - 1)).
+- 3. Check if key already exists in the bucket:
+     - If yes → update value.
+     - If no →  create new Node:
+           - If bucket empty → directly add Node.
+           - if collsion occured:
+                  - Approach 1: Separate Chaining:  create Linked list for the bucket, for ≤ 8 entries in a bucket and convert to Red-Black Tree for > 8 entries for faster search.
+                  - Approach 2: Open Addressing : Double Hashing:  index next bucket as hash(key) + i * hash2(key)
+           - If bucket has nodes → add Node at head (or in tree if converted).
+                  
+- 4. Resize check:
+          - If size > threshold (lets say 12), the table resizes (doubles array size + Rehash all existing entries into new buckets)
+
+- 5. Iterates over buckets from 0 → (n-1) and within bucket nodes.
+        - If bucket converted to tree → iterates tree nodes in order.
+
+ 
