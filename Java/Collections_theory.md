@@ -1,13 +1,22 @@
 # Java Collections types
 
 ### 1️⃣ Sequential Collection: 
-   - [ INDEX based : ArrayList, Vector ] , [ NON-Index based : LinkedList ]
+   -  `INDEX based :` ArrayList, Vector
+   -  `NON-Index based :` LinkedList 
+
 ### 2️⃣ Unique Collection : Set 
-  - [ HashSet - Unpredictable storing order | LinkedHashSet - Preserve insertion order | TreeSet - Automatically sorted at insertion (Red-Black Balnced BST) ]
+  
+  - `HashSet :` Unpredictable storing order ( Based on Hashing Function )
+  - `LinkedHashSet :` Preserve insertion order
+  - `TreeSet :`- Automatically sorted at insertion (Red-Black Balnced BST)
+    
 ### 3️⃣ Key-Value Collection — Separate Hierarchy: Map :
-  - [ HashMap - Unpredictable storing order | LinkedHashMap - Preserve insertion order | TreeMap - Automatically sorted at insertion  (Red-Black Balnced BST) ]
-### 4️⃣ Processing Order Collection: 
-  - [ LIFO Order : PriorityQueue, ArrayDeque ] , [ FIFO Order : Stack ]
+  - `HashMap :` Unpredictable storing order ( Based on Hashing Function )
+  - `LinkedHashMap :` Preserve insertion order 
+  - `TreeMap :` Automatically sorted at insertion  (Red-Black Balnced BST) ]
+### 4️⃣ Data Processing Order Collection: 
+  - `LIFO Processing Order :` PriorityQueue, ArrayDeque
+  - `FIFO Processing Order :` Stack
 
 ----------------------------------------------------------------------------------------------------
 # 1️⃣ Sequential Collection: INDEX based
@@ -34,7 +43,7 @@ arr[1] = 20;
 - Provide Faster index based random access.
 - Maintains insertion order
 - Size cannot change after creation.
-- You can not inser 6th element in this aaray, It will throw excaption "Out-of-bound"
+- You can not insert 6th element in this aaray, It will throw excaption "Out-of-bound"
 - Array is not thread safe.
 
 
