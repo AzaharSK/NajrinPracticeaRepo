@@ -307,24 +307,6 @@ map.put(1,"B"); // replaces value
 
 ----------------------------------------------------------
 
-## 4️⃣ Processing Order Collection: FIFO and LIFO order
-- Examples of FIFO order collections:  PriorityQueue, ArrayDeque
-- Examples of LIFO order collections: Stack
-
-__LIFO order collections:  PriorityQueue, ArrayDeque Properties:__
-
-- FIFO processing
-- Used in scheduling
-- No random access
-
-Example:
-```java
-Queue<Integer> q = new LinkedList<>();
-q.add(1);
-q.add(2);
-q.poll(); // removes 1
-```
-
 ## Hashing :
 
 1️⃣ Concept
@@ -405,3 +387,22 @@ ArrayList[3] = Node("R103" -> "Guest C") --> Node("R203" -> "Guest F") --> Node(
         - If bucket converted to tree → iterates tree nodes in order.
 
  
+--------------------------------------------------------------------
+
+## 4️⃣ Processing Order Collection: FIFO and LIFO order
+- Examples of FIFO order collections:  PriorityQueue, ArrayDeque
+- Examples of LIFO order collections: Stack
+
+__LIFO order collections:  PriorityQueue, ArrayDeque Properties:__
+
+- FIFO processing
+- Used in scheduling
+- No random access
+
+Example:
+```java
+Queue<Integer> q = new LinkedList<>();
+q.add(1);
+q.add(2);
+q.poll(); // removes 1
+```
