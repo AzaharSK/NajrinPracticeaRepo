@@ -239,73 +239,7 @@ After every insertion (or deletion) it automatically fixes itself using recolori
 <img width="688" height="505" alt="image" src="https://github.com/user-attachments/assets/a43f5b76-d92c-416f-b419-7f894f15aabf" />
 <img width="876" height="760" alt="image" src="https://github.com/user-attachments/assets/072180d3-cc08-44f2-9608-e89e05a155e9" />
 
-
-----------------------------------------------------------------------------
-## 2️⃣ Set (Unique Collection)
-
-- Examples: HashSet, LinkedHashSet, TreeSet
-
-__Properties:__
-
-- No duplicates allowed
-- No index
-- Faster search
-- Used for uniqueness
-
-- `HashSet` ==== > store value in `Unpredictable order` at insertion, Order may change after rehashing.
-- `LinkedHashSet` ====> Manintain The `Insertion order`, Elements appear exactly as inserted
-- `TreeSet` ===> Manintain Automatically `sorted order` at insertion 
-
-__HashSet:__
-```java
-Set<Integer> set = new HashSet<>();
-set.add(30);
-set.add(10);
-set.add(10); // ignored -as it is a duplicate
-set.add(20);
-System.out.println(set); // [20, 30, 10]
-```
-__LinkedHashSet:__
-
-```java
-Set<Integer> set = new LinkedHashSet<>();
-set.add(30);
-set.add(10);
-set.add(10); // ignored -as it is a duplicate
-set.add(20);
-System.out.println(set); // [30, 10, 20]
-```
-__TreeSet:__ : Uses Red-Black Tree (Self-balancing BST), BST = Binary Search Tree
-
-```java
-Set<Integer> set = new TreeSet<>(); 
-set.add(30);
-set.add(10);
-set.add(20);
-System.out.println(set); // [10, 20, 30]
-```
-
--------------------------------------------------------------------
-
-## 3️⃣ Key-Value Collection — Separate Hierarchy: Map type
-
-- Examples: HashMap, LinkedHashMap, TreeMap
-
-__Properties:__
-
-- Stores key-value pairs
-- Keys unique
-- Values duplicate allowed
-- Not part of Collection interface
-
-```java
-Map<Integer,String> map = new HashMap<>();
-map.put(1,"A");
-map.put(1,"B"); // replaces value
-```
-
-----------------------------------------------------------
-
+--------------------------------------------------------------------
 ## Hashing :
 
 1️⃣ Concept
@@ -385,8 +319,72 @@ ArrayList[3] = Node("R103" -> "Guest C") --> Node("R203" -> "Guest F") --> Node(
 - 5. Iterates over buckets from 0 → (n-1) and within bucket nodes.
         - If bucket converted to tree → iterates tree nodes in order.
 ```
- 
---------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+## 2️⃣ Set (Unique Collection)
+
+- Examples: HashSet, LinkedHashSet, TreeSet
+
+__Properties:__
+
+- No duplicates allowed
+- No index
+- Faster search
+- Used for uniqueness
+
+- `HashSet` ==== > store value in `Unpredictable order` at insertion, Order may change after rehashing.
+- `LinkedHashSet` ====> Manintain The `Insertion order`, Elements appear exactly as inserted
+- `TreeSet` ===> Manintain Automatically `sorted order` at insertion 
+
+__HashSet:__
+```java
+Set<Integer> set = new HashSet<>();
+set.add(30);
+set.add(10);
+set.add(10); // ignored -as it is a duplicate
+set.add(20);
+System.out.println(set); // [20, 30, 10]
+```
+__LinkedHashSet:__
+
+```java
+Set<Integer> set = new LinkedHashSet<>();
+set.add(30);
+set.add(10);
+set.add(10); // ignored -as it is a duplicate
+set.add(20);
+System.out.println(set); // [30, 10, 20]
+```
+__TreeSet:__ : Uses Red-Black Tree (Self-balancing BST), BST = Binary Search Tree
+
+```java
+Set<Integer> set = new TreeSet<>(); 
+set.add(30);
+set.add(10);
+set.add(20);
+System.out.println(set); // [10, 20, 30]
+```
+
+-------------------------------------------------------------------
+
+## 3️⃣ Key-Value Collection — Separate Hierarchy: Map type
+
+- Examples: HashMap, LinkedHashMap, TreeMap
+
+__Properties:__
+
+- Stores key-value pairs
+- Keys unique
+- Values duplicate allowed
+- Not part of Collection interface
+
+```java
+Map<Integer,String> map = new HashMap<>();
+map.put(1,"A");
+map.put(1,"B"); // replaces value
+```
+
+---------------------------------------------------------
 
 
 __Hash Map Inetrface:__
