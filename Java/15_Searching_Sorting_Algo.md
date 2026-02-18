@@ -67,10 +67,9 @@ Binary Search is a searching algorithm To find whether a key value is present or
 
 - InputArray: [10, 20, 30, 40, 50, 60, 70]
 - Search key = 50
-- Steps:
 
 ```
-//Step #1
+////////////////////////  Step #1  ////////////////////////////////////
 low = 0 // Arr starting index 0
 high = Arr.size() -1 = 6 // Arr Last index
 mid = (low + high)/2  => ( 0 + 6 )/2 =3
@@ -80,7 +79,7 @@ mid = (low + high)/2  => ( 0 + 6 )/2 =3
 
 Middle = Arr[3] = 40  ==> Now compare key(50) > mid(40) → search right side
 
-//Step #2
+//////////////////////////////////// Step #2 ////////////////////////////////////
 low =  mid(3) + 1 = 4
 high = Arr.size() -1 = 6 // Arr Last index 
 mid = (low + high)/2  => ( 4 + 6 )/2 = 5
@@ -90,11 +89,45 @@ mid = (low + high)/2  => ( 4 + 6 )/2 = 5
 
 Middle = Arr[5] = 60  ==>  Now compare key(50) < Arr[mid](60) → → search left side
 
-//Step #3
+//////////////////////////////////// Step #3 ////////////////////////////////////
 low = 4
 high = mid(5) -1 = 4
 mid = (low + high)/2  => ( 4 + 4 )/2 = 4
 Middle = arr[4] =  Now compare key(50) == Arr[mid](50) → Found ✔
 ```
-→Repeat this process until the key is found o
-r the range becomes empty
+
+```java
+public class Test {
+
+    public static void main(String[] args) {
+
+        int[] arr = {10, 20, 30, 40, 50, 60, 70};
+        int key = 50;
+
+        int low = 0;
+        int high = arr.length - 1;
+        int pos = -1;
+
+        while (low <= high) {
+
+            int mid = (low + high) / 2;
+
+            if (arr[mid] == key) {
+                pos = mid;
+                break;
+            }
+            else if (key > arr[mid]) {
+                low = mid + 1;
+            }
+            else {
+                high = mid - 1;
+            }
+        }
+
+        if (pos != -1)
+            System.out.println("Key found at index: " + pos);
+        else
+            System.out.println("Key not found");
+    }
+}
+```
