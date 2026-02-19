@@ -439,7 +439,7 @@ mvn clean package
 ```
 
 ### Step 2: Create Backend App Service Plan:
-```
+```json
 $ az appservice plan create \
   --name todo-backend-plan \
   --resource-group Todo-Webapp-prod-rg \
@@ -674,7 +674,7 @@ $ az webapp deploy \
 
 - Your JAR is uploaded to the Kudu deployment engine inside Microsoft Azure App Service.
 
-```
+```json
 CLI uploads JAR
      ↓
 Kudu extracts & configures runtime
@@ -709,7 +709,7 @@ REACT_APP_API=https://todo-backend-api-12345.azurewebsites.net
 ```
 
 ### Step 2: Build React
-```bash
+```json
 npm install
 npm run build
 
@@ -719,20 +719,59 @@ build/
 
 ### Step 3: Create Frontend Web App
 
+```json
+$ az webapp create \
+  --resource-group Todo-Webapp-prod-rg \
+  --plan todo-prod-plan \
+  --name todo-frontend-12345 \
+  --runtime "NODE|18-lts"
+```
+### Step 4: Configure Static Site Hosting
 
+```json
+$ az webapp config set \
+  --resource-group Todo-Webapp-prod-rg \
+  --name todo-frontend-12345 \
+  --startup-file "pm2 serve /home/site/wwwroot --no-daemon --spa"
 
+```
 
+### Step 5: Deploy React Build
+```json
+cd build
+zip -r app.zip .
+
+az webapp deploy \
+  --resource-group Todo-Webapp-prod-rg \
+  --name todo-frontend-12345 \
+  --src-path app.zip \
+  --type zip
+
+```
+
+-------------------------------------------------------------
+
+## 🌍 Final Working URLs:
+
+__`Frontend:`__
+```
+https://todo-frontend-12345.azurewebsites.net
+```
+
+__`Backend API:`__
+
+```
+https://todo-backend-api-12345.azurewebsites.net/api/todos
+
+---------------------------------------------------
+```
 __⭐ Interview One-Line Answer:__
 
 - I deployed a 3-tier architecture on Azure.
 - `az webapp deploy` uploads the built application artifact to Azure App Service and triggers a runtime restart so the new version becomes live without managing infrastructure.
-- The React frontend is hosted on App Service, which calls a Spring Boot REST API hosted on another App Service.
+- The React frontend is hosted on App Service, which calls a Spring Boot REST API hosted on another App Service. 
 - The backend connects securely to Azure SQL Database for persistence. This design is scalable, stateless and cloud-native, allowing independent scaling of frontend and backend.
 
-
-
-
-```
 ## Why Azure CLI used in DevOps?
 
 - CMD line Automation script recipes
@@ -741,3 +780,57 @@ __⭐ Interview One-Line Answer:__
 - Docker/Kubernetes deployments
 - Remote server management
 
+
+## What Azure Automatically Handles (Important to Say in Interview)
+
+When backend runs on App Service, Azure provides:
+
+- 1) `Auto Scaling` - Automatically adds instances when traffic increases.
+- 2) `Load Balancer` - No nginx or HAProxy setup required.
+- 3) `Free SSL Certificate` -https://yourapi.azurewebsites.net
+- 4) `Process Monitoring (Auto-Heal)` - If Spring Boot crashes → Azure restarts it.
+- 5) `Logging & Monitoring` - Application logs
+    - HTTP logs
+    - Metrics
+    - Live
+    - log
+    - stream
+
+- 6) `Zero-Downtime Deployment` - New version deploy → old version stays running until ready.
+
+
+## What You Must Do on VM (Pain Points)
+
+If backend is on VM, you must: manual server administration.
+
+Install Java
+Install Maven
+Configure firewall
+Setup reverse proxy
+Setup HTTPS
+Setup auto restart (systemd)
+Setup logging
+Setup scaling
+Setup load balancer
+Handle OS updates
+
+- __VM`__ = __`You manage server`__
+- __`App Service`__ = __`Azure manages server`__
+
+👉 That’s why companies avoid VMs for web apps.
+
+## Interview Answer (Perfect)
+
+- I deployed the Spring Boot backend on Azure App Service instead of a Virtual Machine because App Service is a PaaS offering. Azure automatically manages runtime, scaling, SSL, monitoring and crash recovery.
+- This reduces operational overhead and supports CI/CD pipelines, whereas a VM would require manual server administration.
+
+## Then When VM is Actually Used (Trick Question) ?
+
+Use VM only when:
+
+- Custom OS needed
+- Special drivers required
+- Legacy monolith apps
+- Low-level network control needed
+- Not for typical REST APIs.
+- 
