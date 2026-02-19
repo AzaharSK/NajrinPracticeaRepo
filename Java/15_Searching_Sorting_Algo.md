@@ -143,28 +143,29 @@ public class Test {
 
 ```
 Phonebook: [A ... F] [G ... L] [M ... R] [S ... Z]
+Search Eliza's phone number?
 
 Step 1: Open middle page: Middle letters = M
-Compare: Bill < M  → search LEFT half
+Compare: "Eliza" < M  → search LEFT half
 
 
 Remaining search space:
 [A ... F] [G ... L]
 
 Step 2: Find middle again : Middle letters = G
-Compare:Bill < G → search LEFT half
+Compare: "Eliza" < G → search LEFT half
 
 
 Remaining:
 [A ... F]
 
 Step 3: Find middle again: Middle letters = C
-Compare: Bill > C → search Left half
-
+Compare: "Eliza" > C → search Right half
+[A, B] [C] [D, E,F]
 
 Remaining: 
-[A, B]
+[D, E,F]
 
-Step 4: Middle letters = B
-Compare:Bill matches → FOUND ✅
+Step 4: Middle letters = E
+Compare:Eliza page found  →  Eliza matches  FOUND ✅
 ```
