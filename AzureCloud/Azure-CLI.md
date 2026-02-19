@@ -391,8 +391,178 @@ __When you run az vm create, Azure also automatically creates:__
 - SSH Keys (in ~/.ssh)
 
 
+-------------------------------------------------------------------------------------------
+
+##  Perfect — now you have infra ready 🎯
+Let’s deploy:
+
+- __`Frontend:`__ React (Static site → App Service)
+- __`Backend:`__ Spring Boot (Java → App Service or VM)
+
+e.g- 
+
+```json
+User Browser
+     ↓
+React Frontend (Azure Web App)
+     ↓ REST API
+Spring Boot Backend (Azure Web App OR VM)
+     ↓
+Azure SQL Database
+```
+
+## 1️⃣ Backend — Spring Boot API (Java)
+
+### __Step 1: Build the JAR:__
+- Inside your Spring Boot project:
+
+```bash
+mvn clean package
+
+// Output: target/todo-0.0.1-SNAPSHOT.jar
+```
+
+### Step 2: Create Backend App Service Plan:
+```
+$ az appservice plan create \
+  --name todo-backend-plan \
+  --resource-group Todo-Webapp-prod-rg \
+  --sku B1 \
+  --is-linux
 
 
+// Sample Output:
+
+{
+  "id": "/subscriptions/xxxxxxxx/resourceGroups/Todo-Webapp-prod-rg/providers/Microsoft.Web/serverfarms/todo-backend-plan",
+  "name": "todo-backend-plan",
+  "type": "Microsoft.Web/serverfarms",
+  "location": "Central India",
+  "kind": "linux",
+  "reserved": true,
+  "status": "Ready",
+
+  "sku": {
+    "name": "B1",
+    "tier": "Basic",
+    "size": "B1",
+    "capacity": 1
+  },
+
+  "numberOfWorkers": 1,
+  "maximumNumberOfWorkers": 3,
+
+  "perSiteScaling": false,
+  "isSpot": false,
+  "hyperV": false,
+
+  "hostingEnvironmentProfile": null,
+
+  "workerTierName": null,
+  "targetWorkerCount": 0,
+  "targetWorkerSizeId": 0
+}
+```
+
+- It creates an App Service Plan — the compute container that hosts your web apps, You can deploy multiple apps into one plan.
+- `App Service Plan` = `Server (CPU + RAM)`
+- `Web App` = `Application running inside the server`
+
+<img width="946" height="641" alt="image" src="https://github.com/user-attachments/assets/0b0793e1-b93f-4e77-9976-10bf70c6576a" />
+
+### Step 3: Create Backend Web App:
+- Creates a Web App container where your Java backend will run.
+
+```json
+
+$ az webapp create \
+  --resource-group Todo-Webapp-prod-rg \
+  --plan todo-backend-plan \
+  --name todo-backend-api-12345 \
+  --runtime "JAVA|17-java17"
+
+// Sample Output:
+
+{
+  "id": "/subscriptions/xxxx/resourceGroups/Todo-Webapp-prod-rg/providers/Microsoft.Web/sites/todo-backend-api-12345",
+  "name": "todo-backend-api-12345",
+  "type": "Microsoft.Web/sites",
+  "kind": "app,linux",
+  "location": "Central India",
+  "state": "Running",
+
+  "defaultHostName": "todo-backend-api-12345.azurewebsites.net",
+  "httpsOnly": false,
+
+  "serverFarmId": "/subscriptions/xxxx/resourceGroups/Todo-Webapp-prod-rg/providers/Microsoft.Web/serverfarms/todo-backend-plan",
+
+  "siteConfig": {
+    "linuxFxVersion": "JAVA|17-java17",
+    "alwaysOn": false
+  },
+
+  "reserved": true,
+  "enabled": true
+}
+
+```
+- After deployment, Public URL Generated: https://todo-backend-api-12345.azurewebsites.net
+- your API will be available like: https://todo-backend-api-12345.azurewebsites.net/api/todos
+
+```
+Resource Group
+   └── App Service Plan (todo-backend-plan)
+           └── Web App (todo-backend-api-12345)
+```
+
+### Step 4: Configure Reverse proxy & Spring Boot Port
+
+- `Why Needed :` - Azure App Service does NOT directly expose your Java app to internet and Spring Boot runs on 8080 (HTTP web traffic Testing port)
+- isntead
+```
+Internet
+   ↓
+Azure Front-End Load Balancer
+   ↓
+Reverse Proxy (nginx inside App Service)
+   ↓
+Your Spring Boot Application
+
+```
+SO Configure above
+```json
+
+$ az webapp config appsettings set \
+  --resource-group Todo-Webapp-prod-rg \
+  --name todo-backend-api-12345 \
+  --settings WEBSITES_PORT=8080
+
+//Sample Output:
+[
+  {
+    "name": "WEBSITES_PORT",
+    "slotSetting": false,
+    "value": "8080"
+  }
+]
+
+```
+-  App must listen on the port Azure assigns, instead
+-  Azure proxy forwards traffic like: https://todo-backend-api-12345.azurewebsites.net HTTP Port 80 to Internal Testing PORT:8080
+- "My application listens on port 8080 — route traffic there."
+```
+
+###  Alternative Way to set PORT (Better Production Approach)
+
+- Instead of forcing 8080, let Azure decide: Add in application.properties
+```
+server.port=${PORT:8080}
+```
+
+Now:
+
+- Locally → runs on 8080
+Azure → runs on Azure provided PORT automatically
 
 
 
