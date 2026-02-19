@@ -183,7 +183,7 @@ __Key Benefits of using Resource Group:__
 - Easy automation & deployment
 - Environment separation (Dev / Test / Prod)
 
-<img width="1069" height="573" alt="image" src="https://github.com/user-attachments/assets/82fa42bb-455f-43cd-bf4d-09a0c95a50b1" />
+<img width="1769" height="973" alt="image" src="https://github.com/user-attachments/assets/82fa42bb-455f-43cd-bf4d-09a0c95a50b1" />
 
 ## Why Azure CLI used in DevOps?
 
