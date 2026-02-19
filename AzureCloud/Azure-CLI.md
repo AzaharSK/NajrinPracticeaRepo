@@ -347,6 +347,14 @@ $ az sql db create \
 <img width="900" height="282" alt="image" src="https://github.com/user-attachments/assets/bde3f8fe-0398-44e5-b7b7-5c02a877ddba" />
 
 
+
+__⭐ Interview One-Line Answer:__
+
+- First I created a logical SQL Server which acts as a database host.
+- Then I created a database inside that server using S0 pricing tier.
+- The application connects using the fully qualified domain name and SQL authentication.
+
+
 ## 6️⃣ Create Backend VM (APIs):
 
 ```json
@@ -382,6 +390,14 @@ az vm create \
 
 <img width="992" height="310" alt="image" src="https://github.com/user-attachments/assets/16a7717a-d570-4606-8914-73a30bf5b487" />
 
+
+__⭐ Interview One-Line Answer:__
+
+- I created an Ubuntu VM inside the application virtual network and subnet.
+- Azure automatically provisioned networking, public IP and SSH keys.
+- The backend REST APIs run inside this VM and communicate privately with database and storage using the private IP.
+
+
 __When you run az vm create, Azure also automatically creates:__
 
 - Network Interface (NIC)
@@ -411,7 +427,7 @@ Spring Boot Backend (Azure Web App OR VM)
 Azure SQL Database
 ```
 
-## 1️⃣ Backend — Spring Boot API (Java)
+## 1️⃣ Deploy Backend — Spring Boot API (Java) in Azure WebApp service
 
 ### __Step 1: Build the JAR:__
 - Inside your Spring Boot project:
@@ -670,8 +686,50 @@ Spring Boot application runs
 Public HTTPS endpoint becomes active
 ```
 
+  
 ### Step 8: Test API After success:
 - https://todo-backend-api-12345.azurewebsites.net/api/todos
+
+  
+__⭐ Interview One-Line Answer:__
+
+- I deployed the  backend Spring Boot API as separate App Services.
+- The frontend communicates with backend via REST API, and backend connects to Azure SQL Database.
+- This follows a scalable 3-tier architecture and avoids managing infrastructure manually.
+
+
+## 2️⃣ Deploy Frontend — React App on Azure WebApp service
+
+
+### Step 1: Configure Backend URL
+
+- Create `.env` in React:
+```ini
+REACT_APP_API=https://todo-backend-api-12345.azurewebsites.net
+```
+
+### Step 2: Build React
+```bash
+npm install
+npm run build
+
+//Output:Creates
+build/
+```
+
+### Step 3: Create Frontend Web App
+
+
+
+
+__⭐ Interview One-Line Answer:__
+
+- I deployed a 3-tier architecture on Azure.
+- `az webapp deploy` uploads the built application artifact to Azure App Service and triggers a runtime restart so the new version becomes live without managing infrastructure.
+- The React frontend is hosted on App Service, which calls a Spring Boot REST API hosted on another App Service.
+- The backend connects securely to Azure SQL Database for persistence. This design is scalable, stateless and cloud-native, allowing independent scaling of frontend and backend.
+
+
 
 
 ```
