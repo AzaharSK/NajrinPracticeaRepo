@@ -65,6 +65,12 @@ Binary Search is a searching algorithm To find whether a key value is present or
 - It does not check elements sequentially
 - Binary Search works on sorted data and repeatedly divides the search range in half, -- Making Faster search, then Linear Search.
 
+<img width="985" height="656" alt="image" src="https://github.com/user-attachments/assets/4650d462-1a0c-43e5-ac78-6fb4c121e89c" />
+<img width="889" height="487" alt="image" src="https://github.com/user-attachments/assets/dc413f00-bb0a-4b93-b964-b152f07960b3" />
+<img width="1782" height="1204" alt="image" src="https://github.com/user-attachments/assets/33c52d64-43b3-4e88-8ea2-a6eb30faf732" />
+
+
+
 - InputArray: [10, 20, 30, 40, 50, 60, 70]
 - Search key = 50
 
@@ -130,4 +136,35 @@ public class Test {
             System.out.println("Key not found");
     }
 }
+```
+
+## Real World Analogy:
+
+
+```
+Phonebook: [A ... F] [G ... L] [M ... R] [S ... Z]
+
+Step 1: Open middle page: Middle letters = M
+Compare: Bill < M  → search LEFT half
+
+
+Remaining search space:
+[A ... F] [G ... L]
+
+Step 2: Find middle again : Middle letters = G
+Compare:Bill < G → search LEFT half
+
+
+Remaining:
+[A ... F]
+
+Step 3: Find middle again: Middle letters = C
+Compare: Bill > C → search Left half
+
+
+Remaining: 
+[A, B]
+
+Step 4: Middle letters = B
+Compare:Bill matches → FOUND ✅
 ```
