@@ -754,13 +754,13 @@ az webapp deploy \
 ## 🌍 Final Working URLs:
 
 __`Frontend:`__
-```
+```json
 https://todo-frontend-12345.azurewebsites.net
 ```
 
 __`Backend API:`__
 
-```
+```json
 https://todo-backend-api-12345.azurewebsites.net/api/todos
 
 ---------------------------------------------------
@@ -803,7 +803,7 @@ When backend runs on App Service, Azure provides:
 
 If backend is on VM, you must: manual server administration.
 
-```
+```json
 Install Java
 Install Maven
 Configure firewall
