@@ -548,9 +548,9 @@ $ az webapp config appsettings set \
 
 ```
 -  App must listen on the port Azure assigns, instead
--  Azure proxy forwards traffic like: https://todo-backend-api-12345.azurewebsites.net HTTP Port 80 to Internal Testing PORT:8080
+-  Azure proxy forwards traffic like: https://todo-backend-api-12345.azurewebsites.net HTTP Port 80 ---------to---------> Internal Testing PORT:8080
 - "My application listens on port 8080 — route traffic there."
-```
+
 
 ###  Alternative Way to set PORT (Better Production Approach)
 
@@ -562,7 +562,7 @@ server.port=${PORT:8080}
 Now:
 
 - Locally → runs on 8080
-Azure → runs on Azure provided PORT automatically
+- Azure → runs on Azure provided PORT automatically
 
 
 
