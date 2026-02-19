@@ -185,6 +185,29 @@ __Key Benefits of using Resource Group:__
 
 <img width="1769" height="973" alt="image" src="https://github.com/user-attachments/assets/82fa42bb-455f-43cd-bf4d-09a0c95a50b1" />
 
+
+## Create Resource Group:
+
+```bash
+$ az group create \
+  --name Todo-Webapp-prod-rg \
+  --location centralindia
+
+
+// Output:
+{
+  "id": "/subscriptions/d8489a1f-c93d-42ee-8068-72ae05f9915b/resourceGroups/Todo-Webapp-prod-rg",
+  "location": "centralindia",
+  "managedBy": null,
+  "name": "Todo-Webapp-prod-rg",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
+
+
 ## Why Azure CLI used in DevOps?
 
 - CMD line Automation script recipes
