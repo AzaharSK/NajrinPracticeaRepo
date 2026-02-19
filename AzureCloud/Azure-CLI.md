@@ -814,7 +814,7 @@ Setup scaling
 Setup load balancer
 Handle OS updates
 
-- __VM`__ = __`You manage server`__
+- __`VM`__ = __`You manage server`__
 - __`App Service`__ = __`Azure manages server`__
 
 👉 That’s why companies avoid VMs for web apps.
