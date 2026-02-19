@@ -565,7 +565,116 @@ Now:
 - Azure → runs on Azure provided PORT automatically
 
 
+### Step 5: Add Database Connection:
 
+- First-of-all , You should not hardcode/ put password in application.properties in Todo project sourcecod below like
+
+```
+spring.datasource.url=jdbc:sqlserver://todo-sql-server-prod.database.windows.net:1433;database=todo-db
+spring.datasource.username=sqladmin
+spring.datasource.password=StrongPass@123
+```
+__Problems:__
+- Password committed to GitHub ❌
+- Anyone cloning repo gets DB access ❌
+- You must rebuild app for password change ❌
+- Violates DevOps & security compliance ❌
+
+__Correct Production Way__
+```json
+az webapp config appsettings set \
+  --resource-group Todo-Webapp-prod-rg \
+  --name todo-backend-api-12345 \
+  --settings \
+SPRING_DATASOURCE_URL="jdbc:sqlserver://todo-sql-server-prod.database.windows.net:1433;database=todo-db" \
+SPRING_DATASOURCE_USERNAME="sqladmin" \
+SPRING_DATASOURCE_PASSWORD="StrongPass@123"
+
+```
+
+OR
+
+__USe App Settings environment variables:__ Azure injects values as environment variables into your running Java process.
+
+- Spring Boot automatically maps below, So your app reads them without properties file.
+
+```
+SPRING_DATASOURCE_URL → spring.datasource.url
+SPRING_DATASOURCE_USERNAME → spring.datasource.username
+SPRING_DATASOURCE_PASSWORD → spring.datasource.password
+```
+
+Or
+
+__Even Better :Industry Standard `Use Azure Key Vault` (never store password in app settings either)__
+
+- Flow:
+```json
+Spring Boot → Managed Identity → Key Vault → SQL Password
+```
+- No password visible anywhere.
+
+### Step 6: Create DB Firewall rul:
+
+```json
+$ az sql server firewall-rule create \
+  --resource-group Todo-Webapp-prod-rg \
+  --server todo-sql-server-prod \
+  --name AllowAzure \
+  --start-ip-address 0.0.0.0 \
+  --end-ip-address 0.0.0.0
+```
+
+
+- Otherwise you get:
+```
+Cannot open server requested by the login
+Client with IP address is not allowed
+```
+
+### step 7: 
+
+```json
+$ az webapp deploy \
+  --resource-group Todo-Webapp-prod-rg \
+  --name todo-backend-api-12345 \
+  --src-path target/todo-0.0.1-SNAPSHOT.jar \
+  --type jar
+
+
+//Sample Output:
+
+{
+  "deploymentId": "c4c8a5d1-xxxx-xxxx-xxxx-2f4f3b2f7d1a",
+  "status": 4,
+  "status_text": "Deployment successful",
+  "active": true,
+  "received_time": "2026-02-19T09:42:21.231Z",
+  "end_time": "2026-02-19T09:43:02.442Z",
+  "log_url": "https://todo-backend-api-12345.scm.azurewebsites.net/api/deployments/c4c8a5d1/log"
+}
+
+```
+
+- Your JAR is uploaded to the Kudu deployment engine inside Microsoft Azure App Service.
+
+```
+CLI uploads JAR
+     ↓
+Kudu extracts & configures runtime
+     ↓
+Java container starts
+     ↓
+Spring Boot application runs
+     ↓
+Public HTTPS endpoint becomes active
+```
+
+### Step 8: Test API After success:
+- https://todo-backend-api-12345.azurewebsites.net/api/todos
+
+
+```
 ## Why Azure CLI used in DevOps?
 
 - CMD line Automation script recipes
