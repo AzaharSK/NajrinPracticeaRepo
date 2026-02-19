@@ -11,3 +11,23 @@ __👉 Alternative to:__
 __Key Point (Interview):__
 - Azure CLI is mainly used for automation, DevOps pipelines, scripting and remote server management.
 
+
+## Install Azure CLI (Linux – Ubuntu):
+
+```bash
+$ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+OR
+
+```
+
+## Check installation: or Version check:
+```bash
+$ az version
+
+//output:
+{
+  "azure-cli": "2.61.0",
+  "core": "2.61.0",
+  "extensions": {}
+}
