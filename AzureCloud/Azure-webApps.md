@@ -30,9 +30,13 @@ Backend → Azure Web App (Spring Boot API) instasnce2 → api.azurewebsites.net
 - Users never see servers — only HTTPS endpoints.
 - Enterprise Java Application like Banking / ERP system running WAR on Tomcat
 - Multiple micro-services : -  deployed independently on azure AppService instance, Instead of buying server or VPS → deploy in minutes
-      -  `user-service`,
-      -  `order-service`,
-      -  `payment-service`
 
+```json
+
+  user-service
+  order-service
+  payment-service
+
+```
 
 <img width="2000" height="1500" alt="image" src="https://github.com/user-attachments/assets/c332f225-4290-4767-a17f-532020563068" />
