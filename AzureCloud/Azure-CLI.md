@@ -803,6 +803,7 @@ When backend runs on App Service, Azure provides:
 
 If backend is on VM, you must: manual server administration.
 
+```
 Install Java
 Install Maven
 Configure firewall
@@ -813,6 +814,7 @@ Setup logging
 Setup scaling
 Setup load balancer
 Handle OS updates
+```
 
 - __`VM`__ = __`You manage server`__
 - __`App Service`__ = __`Azure manages server`__
