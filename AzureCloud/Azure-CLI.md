@@ -27,7 +27,32 @@ $ az version
 
 //output:
 {
-  "azure-cli": "2.61.0",
-  "core": "2.61.0",
+  "azure-cli": "2.83.0",
+  "azure-cli-core": "2.83.0",
+  "azure-cli-telemetry": "1.1.0",
   "extensions": {}
 }
+
+
+$ az --version
+
+//output:
+
+azure-cli                         2.83.0
+core                              2.83.0
+telemetry                          1.1.0
+
+Dependencies:
+msal                            1.35.0b1
+azure-mgmt-resource               23.3.0
+
+Python location '/opt/az/bin/python3'
+Config directory '/lhome/azahask/.azure'
+Extensions directory '/lhome/azahask/.azure/cliextensions'
+
+Python (Linux) 3.13.11 (main, Jan 27 2026, 07:21:51) [GCC 11.4.0]
+
+Legal docs and information: aka.ms/AzureCliLegal
+
+
+Your CLI is up-to-date
