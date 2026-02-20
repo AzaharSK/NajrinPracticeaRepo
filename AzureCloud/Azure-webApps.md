@@ -362,6 +362,8 @@ DB_PORT=5432
 
 - __Azure ignores .env — but locally it loads.__
 
+### Buy App service domain
+<img width="1490" height="767" alt="image" src="https://github.com/user-attachments/assets/2c96954e-4580-4995-a177-cfca0644dca0" />
 
 
 
