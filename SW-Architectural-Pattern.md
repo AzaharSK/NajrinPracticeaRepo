@@ -306,6 +306,8 @@ Cross‑Cutting Concerns:
 - When a user performs a fund transfer, the request flows from React → Controller → Service → Repository → Database, and the response returns as JSON to update UI.
 - Security, logging, and exception handling are implemented as cross-cutting concerns using Spring Security and AOP.
 
+-----
+
 
 * __GUI Applications__ - GUI frameworks often utilize MVC to separate the graphical interface (view) from the application logic (controller) and data model.
 
@@ -315,6 +317,9 @@ Cross‑Cutting Concerns:
 
 
 
+
+
+------------------------------------------------------------
 
 
 
