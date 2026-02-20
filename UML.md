@@ -54,3 +54,19 @@ All the above show the dynamic sequence of flow in a system.
 
 
 <img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/8ff30a0a-4470-476e-9ab9-9facec4a57c6" />
+
+### Type 1: Class diagrams
+
+__Member access modifiers:__
+- All classes have different access levels depending on the access modifier (visibility). Here are the access levels with their corresponding symbols:
+
+- Public (+)
+- Private (-)
+- Protected (#)
+- Package (~)
+- Derived (/)
+- Static (underlined)
+
+<img width="313" height="183" alt="image" src="https://github.com/user-attachments/assets/f16ba44c-73c4-4591-97b4-8a29080a7958" />
+<img width="286" height="176" alt="image" src="https://github.com/user-attachments/assets/74c51dcd-d439-4fb2-9832-8dddf112e721" />
+
