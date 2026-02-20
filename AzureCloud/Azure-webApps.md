@@ -71,9 +71,6 @@ Backend → Azure Web App (Spring Boot API) instasnce2 → api.azurewebsites.net
 
 
 
-### VS code azure webapp
-<img width="1675" height="1134" alt="image" src="https://github.com/user-attachments/assets/8fbb15f8-07b4-4dce-ae23-f702ab1989aa" />
-
 ## Open VSCOde in project dir
 
 ```json
@@ -109,7 +106,7 @@ def home():
 
 
 
-```
+```bash
 /fastapi-azure/Fastapi-demo$ git status
 On branch main
 Your branch is up to date with 'origin/main'.
@@ -120,15 +117,15 @@ Untracked files:
 	requirements.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
-(venv) azahask@c623lrd90445656:~/fastapi-azure/Fastapi-demo$ 
-(venv) azahask@c623lrd90445656:~/fastapi-azure/Fastapi-demo$ git add .
-(venv) azahask@c623lrd90445656:~/fastapi-azure/Fastapi-demo$ git commit -m "added app & dependecies"
+(venv) Fastapi-demo$ 
+(venv) Fastapi-demo$ git add .
+(venv) Fastapi-demo$ git commit -m "added app & dependecies"
 [main 8092529] added app & dependecies
  2 files changed, 24 insertions(+)
  create mode 100644 app.py
  create mode 100644 requirements.txt
 
-/fastapi-azure/Fastapi-demo$ git push 
+Fastapi-demo$ git push 
 Username for 'https://github.com': AzaharSK
 Password for 'https://AzaharSK@github.com': 
 Enumerating objects: 5, done.
@@ -142,6 +139,8 @@ To https://github.com/AzaharSK/Fastapi-demo.git
 
 ```
 
+<img width="1796" height="193" alt="image" src="https://github.com/user-attachments/assets/b2802787-0f48-4b66-9781-26af36634c6b" />
+
 <img width="1841" height="519" alt="image" src="https://github.com/user-attachments/assets/1b3482bc-5b07-4f90-80d8-9dd6ee2e7c76" />
 
 <img width="1677" height="1070" alt="image" src="https://github.com/user-attachments/assets/0482a978-17e5-42b3-a17a-61bad8017ddf" />
@@ -150,8 +149,15 @@ To https://github.com/AzaharSK/Fastapi-demo.git
 
 
 <img width="1811" height="983" alt="image" src="https://github.com/user-attachments/assets/147d2683-9424-4642-bb40-0c37128c1fba" />
-<img width="1796" height="193" alt="image" src="https://github.com/user-attachments/assets/b2802787-0f48-4b66-9781-26af36634c6b" />
 
 
 <img width="1778" height="918" alt="image" src="https://github.com/user-attachments/assets/53e19bd6-51cf-4cef-96fb-770f064f0127" />
+<img width="1542" height="1000" alt="image" src="https://github.com/user-attachments/assets/638a5c7d-f26b-489e-85e6-3e8fa857b683" />
 
+<img width="1604" height="685" alt="image" src="https://github.com/user-attachments/assets/6b4a389e-1684-487d-9335-3873d2e9e2ff" />
+<img width="1367" height="1104" alt="image" src="https://github.com/user-attachments/assets/52f9d7d4-8670-4180-b6be-ac464a2386c8" />
+<img width="1533" height="1041" alt="image" src="https://github.com/user-attachments/assets/4445888e-5e8d-45ab-ace7-7549e2c4abae" />
+
+
+### VS code azure webapp
+<img width="1675" height="1134" alt="image" src="https://github.com/user-attachments/assets/8fbb15f8-07b4-4dce-ae23-f702ab1989aa" />
