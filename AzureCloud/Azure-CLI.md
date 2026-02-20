@@ -12,6 +12,160 @@ __Key Point (Interview):__
 - Azure CLI is mainly used for automation, DevOps pipelines, scripting and remote server management.
 
 
+----------------------------------------------------------------------------------------------
+
+# Azure CLI Commands — One-Line Interview Answers
+
+## Account & Login
+- `az version` → Shows installed Azure CLI version and dependency details.
+- `az login` → Authenticates user to Azure account via browser/device login.
+- `az account list -o table` → Lists all subscriptions in a readable table format.
+- `az account set --subscription "Azure-subscription-1"` → Sets the active subscription for subsequent commands.
+- `az account show` → Displays current active subscription and tenant details.
+
+---
+
+## Resource Group
+- `az group create --name Todo-Webapp-prod-rg --location centralindia` → Creates a logical container to organize all Azure resources in a region.
+- `az group list -o table` → Lists all resource groups in the subscription.
+- `az group delete --name Todo-Webapp-prod-rg` → Deletes the resource group and all contained resources.
+
+---
+
+## Networking
+- `az network vnet create --resource-group Todo-Webapp-prod-rg --name todo-vnet --subnet-name todo-subnet` → Creates a virtual network and subnet for private communication between resources.
+- `az network vnet list -o table` → Lists all virtual networks.
+- `az network public-ip create --resource-group Todo-Webapp-prod-rg --name todo-ip` → Creates a public IP address.
+- `az network nsg create --resource-group Todo-Webapp-prod-rg --name todo-nsg` → Creates a Network Security Group (firewall rules).
+- `az network nsg rule create --resource-group Todo-Webapp-prod-rg --nsg-name todo-nsg --name AllowSSH --protocol Tcp --priority 1000 --destination-port-range 22 --access Allow` → Opens SSH port 22.
+
+---
+
+## Storage
+- `az storage account create --name todostorageprod12345 --resource-group Todo-Webapp-prod-rg --location centralindia --sku Standard_LRS` → Creates a storage account for blobs/files/queues with locally redundant storage.
+- `az storage account list -o table` → Lists storage accounts.
+- `az storage container create --name uploads --account-name todostorageprod12345` → Creates a blob container inside storage account.
+- `az storage blob upload --account-name todostorageprod12345 --container-name uploads --name file.txt --file file.txt` → Uploads file to blob storage.
+
+---
+
+## Database (Azure SQL)
+- `az sql server create --name todo-sql-server-prod --resource-group Todo-Webapp-prod-rg --location centralindia --admin-user sqladmin --admin-password StrongPass@123` → Creates a logical SQL Server instance to host databases.
+- `az sql db create --resource-group Todo-Webapp-prod-rg --server todo-sql-server-prod --name todo-db --service-objective S0` → Creates a SQL database with S0 performance tier.
+- `az sql db list --server todo-sql-server-prod -o table` → Lists databases inside SQL server.
+- `az sql server firewall-rule create --resource-group Todo-Webapp-prod-rg --server todo-sql-server-prod --name AllowAzure --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0` → Allows Azure services to access SQL Server through firewall.
+
+---
+
+## Virtual Machine (Backend API)
+- `az vm create --resource-group Todo-Webapp-prod-rg --name todo-backend-vm --image Ubuntu2204 --admin-username azureuser --generate-ssh-keys --vnet-name todo-vnet --subnet todo-subnet` → Creates Linux VM inside VNet with SSH access.
+- `az vm list -o table` → Lists all virtual machines.
+- `az vm start --name todo-backend-vm --resource-group Todo-Webapp-prod-rg` → Starts the VM.
+- `az vm stop --name todo-backend-vm --resource-group Todo-Webapp-prod-rg` → Stops the VM.
+- `az vm restart --name todo-backend-vm --resource-group Todo-Webapp-prod-rg` → Restarts the VM.
+- `az vm deallocate --name todo-backend-vm --resource-group Todo-Webapp-prod-rg` → Stops VM and releases billing compute charges.
+- `az vm delete --name todo-backend-vm --resource-group Todo-Webapp-prod-rg` → Deletes the virtual machine.
+- `az vm open-port --port 8080 --resource-group Todo-Webapp-prod-rg --name todo-backend-vm` → Opens application port in VM firewall.
+- `az vm run-command invoke --command-id RunShellScript --name todo-backend-vm --resource-group Todo-Webapp-prod-rg --scripts "sudo apt update"` → Executes remote command inside VM.
+- `az vm show --name todo-backend-vm --resource-group Todo-Webapp-prod-rg -d -o table` → Shows VM public IP and status.
+
+---
+
+## App Service (Web App Hosting)
+- `az appservice plan create --name todo-backend-plan --resource-group Todo-Webapp-prod-rg --sku B1 --is-linux` → Creates Linux App Service hosting plan.
+- `az webapp create --resource-group Todo-Webapp-prod-rg --plan todo-backend-plan --name todo-backend-api-12345 --runtime "JAVA|17-java17"` → Creates Java 17 web application.
+- `az webapp list -o table` → Lists all web apps.
+- `az webapp restart --name todo-backend-api-12345 --resource-group Todo-Webapp-prod-rg` → Restarts the web app.
+
+---
+
+## Application Configuration
+- `az webapp config appsettings set --resource-group Todo-Webapp-prod-rg --name todo-backend-api-12345 --settings WEBSITES_PORT=8080` → Sets application listening port.
+- `az webapp config appsettings set ... SPRING_DATASOURCE_URL/USERNAME/PASSWORD` → Adds environment variables for database connection.
+- `az webapp config appsettings list --name todo-backend-api-12345 --resource-group Todo-Webapp-prod-rg` → Lists all app settings.
+
+---
+
+## Logs & Monitoring
+- `az webapp log tail --name todo-backend-api-12345 --resource-group Todo-Webapp-prod-rg` → Streams live application logs.
+- `az monitor metrics list --resource todo-backend-api-12345 --metric CpuPercentage` → Shows CPU usage metrics.
+- `az monitor activity-log list --resource-group Todo-Webapp-prod-rg` → Shows audit activity logs.
+
+---
+
+## Deployment
+- `az webapp deploy --resource-group Todo-Webapp-prod-rg --name todo-backend-api-12345 --src-path target/todo-0.0.1-SNAPSHOT.jar --type jar` → Deploys Spring Boot JAR file to Azure web app.
+- `az webapp up --name todo-backend-api-quickstart --runtime "JAVA:17"` → Quickly creates and deploys a web app in one command.
+
+----------------------------------------------------------------------
+
+## Why Azure CLI used in DevOps?
+
+- CMD line Automation script recipes
+- Infrastructure as Code (IAC)
+- GitLab and github CI/CD pipelines
+- Docker/Kubernetes deployments
+- Remote server management
+
+
+## What Azure WebApp service Automatically Handles (Important to Say in Interview)
+
+When backend runs on App Service, Azure provides:
+
+- 1) `Auto Scaling` - Automatically adds instances when traffic increases.
+- 2) `Load Balancer` - No nginx or HAProxy setup required.
+- 3) `Free SSL Certificate` -https://yourapi.azurewebsites.net
+- 4) `Process Monitoring (Auto-Heal)` - If Spring Boot crashes → Azure restarts it.
+- 5) `Logging & Monitoring` - Application logs
+    - HTTP logs
+    - Metrics
+    - Live
+    - log
+    - stream
+
+- 6) `Zero-Downtime Deployment` - New version deploy → old version stays running until ready.
+
+
+## What You Must Do on VM (Pain Points)
+
+If backend is on VM, you must: manual server administration.
+
+```json
+Install Java
+Install Maven
+Configure firewall
+Setup reverse proxy
+Setup HTTPS
+Setup auto restart (systemd)
+Setup logging
+Setup scaling
+Setup load balancer
+Handle OS updates
+```
+
+- __`VM`__ = __`You manage server`__
+- __`App Service`__ = __`Azure manages server`__
+
+👉 That’s why companies avoid VMs for web apps.
+
+## Interview Answer (Perfect)
+
+- I deployed the Spring Boot backend on Azure App Service instead of a Virtual Machine because App Service is a PaaS offering. Azure automatically manages runtime, scaling, SSL, monitoring and crash recovery.
+- This reduces operational overhead and supports CI/CD pipelines, whereas a VM would require manual server administration.
+
+## Then When VM is Actually Used (Trick Question) ?
+
+Use VM only when:
+
+- Custom OS needed
+- Special drivers required
+- Legacy monolith apps
+- Low-level network control needed
+- Not for typical REST APIs.
+
+
+------------------------------------------------------------------------------------------------------------
+
 ## Install Azure CLI (Linux – Ubuntu):
 
 ```bash
@@ -773,66 +927,3 @@ __⭐ Interview One-Line Answer:__
 - The React frontend is hosted on App Service, which calls a Spring Boot REST API hosted on another App Service. 
 - The backend connects securely to Azure SQL Database for persistence. This design is scalable, stateless and cloud-native, allowing independent scaling of frontend and backend.
 
-## Why Azure CLI used in DevOps?
-
-- CMD line Automation script recipes
-- Infrastructure as Code (IAC)
-- GitLab and github CI/CD pipelines
-- Docker/Kubernetes deployments
-- Remote server management
-
-
-## What Azure Automatically Handles (Important to Say in Interview)
-
-When backend runs on App Service, Azure provides:
-
-- 1) `Auto Scaling` - Automatically adds instances when traffic increases.
-- 2) `Load Balancer` - No nginx or HAProxy setup required.
-- 3) `Free SSL Certificate` -https://yourapi.azurewebsites.net
-- 4) `Process Monitoring (Auto-Heal)` - If Spring Boot crashes → Azure restarts it.
-- 5) `Logging & Monitoring` - Application logs
-    - HTTP logs
-    - Metrics
-    - Live
-    - log
-    - stream
-
-- 6) `Zero-Downtime Deployment` - New version deploy → old version stays running until ready.
-
-
-## What You Must Do on VM (Pain Points)
-
-If backend is on VM, you must: manual server administration.
-
-```json
-Install Java
-Install Maven
-Configure firewall
-Setup reverse proxy
-Setup HTTPS
-Setup auto restart (systemd)
-Setup logging
-Setup scaling
-Setup load balancer
-Handle OS updates
-```
-
-- __`VM`__ = __`You manage server`__
-- __`App Service`__ = __`Azure manages server`__
-
-👉 That’s why companies avoid VMs for web apps.
-
-## Interview Answer (Perfect)
-
-- I deployed the Spring Boot backend on Azure App Service instead of a Virtual Machine because App Service is a PaaS offering. Azure automatically manages runtime, scaling, SSL, monitoring and crash recovery.
-- This reduces operational overhead and supports CI/CD pipelines, whereas a VM would require manual server administration.
-
-## Then When VM is Actually Used (Trick Question) ?
-
-Use VM only when:
-
-- Custom OS needed
-- Special drivers required
-- Legacy monolith apps
-- Low-level network control needed
-- Not for typical REST APIs.
