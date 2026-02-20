@@ -1,4 +1,4 @@
-## 🌐 1. Azure App Service (Web Apps) — MAIN HOSTING LAYER:
+<img width="1624" height="776" alt="image" src="https://github.com/user-attachments/assets/dd66f277-b1b9-41d7-9b27-8b74fd96ad2a" />## 🌐 1. Azure App Service (Web Apps) — MAIN HOSTING LAYER:
 
 - `Platform-as-a-Service` to host - No OS level management.
 
@@ -161,11 +161,17 @@ To https://github.com/AzaharSK/Fastapi-demo.git
 <img width="1693" height="1057" alt="image" src="https://github.com/user-attachments/assets/b1565332-2d81-4970-95e5-1a19d07f4d25" />
 
 `SAVE`
-<img width="1786" height="905" alt="image" src="https://github.com/user-attachments/assets/4a4586ba-baf9-43c2-aac8-a5e7c2d022a0" />
+
+## USE Python 3.11 (recomanded)
+<img width="1352" height="846" alt="image" src="https://github.com/user-attachments/assets/006e8e85-e64c-4c06-92e4-2eaac3478d9f" />
+
+
 <img width="998" height="333" alt="image" src="https://github.com/user-attachments/assets/0d277503-fc24-492c-8033-ce244325bd10" />
 <img width="1693" height="1057" alt="image" src="https://github.com/user-attachments/assets/18a838d6-4b5a-468e-b3f9-718e4dae1034" />
+<img width="1624" height="776" alt="image" src="https://github.com/user-attachments/assets/5e5b3ae9-aa53-4a3e-8a05-97fe129be7ef" />
 
 
+`SAVE`
 ### VS code azure webapp
 <img width="1675" height="1134" alt="image" src="https://github.com/user-attachments/assets/8fbb15f8-07b4-4dce-ae23-f702ab1989aa" />
 
