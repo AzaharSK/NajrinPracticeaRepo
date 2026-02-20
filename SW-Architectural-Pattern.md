@@ -145,7 +145,7 @@ public class Account {
 public interface AccountRepository extends JpaRepository<Account, Long> {}
 ```
 
-➡ This is the **Model in MVC**
+➡ This is the **M --> Model in MVC**
 
 ---
 
