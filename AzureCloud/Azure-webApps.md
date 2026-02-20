@@ -266,6 +266,19 @@ __Rollback ?__
 <img width="1900" height="963" alt="image" src="https://github.com/user-attachments/assets/9fb6796b-ad60-4c82-bd67-84873cc1e06f" /> 
 <img width="1900" height="963" alt="image" src="https://github.com/user-attachments/assets/d771d641-b7ef-41fa-9a68-a1a55101fcf8" />
 <img width="1388" height="805" alt="image" src="https://github.com/user-attachments/assets/d98f515e-29c1-49b5-89a8-e1059d3642ff" />
+### Set 50 % Traffic to staging slot for testing
+
+<img width="1920" height="691" alt="image" src="https://github.com/user-attachments/assets/9142e59f-87fb-41d3-aa13-292e8f6b768b" />
+
+## Disable Session Affinity and reload browser to test:
+<img width="1900" height="942" alt="image" src="https://github.com/user-attachments/assets/50bf4aa5-e1de-40af-965f-52559b88973a" />
+
+## Swap:
+<img width="1392" height="548" alt="image" src="https://github.com/user-attachments/assets/5075cef9-7f10-4885-bc73-5563c711cae0" />
+<img width="1900" height="942" alt="image" src="https://github.com/user-attachments/assets/21da3291-5fe9-4cf3-a6ea-1c431c02fbe1" />
+
+
+
 
 
 
