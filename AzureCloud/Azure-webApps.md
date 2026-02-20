@@ -161,6 +161,9 @@ To https://github.com/AzaharSK/Fastapi-demo.git
 <img width="1693" height="1057" alt="image" src="https://github.com/user-attachments/assets/b1565332-2d81-4970-95e5-1a19d07f4d25" />
 
 `SAVE`
+<img width="1786" height="905" alt="image" src="https://github.com/user-attachments/assets/4a4586ba-baf9-43c2-aac8-a5e7c2d022a0" />
+<img width="998" height="333" alt="image" src="https://github.com/user-attachments/assets/0d277503-fc24-492c-8033-ce244325bd10" />
+<img width="1693" height="1057" alt="image" src="https://github.com/user-attachments/assets/18a838d6-4b5a-468e-b3f9-718e4dae1034" />
 
 
 ### VS code azure webapp
