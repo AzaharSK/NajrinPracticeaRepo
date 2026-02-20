@@ -385,6 +385,11 @@ At Start-up:
 - Flow: ` App Service → Managed Identity → Key Vault → Secret → App reads secret `
 - (No passwords visible in portal)
 
+<img width="1896" height="1058" alt="image" src="https://github.com/user-attachments/assets/e3558dad-2c95-4d62-a494-e7b3d90dc85e" />
+
+<img width="1896" height="1058" alt="image" src="https://github.com/user-attachments/assets/b63eca15-c72b-4e87-ae47-e05d4ce3c930" />
+
+
 ## Interview explanation (short)
 
 - Azure App Service stores sensitive configuration like DB credentials in Application Settings, which are exposed to the runtime as environment variables.
