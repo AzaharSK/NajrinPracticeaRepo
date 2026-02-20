@@ -256,3 +256,17 @@ __You run a FastAPI API.__
 
 __Rollback ?__
 - 👉 Swap again (2 seconds)
+
+
+## Deployment slots are available for premium plans
+
+<img width="1359" height="723" alt="image" src="https://github.com/user-attachments/assets/0da47a53-53bb-429e-bf80-eacbc473e390" />
+<img width="1343" height="733" alt="image" src="https://github.com/user-attachments/assets/2e6d2302-e6f2-4f39-ba02-2653e6c07ead" />
+<img width="1693" height="1057" alt="image" src="https://github.com/user-attachments/assets/6ab9616f-99b5-459c-9159-9b63a0cc476f" />
+<img width="1900" height="963" alt="image" src="https://github.com/user-attachments/assets/9fb6796b-ad60-4c82-bd67-84873cc1e06f" /> 
+<img width="1900" height="963" alt="image" src="https://github.com/user-attachments/assets/d771d641-b7ef-41fa-9a68-a1a55101fcf8" />
+<img width="1388" height="805" alt="image" src="https://github.com/user-attachments/assets/d98f515e-29c1-49b5-89a8-e1059d3642ff" />
+
+
+
+
