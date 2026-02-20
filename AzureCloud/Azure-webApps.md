@@ -279,6 +279,92 @@ __Rollback ?__
 
 
 
+## Azure WebApp Environment Variables :
+
+- In Microsoft Azure App Service you never hard-code DB credentials in code.
+- You store them as Environment Variables (Application Settings) and read them in your app.
+- `App Service → Settings → Environment variables → Application settings → + Add`
+
+  
+<img width="1353" height="759" alt="image" src="https://github.com/user-attachments/assets/1ae0f488-d1e8-4765-b4b3-9ea31c3b5ac9" />
+
+```sql
+DB_HOST  		myserver.database.windows.net
+DB_NAME  		mydb
+DB_USER			dbadmin
+DB_PASSWORD		********
+DB_PORT		1433
+
+```
+- Click `Save` → `Restart`
+- ⚠️ Passwords here are encrypted automatically by Azure.
+
+
+### Read them inside FastAPI (Python-dotenv module)
+```bash
+pip install python-dotenv
+```
+
+__config.py__
+
+```python
+
+import os
+
+DB_HOST = os.getenv("DB_HOST")
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_PORT = os.getenv("DB_PORT", "1433")
+
+Now use it:
+
+from fastapi import FastAPI
+import os
+
+app = FastAPI()
+
+@app.get("/dbinfo")
+def dbinfo():
+    return {
+        "host": os.getenv("DB_HOST"),
+        "port": os.getenv("DB_PORT")
+    }
+```
+
+
+### Database connection example (PostgreSQL)
+
+```python
+
+import os
+from sqlalchemy import create_engine
+
+DATABASE_URL = f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@" \
+               f"{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
+
+engine = create_engine(DATABASE_URL)
+
+```
+
+### Local Test  development ( Use .env file)
+
+__Create .env locally:__
+
+```bash
+
+DB_HOST=localhost
+DB_NAME=testdb
+DB_USER=postgres
+DB_PASSWORD=1234
+DB_PORT=5432
+```
+
+- __Azure ignores .env — but locally it loads.__
+
+
+
+
 
 
 
