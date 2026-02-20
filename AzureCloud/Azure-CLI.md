@@ -150,7 +150,7 @@ Handle OS updates
 
 ## Interview Answer (Perfect)
 
-- I deployed the Spring Boot backend on Azure App Service instead of a Virtual Machine because App Service is a PaaS offering. Azure automatically manages runtime, scaling, SSL, monitoring and crash recovery.
+- I had deployed the Spring Boot backend on Azure App Service instead of a Virtual Machine because App Service is a PaaS offering. Azure automatically manages runtime, scaling, SSL, monitoring and crash recovery.
 - This reduces operational overhead and supports CI/CD pipelines, whereas a VM would require manual server administration.
 
 ## Then When VM is Actually Used (Trick Question) ?
