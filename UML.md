@@ -68,5 +68,5 @@ __Member access modifiers:__
 - Static (underlined)
 
 <img width="313" height="183" alt="image" src="https://github.com/user-attachments/assets/f16ba44c-73c4-4591-97b4-8a29080a7958" />
-<img width="286" height="176" alt="image" src="https://github.com/user-attachments/assets/74c51dcd-d439-4fb2-9832-8dddf112e721" />
+<img width=450"" height="206" alt="image" src="https://github.com/user-attachments/assets/74c51dcd-d439-4fb2-9832-8dddf112e721" />
 
