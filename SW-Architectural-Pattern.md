@@ -1,12 +1,309 @@
 ## Model-View-Controller (MVC):
 
-* __Web Applications__ - MVC is commonly used in web applications where the model represents the data (e.g., user information), the view represents the presentation layer (e.g., HTML pages), and the controller handles user input (e.g., HTTP requests).
+* __Web Applications__
+- The Model-View-Controller (MVC) framework is an architectural/design pattern that separates an application into three main logical components `Model`, `View`, and `Controller`.
+- Each architectural component is built to handle specific development aspects of an application. It isolates the business logic and presentation layer from each other.
+- MVC is commonly used in web applications where the model represents the data (e.g., user information), the view represents the presentation layer (e.g., HTML pages), and the controller handles user input (e.g., HTTP requests).
+
+__Features of MVC:__
+- It provides a clear separation of business logic, UI logic, and input logic.
+- It offers full control over your HTML and URLs which makes it easy to design web application architecture.
+- It is a powerful URL-mapping component using which we can build applications that have comprehensible and searchable URLs.
+- It supports Test Driven Development (TDD).
+
+
+<img width="850" height="508" alt="image" src="https://github.com/user-attachments/assets/fc04d0d7-89cf-4087-9fa5-596f8b186efa" />
+
+<img width="767" height="456" alt="image" src="https://github.com/user-attachments/assets/d8af322e-b9f9-4b97-82da-dfffc8c5ca88" />
+
+
+
+# MVC Design Pattern – Full Stack Banking Application (Spring Boot + React + Azure)
+
+---
+
+## 1. MVC Concept (Interview Definition)
+
+**MVC (Model–View–Controller)** separates application responsibilities into three layers:
+
+| Layer | Responsibility |
+|------|------|
+| Model | Business data, rules, and database interaction |
+| View | User Interface shown to users |
+| Controller | Handles request and coordinates Model + View |
+
+**Purpose:** Improves scalability, maintainability, and loose coupling.
+
+---
+
+## 2. Mapping Project Components to MVC
+
+Your project actually contains **two MVC architectures**:
+
+1. Backend MVC → Spring Boot (Server)
+2. Frontend MVC-like → React SPA (Client)
+
+---
+
+# BACKEND MVC (Spring Boot)
+
+## Controller Layer (Request Entry Point)
+Handles HTTP requests coming from React frontend.
+
+```java
+@RestController
+@RequestMapping("/api/accounts")
+public class AccountController {
+
+    @PostMapping("/transfer")
+    public ResponseEntity<?> transfer(@Valid @RequestBody TransferRequest dto){
+        transferService.transferMoney(dto);
+        return ResponseEntity.ok("Transfer Successful");
+    }
+}
+```
+
+### 👉 Interview Explanation:
+
+`Controller receives HTTP request, validates input DTO, calls Service layer and returns JSON response.`
+
+**Responsibilities:**
+- Accept API requests
+- Validate input DTO
+- Authenticate user
+- Call service layer
+- Return JSON response
+
+**Examples: Your Controllers:**
+- AccountController
+- TransactionController
+- AuthController
+- AuditController
+
+➡ This is the **C -> Controller in MVC**
+
+---
+
+## Service Layer (Business Logic – Part of Model)
+Contains banking rules and transaction processing.
+
+```java
+@Transactional
+public void transferMoney(TransferRequest dto){
+
+    Account from = accountRepo.findById(dto.getFromId())
+            .orElseThrow(() -> new AccountNotFoundException());
+
+    Account to = accountRepo.findById(dto.getToId())
+            .orElseThrow(() -> new AccountNotFoundException());
+
+    if(from.getBalance() < dto.getAmount())
+        throw new InsufficientBalanceException();
+
+    from.debit(dto.getAmount());
+    to.credit(dto.getAmount());
+
+    transactionRepo.save(new Transaction(...));
+}
+```
+
+### 👉 Interview Explanation:
+`Service layer contains actual banking rules like balance validation, atomic transaction, and business operations.`
+
+**Responsibilities:**
+- Business validations
+- Transaction management (ACID)
+- Audit logging
+- Email notification triggers
+
+---
+
+## Model Layer (Domain + Persistence)
+Includes:
+
+| Component | Role |
+|------|------|
+| Entities | Database tables mapping |
+| Repository | Database queries |
+| DTO | API data objects |
+| Validation | Data integrity |
+| AOP | Error models |
+| Transaction Logs | Business state |
+
+### Entity Example
+```java
+@Entity
+public class Account {
+   private Long id;
+   private String owner;
+   private BigDecimal balance;
+}
+```
+
+### Repository
+```java
+public interface AccountRepository extends JpaRepository<Account, Long> {}
+```
+
+➡ This is the **Model in MVC**
+
+---
+
+## Database
+MySQL / PostgreSQL tables:
+- accounts
+- transactions
+- users
+- audit_logs
+
+---
+
+## Backend View Layer
+Spring Boot returns JSON response instead of HTML UI.
+
+```json
+{
+  "status": "SUCCESS",
+  "transactionId": 78321,
+  "balance": 4500
+}
+```
+
+---
+
+# FRONTEND MVC (React SPA)
+
+React acts as the **real user interface View**.
+
+| React Component | MVC Role |
+|------|------|
+| React Pages | View |
+| Axios API Calls | Controller (Client Side) |
+| State (Redux/useState) | Model (UI State) |
+
+Example:
+
+```javascript
+const transferMoney = async () => {
+  await axios.post("/api/accounts/transfer", data, {
+     headers: { Authorization: `Bearer ${token}` }
+  });
+}
+```
+
+---
+
+# 3. End-to-End Flow (Fund Transfer Example)
+
+## Step 1 — User Action (View)
+User clicks **Transfer Money** in React UI.
+
+React sends:
+
+```
+POST /api/accounts/transfer
+```
+
+---
+
+## Step 2 — Controller (Spring Boot)
+AccountController receives request:
+- Validates DTO
+- Verifies JWT authentication
+- Calls service
+
+---
+
+## Step 3 — Service (Business Logic)
+TransferService performs:
+1. Fetch accounts
+2. Balance validation
+3. Debit & credit
+4. Insert transaction record
+5. Write audit log
+6. Send notification
+
+---
+
+## Step 4 — Model (Repository + Database)
+Repositories interact with DB:
+
+```
+AccountRepository → SELECT account
+TransactionRepository → INSERT transaction
+AuditRepository → INSERT audit log
+```
+
+Transactional safety ensured using `@Transactional`.
+
+---
+
+## Step 5 — Response (View)
+Controller returns JSON response.
+React updates UI.
+
+---
+
+# 4. Security in MVC
+
+Security acts as a cross‑cutting concern.
+
+Flow:
+1. React sends JWT token
+2. Security filter validates user
+3. Controller executes
+
+---
+
+# 5. AOP Exception Handling
+
+Instead of try‑catch blocks everywhere:
+
+```java
+@ExceptionHandler(AccountNotFoundException.class)
+```
+
+AOP intercepts controller and returns standardized error response.
+
+---
+
+# 6. Complete Architecture Diagram
+
+```
+React UI (View)
+      ↓ HTTP
+Spring Controller (Controller)
+      ↓
+Service Layer (Business Rules)
+      ↓
+Repository (Model)
+      ↓
+Database
+```
+
+Cross‑Cutting Concerns:
+- Security (JWT)
+- Logging & Auditing
+- Exception Handling (AOP)
+- Caching (Redis)
+- Monitoring
+
+---
+
+# 7. 30‑Second Interview Answer
+
+The application follows MVC architecture where React acts as the View layer providing UI screens. Spring Boot Controllers act as the Controller layer handling REST requests. The Model layer consists of JPA Entities, Repositories, and database tables storing accounts and transactions. When a user performs a fund transfer, the request flows from React → Controller → Service → Repository → Database, and the response returns as JSON to update UI. Security, logging, and exception handling are implemented as cross‑cutting concerns using Spring Security and AOP.
+
+
+
 
 * __GUI Applications__ - GUI frameworks often utilize MVC to separate the graphical interface (view) from the application logic (controller) and data model.
 
 * __Game Development__ - In game development, MVC can be applied to separate game state management (model) from rendering (view) and player input (controller).
 
 * ![image](https://github.com/user-attachments/assets/07d6d4d7-d1c7-4fd3-a2e1-d232627ae5af)
+
+
 
 
 
