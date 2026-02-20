@@ -40,3 +40,27 @@ Backend → Azure Web App (Spring Boot API) instasnce2 → api.azurewebsites.net
 ```
 
 <img width="2000" height="1500" alt="image" src="https://github.com/user-attachments/assets/c332f225-4290-4767-a17f-532020563068" />
+
+<img width="1839" height="1020" alt="image" src="https://github.com/user-attachments/assets/5faa8473-e27a-43bf-9028-baf034b86dc5" />
+<img width="1833" height="851" alt="image" src="https://github.com/user-attachments/assets/acf21586-00df-43f0-8130-71545116a037" />
+<img width="1858" height="945" alt="image" src="https://github.com/user-attachments/assets/0d437b94-ee09-45ae-9404-5020aa529aaa" />
+<img width="1858" height="945" alt="image" src="https://github.com/user-attachments/assets/42f2cc4c-1253-4d21-84c9-6ae99ab43590" />
+<img width="1748" height="1095" alt="image" src="https://github.com/user-attachments/assets/bf65cb7d-a352-4498-a916-25f709f4448f" />
+
+### Select App Service Pricing Plan:
+<img width="1849" height="1115" alt="image" src="https://github.com/user-attachments/assets/bda6b23c-2d07-41f2-bc50-f6932cd72c3f" />
+<img width="1402" height="494" alt="image" src="https://github.com/user-attachments/assets/71c9862a-5ee8-403a-9f43-e8fd401abfe4" />
+<img width="1630" height="1092" alt="image" src="https://github.com/user-attachments/assets/98ffaeb9-3ecd-41da-a9a9-cce468a3d62d" />
+<img width="1550" height="736" alt="image" src="https://github.com/user-attachments/assets/b4e96141-80d8-4f23-8d55-2165969181d2" />
+
+### Enable Monitoring performance matrices service
+<img width="1649" height="1012" alt="image" src="https://github.com/user-attachments/assets/024acae0-e026-4482-b4c5-0f1ca55fcd1b" />
+
+<img width="1856" height="1121" alt="image" src="https://github.com/user-attachments/assets/c041fae9-cea3-4d05-85ac-49764ea95b60" />
+
+### Created Webapp services
+
+<img width="1876" height="859" alt="image" src="https://github.com/user-attachments/assets/e077ac61-e697-4e14-81a0-153b314137ea" />
+<img width="1824" height="1105" alt="image" src="https://github.com/user-attachments/assets/96ef7c47-eb3e-4199-ab15-0564d3dc4b5a" />
+
+
