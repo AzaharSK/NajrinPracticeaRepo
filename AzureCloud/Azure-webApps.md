@@ -176,6 +176,12 @@ To https://github.com/AzaharSK/Fastapi-demo.git
 
 
 `SAVE`
+<img width="1233" height="221" alt="image" src="https://github.com/user-attachments/assets/86f3eb43-3805-4b2d-94fb-bca4674fd48c" />
+
+
+-------------------------------------------------------------
+
+## Local VSCODE deployment
 ### VS code azure webapp
 <img width="1675" height="1134" alt="image" src="https://github.com/user-attachments/assets/8fbb15f8-07b4-4dce-ae23-f702ab1989aa" />
 
