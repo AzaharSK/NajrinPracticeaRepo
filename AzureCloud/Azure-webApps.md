@@ -367,7 +367,23 @@ DB_PORT=5432
 
 
 
+## Special Azure variables (very important): Azure automatically provides:
+PORT     			Web server port (must use)
+WEBSITE_HOSTNAME  	your public URL
+WEBSITE_SITE_NAME   app name
 
+At Start-up:
+` uvicorn app:app --host 0.0.0.0 --port $PORT `
 
+### Secure way (production best practice)
+
+- Instead of storing password directly → use Azure Key Vault
+- Flow: ` App Service → Managed Identity → Key Vault → Secret → App reads secret `
+- (No passwords visible in portal)
+
+## Interview explanation (short)
+
+- Azure App Service stores sensitive configuration like DB credentials in Application Settings, which are exposed to the runtime as environment variables.
+- The application reads them using os.getenv(), enabling secure configuration without hardcoding secrets.
 
 
