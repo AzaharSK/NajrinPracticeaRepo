@@ -70,3 +70,94 @@ Backend → Azure Web App (Spring Boot API) instasnce2 → api.azurewebsites.net
 <img width="1824" height="1105" alt="image" src="https://github.com/user-attachments/assets/96ef7c47-eb3e-4199-ab15-0564d3dc4b5a" />
 
 
+
+### VS code azure webapp
+<img width="1675" height="1134" alt="image" src="https://github.com/user-attachments/assets/8fbb15f8-07b4-4dce-ae23-f702ab1989aa" />
+
+## Open VSCOde in project dir
+
+```json
+mkdir fastapi-azure
+cd fastapi-azure
+code .
+```
+
+<img width="1541" height="1093" alt="image" src="https://github.com/user-attachments/assets/2cd7adb9-5226-4388-8e75-637136bf4dec" />
+
+```json
+python3 -m venv venv
+source venv/bin/activate
+
+pip install fastapi uvicorn[standard] 
+pip freeze > requirements.txt
+
+touch app.py
+touch startup.sh`
+```
+`app.py`
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"message": "FastAPI running on Azure WebApp 🚀"}
+```
+
+startup.sh`
+```json
+gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app
+```
+- `chmod +x startup.sh`
+
+
+
+```
+/fastapi-azure/Fastapi-demo$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app.py
+	requirements.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+(venv) azahask@c623lrd90445656:~/fastapi-azure/Fastapi-demo$ 
+(venv) azahask@c623lrd90445656:~/fastapi-azure/Fastapi-demo$ git add .
+(venv) azahask@c623lrd90445656:~/fastapi-azure/Fastapi-demo$ git commit -m "added app & dependecies"
+[main 8092529] added app & dependecies
+ 2 files changed, 24 insertions(+)
+ create mode 100644 app.py
+ create mode 100644 requirements.txt
+
+/fastapi-azure/Fastapi-demo$ git push 
+Username for 'https://github.com': AzaharSK
+Password for 'https://AzaharSK@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 32 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 657 bytes | 657.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AzaharSK/Fastapi-demo.git
+   8240749..8092529  main -> main
+
+
+<img width="1677" height="1070" alt="image" src="https://github.com/user-attachments/assets/0482a978-17e5-42b3-a17a-61bad8017ddf" />
+<img width="1237" height="1105" alt="image" src="https://github.com/user-attachments/assets/9922c3ee-679e-4110-8711-c3a57f9bcd29" />
+<img width="1521" height="1139" alt="image" src="https://github.com/user-attachments/assets/b56cb094-dbd5-4cda-a35d-4ae1cf476778" />
+
+
+<img width="1811" height="983" alt="image" src="https://github.com/user-attachments/assets/147d2683-9424-4642-bb40-0c37128c1fba" />
+<img width="1796" height="193" alt="image" src="https://github.com/user-attachments/assets/b2802787-0f48-4b66-9781-26af36634c6b" />
+
+
+<img width="1541" height="1093" alt="image" src="https://github.com/user-attachments/assets/1644208d-99aa-481c-b214-ad5c4e1634bd" />
+<img width="1842" height="1113" alt="image" src="https://github.com/user-attachments/assets/26db8d28-18b7-4921-8ce1-ad7a9753dfdf" />
+
+<img width="1857" height="914" alt="image" src="https://github.com/user-attachments/assets/755cf183-6a08-4457-8930-635539fb0069" />
+
+
