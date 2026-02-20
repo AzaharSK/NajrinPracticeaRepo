@@ -158,9 +158,11 @@ MySQL / PostgreSQL tables:
 
 ---
 
-## Backend View Layer
-Spring Boot returns JSON response instead of HTML UI.
+## View Layer (Backend Perspective)
 
+- Spring Boot is REST based → returns JSON (returns JSON response instead of HTML UI.)
+- So the backend "View" is actually JSON Response
+ 
 ```json
 {
   "status": "SUCCESS",
@@ -173,7 +175,7 @@ Spring Boot returns JSON response instead of HTML UI.
 
 # FRONTEND MVC (React SPA)
 
-React acts as the **real user interface View**.
+React acts as the **real user interface-UI View**.
 
 | React Component | MVC Role |
 |------|------|
@@ -198,7 +200,7 @@ const transferMoney = async () => {
 ## Step 1 — User Action (View)
 User clicks **Transfer Money** in React UI.
 
-React sends:
+React sends: React Form → sends HTTP request
 
 ```
 POST /api/accounts/transfer
@@ -207,7 +209,7 @@ POST /api/accounts/transfer
 ---
 
 ## Step 2 — Controller (Spring Boot)
-AccountController receives request:
+`AccountController` receives request:
 - Validates DTO
 - Verifies JWT authentication
 - Calls service
@@ -216,12 +218,12 @@ AccountController receives request:
 
 ## Step 3 — Service (Business Logic)
 TransferService performs:
-1. Fetch accounts
-2. Balance validation
+1. Fetch accounts from DB
+2. Balance validation / Check balance
 3. Debit & credit
-4. Insert transaction record
+4. Insert transaction record / Create transaction record
 5. Write audit log
-6. Send notification
+6. Send email notification
 
 ---
 
@@ -234,7 +236,8 @@ TransactionRepository → INSERT transaction
 AuditRepository → INSERT audit log
 ```
 
-Transactional safety ensured using `@Transactional`.
+-Transactional safety ensured using `@Transactional`.
+-👉 Ensures ACID banking safety
 
 ---
 
@@ -246,7 +249,8 @@ React updates UI.
 
 # 4. Security in MVC
 
-Security acts as a cross‑cutting concern.
+- Spring Security + JWT
+- Security acts as a cross‑cutting concern.
 
 Flow:
 1. React sends JWT token
@@ -255,15 +259,18 @@ Flow:
 
 ---
 
+- So security runs before Controller
+
 # 5. AOP Exception Handling
 
+If this project uses AOP for exception handling.
 Instead of try‑catch blocks everywhere:
 
 ```java
 @ExceptionHandler(AccountNotFoundException.class)
 ```
 
-AOP intercepts controller and returns standardized error response.
+- AOP intercepts controller and returns standardized error response.
 
 ---
 
@@ -282,19 +289,22 @@ Database
 ```
 
 Cross‑Cutting Concerns:
-- Security (JWT)
+- Spring Security + JWT
 - Logging & Auditing
-- Exception Handling (AOP)
+- AOP Exception Handler
 - Caching (Redis)
 - Monitoring
+- Email Notification
 
 ---
 
 # 7. 30‑Second Interview Answer
 
-The application follows MVC architecture where React acts as the View layer providing UI screens. Spring Boot Controllers act as the Controller layer handling REST requests. The Model layer consists of JPA Entities, Repositories, and database tables storing accounts and transactions. When a user performs a fund transfer, the request flows from React → Controller → Service → Repository → Database, and the response returns as JSON to update UI. Security, logging, and exception handling are implemented as cross‑cutting concerns using Spring Security and AOP.
-
-
+- The application follows MVC architecture where React acts as the View layer providing UI screens.
+- Spring Boot Controllers act as the Controller layer handling REST requests.
+- The Model layer consists of JPA Entities, Repositories, and database tables storing accounts and transactions.
+- When a user performs a fund transfer, the request flows from React → Controller → Service → Repository → Database, and the response returns as JSON to update UI.
+- Security, logging, and exception handling are implemented as cross-cutting concerns using Spring Security and AOP.
 
 
 * __GUI Applications__ - GUI frameworks often utilize MVC to separate the graphical interface (view) from the application logic (controller) and data model.
