@@ -1,4 +1,4 @@
-<img width="1624" height="776" alt="image" src="https://github.com/user-attachments/assets/dd66f277-b1b9-41d7-9b27-8b74fd96ad2a" />## 🌐 1. Azure App Service (Web Apps) — MAIN HOSTING LAYER:
+## 🌐 1. Azure App Service (Web Apps) — MAIN HOSTING LAYER:
 
 - `Platform-as-a-Service` to host - No OS level management.
 
