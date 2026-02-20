@@ -58,6 +58,12 @@ Backend → Azure Web App (Spring Boot API) instasnce2 → api.azurewebsites.net
 
 <img width="1856" height="1121" alt="image" src="https://github.com/user-attachments/assets/c041fae9-cea3-4d05-85ac-49764ea95b60" />
 
+### Scalling:
+<img width="1813" height="1147" alt="image" src="https://github.com/user-attachments/assets/f73be425-e45c-4682-9224-25809f2de58e" />
+<img width="1876" height="1079" alt="image" src="https://github.com/user-attachments/assets/843524e4-e93c-4dfa-b99d-b9893f070db0" />
+
+
+
 ### Created Webapp services
 
 <img width="1876" height="859" alt="image" src="https://github.com/user-attachments/assets/e077ac61-e697-4e14-81a0-153b314137ea" />
