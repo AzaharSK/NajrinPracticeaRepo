@@ -147,17 +147,16 @@ To https://github.com/AzaharSK/Fastapi-demo.git
 
 ```
 
+## Run Localy First:
+<img width="1811" height="983" alt="image" src="https://github.com/user-attachments/assets/147d2683-9424-4642-bb40-0c37128c1fba" />
 <img width="1796" height="193" alt="image" src="https://github.com/user-attachments/assets/b2802787-0f48-4b66-9781-26af36634c6b" />
 
-<img width="1841" height="519" alt="image" src="https://github.com/user-attachments/assets/1b3482bc-5b07-4f90-80d8-9dd6ee2e7c76" />
 
+## Deploy it in Azure Web App service using github repo:
+<img width="1841" height="519" alt="image" src="https://github.com/user-attachments/assets/1b3482bc-5b07-4f90-80d8-9dd6ee2e7c76" />
 <img width="1677" height="1070" alt="image" src="https://github.com/user-attachments/assets/0482a978-17e5-42b3-a17a-61bad8017ddf" />
 <img width="1237" height="1105" alt="image" src="https://github.com/user-attachments/assets/9922c3ee-679e-4110-8711-c3a57f9bcd29" />
 <img width="1521" height="1139" alt="image" src="https://github.com/user-attachments/assets/b56cb094-dbd5-4cda-a35d-4ae1cf476778" />
-
-
-<img width="1811" height="983" alt="image" src="https://github.com/user-attachments/assets/147d2683-9424-4642-bb40-0c37128c1fba" />
-
 
 <img width="1778" height="918" alt="image" src="https://github.com/user-attachments/assets/53e19bd6-51cf-4cef-96fb-770f064f0127" />
 <img width="1542" height="1000" alt="image" src="https://github.com/user-attachments/assets/638a5c7d-f26b-489e-85e6-3e8fa857b683" />
