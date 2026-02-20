@@ -77,7 +77,7 @@ __Member access modifiers:__
 <img width="1100" height="408" alt="image" src="https://github.com/user-attachments/assets/70e82e8f-ad21-4cb5-b100-afecc507248c" />
 
 
-### Relationships:
+###  Type 2 : Relationships:
 
 <img width="1267" height="950" alt="image" src="https://github.com/user-attachments/assets/573d5163-b8a7-404f-bf4e-eed3e9e6c0c9" />
 
@@ -104,27 +104,48 @@ __Member access modifiers:__
 <img width="1700" height="2276" alt="image" src="https://github.com/user-attachments/assets/6cac9ce2-c920-4381-96cf-e5f6678cf24d" />
 
 
-### Object Diagram:
+###  Type 3: Object Diagram:
 
 <img width="961" height="745" alt="image" src="https://github.com/user-attachments/assets/bd170abc-b9b8-42e1-bf53-f3c7afd437e2" />
 
 
-### Type : Component Diagram
+### Type 4: Component Diagram
 
 <img width="948" height="867" alt="image" src="https://github.com/user-attachments/assets/f76440d5-d342-4dff-9164-66d40cf44990" />
 
-### Package Diagram:
-<img width="951" height="677" alt="image" src="https://github.com/user-attachments/assets/17be6ee2-e071-4d0c-967b-891de0e9b653" />
+### Type 5: Composite structure diagrams
+<img width="1030" height="645" alt="image" src="https://github.com/user-attachments/assets/593d32a3-d727-4af7-be89-4b7f08c6a2d4" />
 
-### Deployment Diagram
+###  Type 6: Package Diagram:
+<img width="951" height="677" alt="image" src="https://github.com/user-attachments/assets/17be6ee2-e071-4d0c-967b-891de0e9b653" />
+<img width="1440" height="850" alt="image" src="https://github.com/user-attachments/assets/eeb887bd-6be1-4f43-919b-9e440f9384d0" />
+
+###  Type 7: Deployment Diagram
 
 <img width="965" height="645" alt="image" src="https://github.com/user-attachments/assets/262bd5d2-b8d6-42f1-98a6-5b98260144bc" />
+<img width="479" height="417" alt="image" src="https://github.com/user-attachments/assets/221ddab8-b4bc-4b07-aadc-3f380c6ddb28" />
 
 
-### Type : Communication Diagram
+###  Type 8: Use Case UML diagram:
+
+<img width="949" height="680" alt="image" src="https://github.com/user-attachments/assets/2a06e6ab-6a5f-48b8-8986-ca7665b09849" />
+<img width="446" height="323" alt="image" src="https://github.com/user-attachments/assets/dd760d87-5877-420c-bbc3-71a040b92ccd" />
+<img width="1440" height="850" alt="image" src="https://github.com/user-attachments/assets/402c6ded-92d3-49e5-b419-6fc61481f1a1" />
+
+###  Type 9: User Activity Diagram:
+<img width="952" height="738" alt="image" src="https://github.com/user-attachments/assets/749df185-aa09-4ac6-b0be-2075de074113" />
+
+
+### Type 10: Communication Diagram
 <img width="1042" height="746" alt="image" src="https://github.com/user-attachments/assets/870484d2-82b2-42dd-a446-d0697dc74148" />
 
-### Type : Sequence diagram
+### Type 11: Sequence diagram
 
 <img width="1029" height="949" alt="image" src="https://github.com/user-attachments/assets/bc7fff98-5c84-45b7-be82-518c4ce67737" />
 <img width="965" height="698" alt="image" src="https://github.com/user-attachments/assets/8b415f25-0324-4947-8ee2-911bf9da549e" />
+
+###  Type 12: State Machine Diagrams/  State-chart Diagrams:
+
+<img width="946" height="678" alt="image" src="https://github.com/user-attachments/assets/8a6ddd24-ee2c-493c-b6a6-699c77c53bfe" />
+
+<img width="958" height="416" alt="image" src="https://github.com/user-attachments/assets/ac708568-0814-45b6-9049-8867a5a6fb59" />
