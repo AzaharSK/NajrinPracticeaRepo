@@ -77,14 +77,12 @@ Backend → Azure Web App (Spring Boot API) instasnce2 → api.azurewebsites.net
 ## Open VSCOde in project dir
 
 ```json
-mkdir fastapi-azure
-cd fastapi-azure
+mkdir Fastapi-demo
+cd Fastapi-demo
 code .
-```
 
-<img width="1541" height="1093" alt="image" src="https://github.com/user-attachments/assets/2cd7adb9-5226-4388-8e75-637136bf4dec" />
+// Open VSCODE terminal
 
-```json
 python3 -m venv venv
 source venv/bin/activate
 
@@ -92,7 +90,7 @@ pip install fastapi uvicorn[standard]
 pip freeze > requirements.txt
 
 touch app.py
-touch startup.sh`
+
 ```
 `app.py`
 
@@ -106,11 +104,8 @@ def home():
     return {"message": "FastAPI running on Azure WebApp 🚀"}
 ```
 
-startup.sh`
-```json
-gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app
-```
-- `chmod +x startup.sh`
+
+<img width="1778" height="918" alt="image" src="https://github.com/user-attachments/assets/73a6ccae-e74e-4384-8fea-6d3fbb94d7cf" />
 
 
 
@@ -145,6 +140,9 @@ Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
 To https://github.com/AzaharSK/Fastapi-demo.git
    8240749..8092529  main -> main
 
+```
+
+<img width="1841" height="519" alt="image" src="https://github.com/user-attachments/assets/1b3482bc-5b07-4f90-80d8-9dd6ee2e7c76" />
 
 <img width="1677" height="1070" alt="image" src="https://github.com/user-attachments/assets/0482a978-17e5-42b3-a17a-61bad8017ddf" />
 <img width="1237" height="1105" alt="image" src="https://github.com/user-attachments/assets/9922c3ee-679e-4110-8711-c3a57f9bcd29" />
@@ -155,9 +153,5 @@ To https://github.com/AzaharSK/Fastapi-demo.git
 <img width="1796" height="193" alt="image" src="https://github.com/user-attachments/assets/b2802787-0f48-4b66-9781-26af36634c6b" />
 
 
-<img width="1541" height="1093" alt="image" src="https://github.com/user-attachments/assets/1644208d-99aa-481c-b214-ad5c4e1634bd" />
-<img width="1842" height="1113" alt="image" src="https://github.com/user-attachments/assets/26db8d28-18b7-4921-8ce1-ad7a9753dfdf" />
-
-<img width="1857" height="914" alt="image" src="https://github.com/user-attachments/assets/755cf183-6a08-4457-8930-635539fb0069" />
-
+<img width="1778" height="918" alt="image" src="https://github.com/user-attachments/assets/53e19bd6-51cf-4cef-96fb-770f064f0127" />
 
