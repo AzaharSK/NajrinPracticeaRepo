@@ -194,3 +194,65 @@ To https://github.com/AzaharSK/Fastapi-demo.git
 <img width="1693" height="1057" alt="image" src="https://github.com/user-attachments/assets/7d50b881-9c1e-4f2d-8519-529141021ac2" />
 <img width="1693" height="1057" alt="image" src="https://github.com/user-attachments/assets/6282aaf2-acdf-450a-ba19-7d8981b4a05e" />
 
+
+## What is Deployment slot , Production & staging
+
+- In Microsoft Azure App Service, a Deployment Slot is like a separate copy of your web app running inside the same App Service plan — but with its own URL (slightly different then production one), settings, and code version.
+
+Think of it as:
+- 👉 Multiple environments (Prod / Test / QA) inside one app.
+
+```json
+Users visit → Production version (Live App used by real users)  - URL: https://myapp.azurewebsites.net
+
+Developers use → Staging version (Testing App - Safe testing environment before release) - URL https://myapp-staging.azurewebsites.net
+
+But Both runs simultaneously.
+
+```
+- You deploy new code to Staging, test it, then instantly swap with Production.
+- After testing:
+  
+```json
+Swap <====> Staging becomes Production
+
+Old Production becomes Staging
+```
+
+<img width="1003" height="276" alt="image" src="https://github.com/user-attachments/assets/fa8fb028-7339-43fa-8aeb-e06a4d5abd28" />
+
+
+### Why slots are powerful ?
+
+- Deployment slots enable zero-downtime deployment and instant rollback in Azure App Service.
+- __Without slots:__ `Deploy → App restarts → Users see errors 😱`
+- __With slots:__ `Deploy to staging → test → swap → zero downtime 😎`
+
+
+### What happens during swap
+
+__Azure swaps:__
+
+- code
+- containers
+- environment variables (optional)
+- connection strings (optional)
+
+__But keeps:__
+
+- hostname
+- SSL
+- traffic
+
+So users never notice deployment.
+
+### Real world example (FastAPI)
+
+__You run a FastAPI API.__
+- Deploy new version to staging
+- QA tests endpoints
+- Click Swap
+- New API becomes live instantly
+
+__Rollback ?__
+- 👉 Swap again (2 seconds)
