@@ -167,6 +167,10 @@ To https://github.com/AzaharSK/Fastapi-demo.git
 
 
 <img width="998" height="333" alt="image" src="https://github.com/user-attachments/assets/0d277503-fc24-492c-8033-ce244325bd10" />
+
+### Use health check
+<img width="956" height="822" alt="image" src="https://github.com/user-attachments/assets/7e7579df-e1a3-4734-9757-4127e61a6886" />
+
 <img width="1693" height="1057" alt="image" src="https://github.com/user-attachments/assets/18a838d6-4b5a-468e-b3f9-718e4dae1034" />
 <img width="1624" height="776" alt="image" src="https://github.com/user-attachments/assets/5e5b3ae9-aa53-4a3e-8a05-97fe129be7ef" />
 
