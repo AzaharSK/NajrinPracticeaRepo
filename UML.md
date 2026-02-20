@@ -35,7 +35,6 @@ Classes diagrams
 Objects diagrams
 Deployment diagrams
 Package diagrams
-Composite structure diagram
 Component diagram
 ```
 - Structural model represents the framework for the system and this framework is the place where all other components exist.
@@ -68,5 +67,64 @@ __Member access modifiers:__
 - Static (underlined)
 
 <img width="313" height="183" alt="image" src="https://github.com/user-attachments/assets/f16ba44c-73c4-4591-97b4-8a29080a7958" />
-<img width=450"" height="206" alt="image" src="https://github.com/user-attachments/assets/74c51dcd-d439-4fb2-9832-8dddf112e721" />
+<img width="1700" height="925" alt="image" src="https://github.com/user-attachments/assets/bfba5ef0-4531-4212-81cf-d2aff231bcd7" />
+<img width="1001" height="501" alt="image" src="https://github.com/user-attachments/assets/6599673a-9157-4483-8e26-c96816eb2338" />
 
+### Abstract Class UML
+<img width="1100" height="328" alt="image" src="https://github.com/user-attachments/assets/e0eb01b0-fa4e-450e-927b-4a25313513f2" />
+
+### Interface UML
+<img width="1100" height="408" alt="image" src="https://github.com/user-attachments/assets/70e82e8f-ad21-4cb5-b100-afecc507248c" />
+
+
+### Relationships:
+
+<img width="1267" height="950" alt="image" src="https://github.com/user-attachments/assets/573d5163-b8a7-404f-bf4e-eed3e9e6c0c9" />
+
+<img width="1700" height="1411" alt="image" src="https://github.com/user-attachments/assets/5b61ea1e-a098-4bfb-8886-215db1689fde" />
+
+- `Associations:` Associations in a UML Class Diagram are relationships between classes. A solid line between classes is used to represent them. Associations are often labeled with a verb or verb phrase that matches the problem area in the real world.
+
+- `Generalization or inheritance:` A taxonomic link between a broader and a more particular classifier is referred to as an inheritance or generalization. Each classifier instance is also an indirect instance of the general classifier. As a result, the particular classifier inherits the characteristics of the more general classifier. It symbolizes an "is-a" relationship.
+
+- `Aggregation:` The construction of a specific class as a result of one class being aggregated or formed as a collection is referred to as aggregation. The class "library," for example, consists of one or more books, among other items. The included classes in aggregate are not heavily dependent on the container's lifespan. To depict aggregation in a diagram, draw a line from the parent class to the child class with a diamond shape near the parent class.
+
+- `Composition:` The composition relationship and the aggregation connection are extremely similar. The main distinction is that it emphasizes the contained class's reliance on the life cycle of the container class. That is, when the container class is destroyed, the enclosed class is eliminated. A bag's side pocket, for example, will no longer exist after the bag is destroyed.
+
+-`Realisation:` The implementation of functionality defined in one class by another class is referred to as realization. In UML, a broken line with an unfilled solid arrowhead is sketched from the class that defines the functionality to the class that implements the function to demonstrate the relationship. 
+
+- `Dependency:` In the code of a method, an object of one class may use an object of another class. If the object is not kept in any field, the relationship is portrayed as a dependency.
+
+- `Cardinality:` Cardinality is expressed as one-to-one, one-to-many, or many-to-many relationships.
+
+
+<img width="1700" height="1243" alt="image" src="https://github.com/user-attachments/assets/1e2b8ddf-767e-4c8e-90ac-69d52791e95d" />
+
+### Example
+<img width="1700" height="2276" alt="image" src="https://github.com/user-attachments/assets/6cac9ce2-c920-4381-96cf-e5f6678cf24d" />
+
+
+### Object Diagram:
+
+<img width="961" height="745" alt="image" src="https://github.com/user-attachments/assets/bd170abc-b9b8-42e1-bf53-f3c7afd437e2" />
+
+
+### Type : Component Diagram
+
+<img width="948" height="867" alt="image" src="https://github.com/user-attachments/assets/f76440d5-d342-4dff-9164-66d40cf44990" />
+
+### Package Diagram:
+<img width="951" height="677" alt="image" src="https://github.com/user-attachments/assets/17be6ee2-e071-4d0c-967b-891de0e9b653" />
+
+### Deployment Diagram
+
+<img width="965" height="645" alt="image" src="https://github.com/user-attachments/assets/262bd5d2-b8d6-42f1-98a6-5b98260144bc" />
+
+
+### Type : Communication Diagram
+<img width="1042" height="746" alt="image" src="https://github.com/user-attachments/assets/870484d2-82b2-42dd-a446-d0697dc74148" />
+
+### Type : Sequence diagram
+
+<img width="1029" height="949" alt="image" src="https://github.com/user-attachments/assets/bc7fff98-5c84-45b7-be82-518c4ce67737" />
+<img width="965" height="698" alt="image" src="https://github.com/user-attachments/assets/8b415f25-0324-4947-8ee2-911bf9da549e" />
