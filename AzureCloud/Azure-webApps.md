@@ -93,20 +93,28 @@ touch app.py
 
 ```python
 from fastapi import FastAPI
+import uvicorn 
 
 app = FastAPI()
 
 @app.get("/")
 def home():
     return {"message": "FastAPI running on Azure WebApp 🚀"}
+
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
 ```
 
+- Ref: https://github.com/AzaharSK/Fastapi-demo.git
 
 <img width="1778" height="918" alt="image" src="https://github.com/user-attachments/assets/73a6ccae-e74e-4384-8fea-6d3fbb94d7cf" />
 
 
 
 ```bash
+git clone https://github.com/AzaharSK/Fastapi-demo.git
+
 /fastapi-azure/Fastapi-demo$ git status
 On branch main
 Your branch is up to date with 'origin/main'.
