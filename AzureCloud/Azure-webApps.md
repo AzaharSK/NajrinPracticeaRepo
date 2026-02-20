@@ -368,10 +368,14 @@ DB_PORT=5432
 
 
 ## Special Azure variables (very important): Azure automatically provides:
+
+```
+
 PORT     			Web server port (must use)
 WEBSITE_HOSTNAME  	your public URL
 WEBSITE_SITE_NAME   app name
 
+```
 At Start-up:
 ` uvicorn app:app --host 0.0.0.0 --port $PORT `
 
