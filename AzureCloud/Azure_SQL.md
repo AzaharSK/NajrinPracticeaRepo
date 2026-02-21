@@ -1,3 +1,5 @@
+- Ref: https://www.udemy.com/course/dp900-azure/learn/lecture/20869562#overview
+
 <img width="1913" height="621" alt="image" src="https://github.com/user-attachments/assets/54efc6e7-8de8-42b5-ae81-d79feb6f805f" />
 <img width="1913" height="621" alt="image" src="https://github.com/user-attachments/assets/14471db2-bfea-4e11-a60c-63e137e7f3c4" />
 <img width="1908" height="888" alt="image" src="https://github.com/user-attachments/assets/4ddb559a-8f89-48e7-9dc7-391b71cf903d" />
