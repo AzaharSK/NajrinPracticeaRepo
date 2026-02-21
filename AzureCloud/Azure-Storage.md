@@ -95,7 +95,17 @@ __Think of it as AWS S3 + EBS + DynamoDB + File Server combined in one ecosystem
 3>  Table Storage
 4>  Queue Storage
 5>  Disk Storage
+
+
+Storage Account
+├── Blob Containers
+├── File Shares
+├── Tables
+└── Queues
 ```
+
+
+
 ### 🧱 Blob Storage (Object Storage)
 Used to store unstructured data:
 - Profile pictures
@@ -142,12 +152,27 @@ Use cases:
 - Shared folders
 - Lift-and-shift migration
 
+
+<img width="1755" height="774" alt="image" src="https://github.com/user-attachments/assets/c129f621-1d2f-4dfa-9c39-ca414d9caf58" />
+<img width="1431" height="700" alt="image" src="https://github.com/user-attachments/assets/1a3db12d-8ca9-4040-a321-d37f1fe3d79c" />
+<img width="962" height="1090" alt="image" src="https://github.com/user-attachments/assets/3097b2b1-9153-4783-8a76-2c9af1867ce7" />
+<img width="1776" height="855" alt="image" src="https://github.com/user-attachments/assets/da17358c-cf69-4665-9aab-695f2e5e323f" />
+<img width="1781" height="1091" alt="image" src="https://github.com/user-attachments/assets/41e717fe-d29d-4711-96ad-4f34f64a5488" />
+<img width="1781" height="1091" alt="image" src="https://github.com/user-attachments/assets/5b4a974c-2d92-4ba0-b6f8-1c5461e1962a" />
+<img width="1843" height="956" alt="image" src="https://github.com/user-attachments/assets/505e3e99-2e11-4966-abfe-d26a69df9070" />
+<img width="1853" height="985" alt="image" src="https://github.com/user-attachments/assets/5b4ca4e9-0200-4f37-8d0c-938274495553" />
+<img width="1858" height="694" alt="image" src="https://github.com/user-attachments/assets/6aa277c8-e661-4f8e-beac-4e25d13d4e52" />
+<img width="1851" height="949" alt="image" src="https://github.com/user-attachments/assets/ebdd802b-bac8-43ed-ae09-751f3a0dfd6b" />
+<img width="1848" height="881" alt="image" src="https://github.com/user-attachments/assets/cceb8357-fce5-45a6-be06-1d36f054004c" />
+<img width="1848" height="881" alt="image" src="https://github.com/user-attachments/assets/cde59b6d-cc94-4402-a1aa-fbeb99a7a04d" />
+<img width="1848" height="881" alt="image" src="https://github.com/user-attachments/assets/1fd03040-e18d-43a0-9f68-f199e438727b" />
+
 ---
 
 ### 🧠 Table Storage
 NoSQL Key-Value DB
 
-Structure:
+Semi Structure data:
 PartitionKey | RowKey | Properties
 
 Used for:
@@ -155,6 +180,37 @@ Used for:
 - IoT telemetry
 - Metadata
 - Cache
+
+
+<img width="1910" height="1082" alt="image" src="https://github.com/user-attachments/assets/bfe5ef4c-590d-434c-b50a-4ebbdb01b2fe" />
+<img width="1910" height="1082" alt="image" src="https://github.com/user-attachments/assets/9f26be82-fe4a-4764-b9a5-0a41a8329be2" />
+
+### why Azure Table Storage is not the same as a relational database ?
+
+`💡 Summary: Table Storage looks like a table but is non-relational, semi-structured, and flexible, unlike SQL databases which are strictly structured with enforced relationships.`
+
+__1. Semi-Structured Data__
+
+- Table Storage stores entities with properties that can vary per row.
+- Unlike relational tables, columns are not strictly enforced; some rows can have missing or extra properties.
+
+__2. No Fixed Schema__
+
+- You can add new properties to an entity at any time.
+- No requirement that all rows have the same columns or data types.
+
+__3. No Relational Constraints__
+
+- Table Storage does not support foreign keys, joins, or referential integrity.
+- Cannot enforce relationships between tables like in SQL.
+
+__4. Primary Key is Simple__
+
+- Each entity has a PartitionKey and RowKey for uniqueness.
+- There is no complex indexing, constraints, or relational keys beyond this.
+
+__5. Flexible but Limited Queries__
+- Queries are performed on PartitionKey/RowKey or properties, but no complex relational operations like JOIN, GROUP BY, or transactions across multiple tables.
 
 ---
 
