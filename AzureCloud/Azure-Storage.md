@@ -74,6 +74,8 @@ __Think of it as AWS S3 + EBS + DynamoDB + File Server combined in one ecosystem
 -   Microsoft-managed keys or customer-managed keys\
 -   Optional double encryption (software + hardware disk encryption)
 
+--------------------
+
 ## Storage Account Structure
 
 <img width="1705" height="1033" alt="image" src="https://github.com/user-attachments/assets/e23459cf-999f-486d-9622-610410cd3241" />
@@ -104,7 +106,7 @@ Storage Account
 └── Queues
 ```
 
-
+----------------------------------------
 
 ### 🧱 Blob Storage (Object Storage)
 Used to store unstructured data:
@@ -167,7 +169,7 @@ Use cases:
 <img width="1848" height="881" alt="image" src="https://github.com/user-attachments/assets/cde59b6d-cc94-4402-a1aa-fbeb99a7a04d" />
 <img width="1848" height="881" alt="image" src="https://github.com/user-attachments/assets/1fd03040-e18d-43a0-9f68-f199e438727b" />
 
----
+-------------------------------------
 
 ### 🧠 Table Storage
 NoSQL Key-Value DB
@@ -212,7 +214,7 @@ __4. Primary Key is Simple__
 __5. Flexible but Limited Queries__
 - Queries are performed on PartitionKey/RowKey or properties, but no complex relational operations like JOIN, GROUP BY, or transactions across multiple tables.
 
----
+------------------------------------------
 
 ### 💾 Queue Storage
 Async communication between services
@@ -220,7 +222,7 @@ Async communication between services
 Example:
 User Upload → Queue → Worker → DB
 
----
+------------------------------
 
 ### 🖴 Disk Storage
 VM disks:
@@ -229,7 +231,7 @@ VM disks:
 - Premium SSD
 - Ultra Disk
 
----
+-------------------------------
 
 
 
