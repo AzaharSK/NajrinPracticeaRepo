@@ -82,4 +82,26 @@ __Think of it as AWS S3 + EBS + DynamoDB + File Server combined in one ecosystem
 <img width="983" height="1117" alt="image" src="https://github.com/user-attachments/assets/d0b2b7f5-2c08-4fc5-912d-d5ce58681e1b" />
 <img width="1261" height="809" alt="image" src="https://github.com/user-attachments/assets/e0a6eb8c-af9a-4a2d-b448-e6175634a34a" />
 <img width="1345" height="1133" alt="image" src="https://github.com/user-attachments/assets/a517b3aa-ac65-494e-9b27-47f5eed56d1f" />
+<img width="1806" height="766" alt="image" src="https://github.com/user-attachments/assets/e72b0677-dda9-453a-90e2-4a20666e0f8f" />
+<img width="1643" height="954" alt="image" src="https://github.com/user-attachments/assets/9ad418fd-d92f-45c5-9dbd-dd3b8d1ef5da" />
+
+## Creating blob:
+<img width="1844" height="1015" alt="image" src="https://github.com/user-attachments/assets/7acd6d35-4ba9-4cf9-924a-71acf06a9fa4" />
+<img width="1846" height="773" alt="image" src="https://github.com/user-attachments/assets/dbdd168b-da6e-453a-aa5a-50f7db7652ed" />
+<img width="1837" height="852" alt="image" src="https://github.com/user-attachments/assets/6d61289d-7f03-42a2-bd5a-ca241eb0b82c" />
+
+### Generate SAS token
+<img width="1781" height="1091" alt="image" src="https://github.com/user-attachments/assets/14e37274-4ab0-4106-828d-28f94c8d7043" />
+<img width="1852" height="994" alt="image" src="https://github.com/user-attachments/assets/e0d348cd-2d2a-46dd-a775-61372025e092" />
+<img width="1860" height="1102" alt="image" src="https://github.com/user-attachments/assets/11795068-6ada-4c8a-ab05-57daccc89772" />
+
+```
+https://appnewstorage.blob.core.windows.net/blob1/MVC.md?sp=r&st=2026-02-21T19:20:40Z&se=2026-02-22T03:35:40Z&sv=2024-11-04&sr=b&sig=TPqt7yHORGXOMJ%2FBcUxyHmQYHwSCvzxveKe3xXSd7%2FI%3D
+```
+
+
+
+
+
+
 
