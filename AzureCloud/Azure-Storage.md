@@ -74,7 +74,8 @@ __Think of it as AWS S3 + EBS + DynamoDB + File Server combined in one ecosystem
 -   Microsoft-managed keys or customer-managed keys\
 -   Optional double encryption (software + hardware disk encryption)
 
-  
+## Storage Account Structure
+
 <img width="1705" height="1033" alt="image" src="https://github.com/user-attachments/assets/e23459cf-999f-486d-9622-610410cd3241" />
 <img width="1346" height="1112" alt="image" src="https://github.com/user-attachments/assets/23de385a-08de-424f-93da-5a71c2bd7ddb" />
 <img width="1192" height="1092" alt="image" src="https://github.com/user-attachments/assets/772036a9-d0c7-45c4-acdd-ae62dfb23a32" />
@@ -113,8 +114,25 @@ Used to store unstructured data:
 
 **Example**
 React → Backend API → Blob → CDN
-
 ---
+
+
+## Creating blob:
+<img width="1844" height="1015" alt="image" src="https://github.com/user-attachments/assets/7acd6d35-4ba9-4cf9-924a-71acf06a9fa4" />
+<img width="1846" height="773" alt="image" src="https://github.com/user-attachments/assets/dbdd168b-da6e-453a-aa5a-50f7db7652ed" />
+<img width="1837" height="852" alt="image" src="https://github.com/user-attachments/assets/6d61289d-7f03-42a2-bd5a-ca241eb0b82c" />
+
+<img width="1934" height="1084" alt="image" src="https://github.com/user-attachments/assets/06062eea-6e26-449d-83c4-61406cc8bbf8" />
+
+### Generate SAS token
+<img width="1781" height="1091" alt="image" src="https://github.com/user-attachments/assets/14e37274-4ab0-4106-828d-28f94c8d7043" />
+<img width="1852" height="994" alt="image" src="https://github.com/user-attachments/assets/e0d348cd-2d2a-46dd-a775-61372025e092" />
+<img width="1860" height="1102" alt="image" src="https://github.com/user-attachments/assets/11795068-6ada-4c8a-ab05-57daccc89772" />
+
+```
+https://appnewstorage.blob.core.windows.net/blob1/MVC.md?sp=r&st=2026-02-21T19:20:40Z&se=2026-02-22T03:35:40Z&sv=2024-11-04&sr=b&sig=TPqt7yHORGXOMJ%2FBcUxyHmQYHwSCvzxveKe3xXSd7%2FI%3D
+```
+---------------------
 
 ### 📁 File Storage
 Cloud SMB file share: \\\\companyshare\\documents
@@ -156,24 +174,6 @@ VM disks:
 - Ultra Disk
 
 ---
-
-## Storage Account Structure
-
-## Creating blob:
-<img width="1844" height="1015" alt="image" src="https://github.com/user-attachments/assets/7acd6d35-4ba9-4cf9-924a-71acf06a9fa4" />
-<img width="1846" height="773" alt="image" src="https://github.com/user-attachments/assets/dbdd168b-da6e-453a-aa5a-50f7db7652ed" />
-<img width="1837" height="852" alt="image" src="https://github.com/user-attachments/assets/6d61289d-7f03-42a2-bd5a-ca241eb0b82c" />
-
-<img width="1934" height="1084" alt="image" src="https://github.com/user-attachments/assets/06062eea-6e26-449d-83c4-61406cc8bbf8" />
-
-### Generate SAS token
-<img width="1781" height="1091" alt="image" src="https://github.com/user-attachments/assets/14e37274-4ab0-4106-828d-28f94c8d7043" />
-<img width="1852" height="994" alt="image" src="https://github.com/user-attachments/assets/e0d348cd-2d2a-46dd-a775-61372025e092" />
-<img width="1860" height="1102" alt="image" src="https://github.com/user-attachments/assets/11795068-6ada-4c8a-ab05-57daccc89772" />
-
-```
-https://appnewstorage.blob.core.windows.net/blob1/MVC.md?sp=r&st=2026-02-21T19:20:40Z&se=2026-02-22T03:35:40Z&sv=2024-11-04&sr=b&sig=TPqt7yHORGXOMJ%2FBcUxyHmQYHwSCvzxveKe3xXSd7%2FI%3D
-```
 
 
 
