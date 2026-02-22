@@ -63,9 +63,13 @@ sqlcmd -S app-sqldbserver.database.windows.net -U dbadmin -P yourpassword -d app
 
 ## Deploy 50 SQL DB same instance using template , downloads an ARM template JSON file
 <img width="1826" height="1103" alt="image" src="https://github.com/user-attachments/assets/63dee027-3d54-41e6-a0dc-b7318b55964f" />
-
-
-
-
 <img width="1572" height="1102" alt="image" src="https://github.com/user-attachments/assets/9988b34d-66f6-45fb-97e0-b28f63a0fd18" />
+
+## DataBase connection string:
+<img width="1841" height="1016" alt="image" src="https://github.com/user-attachments/assets/3667eba7-f0a5-489b-b91e-433e7a87549f" />
+<img width="1038" height="851" alt="image" src="https://github.com/user-attachments/assets/55c2667b-8bbe-41e1-b900-46b3db579c4c" />
+<img width="1851" height="542" alt="image" src="https://github.com/user-attachments/assets/404c9d12-94ae-409f-9b58-862adf66c33e" />
+
+
+
 
