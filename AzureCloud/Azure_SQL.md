@@ -23,3 +23,15 @@
 <img width="1885" height="1046" alt="image" src="https://github.com/user-attachments/assets/21752c4e-3ba3-42e8-b49f-82cdfab8e71b" />
 <img width="1850" height="673" alt="image" src="https://github.com/user-attachments/assets/4d80d44c-49a0-4071-9a23-f472582dd564" />
 
+----------------------------------------
+# Azure SQL database LAB
+
+<img width="1707" height="982" alt="image" src="https://github.com/user-attachments/assets/82b0e01d-7820-4948-8457-c6d0c2489326" />
+<img width="1469" height="1102" alt="image" src="https://github.com/user-attachments/assets/af9c9e29-4c4e-4c86-a881-667229c47e2f" />
+<img width="1028" height="1109" alt="image" src="https://github.com/user-attachments/assets/1dcafe99-c1ce-4879-8869-803d77dcc1d1" />
+<img width="1143" height="1113" alt="image" src="https://github.com/user-attachments/assets/6ce21048-a992-41c1-a15d-9df8cecd71e0" />
+<img width="1364" height="1084" alt="image" src="https://github.com/user-attachments/assets/e59fa27d-332b-417a-ad45-12258e24e7b4" />
+<img width="1628" height="802" alt="image" src="https://github.com/user-attachments/assets/92e41fab-f707-42f2-a84f-984110bc5bb7" />
+
+<img width="1572" height="1102" alt="image" src="https://github.com/user-attachments/assets/9988b34d-66f6-45fb-97e0-b28f63a0fd18" />
+
