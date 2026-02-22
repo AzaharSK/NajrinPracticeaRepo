@@ -70,6 +70,146 @@ sqlcmd -S app-sqldbserver.database.windows.net -U dbadmin -P yourpassword -d app
 <img width="1038" height="851" alt="image" src="https://github.com/user-attachments/assets/55c2667b-8bbe-41e1-b900-46b3db579c4c" />
 <img width="1851" height="542" alt="image" src="https://github.com/user-attachments/assets/404c9d12-94ae-409f-9b58-862adf66c33e" />
 
+## SQL Database security:
+<img width="1747" height="993" alt="image" src="https://github.com/user-attachments/assets/bae893ba-ff30-4545-b752-bc72311b5c96" />
+
+# SQL Database Security – Summary Notes
+
+## Overview
+Database security consists of multiple layers that protect data from unauthorized access, attacks, misuse, and breaches. In Azure SQL Database, security is enforced through five major mechanisms:
+
+1. Networking Security  
+2. Identity (Account) Security  
+3. Firewall & Threat Protection (Microsoft Defender)  
+4. Encryption  
+5. Logging & Auditing  
+
+---
+
+# 1️⃣ Networking Security
+
+## Key Concepts
+- Public access is **denied by default**.
+- Databases should NOT be publicly accessible in production.
+- Public access may be temporarily enabled for testing/demo purposes.
+
+## Secure Access Options
+
+### 🔹 Private Access (Recommended)
+- Uses **Azure Private Link**
+- Point-to-point private connection
+- No open internet exposure
+- Ideal for:
+  - Azure VMs
+  - Web Apps
+  - Internal services
+
+### 🔹 Virtual Network (VNet) Access
+- Restrict access to specific Azure Virtual Networks
+- Prevents exposure to public internet
+- Allows controlled internal traffic
+
+### 🔹 Firewall Rules
+- Allow specific IP addresses or IP ranges
+- Used when public access is required
+- “Allow Azure services” checkbox enables Azure resources to connect
+
+---
+
+# 2️⃣ Identity / Account Security
+
+## Authentication Methods
+
+### 🔹 SQL Server Authentication
+- Username & password managed by SQL Server
+- Less secure in enterprise scenarios
+
+### 🔹 Microsoft Entra ID (Azure AD) – Recommended
+- Centralized identity management
+- Single Sign-On (SSO)
+- Role-Based Access Control (RBAC)
+- Can disable SQL authentication
+- Requires Entra Admin setup
+
+## Benefits
+- Centralized access control
+- Better compliance
+- Stronger identity governance
+
+---
+
+# 3️⃣ Firewall & Threat Protection (Microsoft Defender)
+
+## Microsoft Defender for Cloud
+- Paid service (~$15 per server/month)
+- 30-day free trial available
+- Advanced threat detection
+- Monitors unusual activity
+- Detects:
+  - Suspicious downloads
+  - Data exfiltration attempts
+  - Unusual login behavior
+
+## Additional Features
+- Just-in-Time (JIT) access
+- Security policy enforcement
+- Dynamic threat detection
+
+---
+
+# 4️⃣ Encryption
+
+## Default Encryption
+- Databases are encrypted by default
+- Uses Service-Managed Keys
+- Cannot disable at server level
+- Can disable at database level (not recommended)
+
+## Customer-Managed Keys (CMK)
+- Stored in **Azure Key Vault**
+- Full control over encryption keys
+- Ability to rotate/regenerate keys
+- Microsoft does not store your key
+
+---
+
+# 5️⃣ Logging & Auditing
+
+## Purpose
+- Does not prevent attacks
+- Helps detect, monitor, and investigate incidents
+
+## Features
+- Track database activity
+- Identify:
+  - Who accessed data
+  - What actions were performed
+  - When changes occurred
+- Set alerts for suspicious behavior
+
+## Storage Options
+- Log Analytics (centralized monitoring)
+- Audit Microsoft access activities (optional)
+
+---
+
+# 🔐 Security Summary for DP-900 Exam
+
+Azure SQL Database security includes:
+
+- ✅ Networking Security  
+- ✅ Identity & Access Management  
+- ✅ Firewall & Threat Protection  
+- ✅ Encryption  
+- ✅ Logging & Auditing  
+
+Together, these create a multi-layered security model to protect databases from unauthorized access, attacks, and data breaches.
+
+---
+
+# 🎯 Interview One-Line Summary
+
+"Azure SQL security follows a layered defense approach using network isolation, identity-based authentication, firewall protection, encryption at rest, and auditing for monitoring and compliance."
 
 
 
