@@ -35,8 +35,14 @@
 <img width="1854" height="660" alt="image" src="https://github.com/user-attachments/assets/8e69cd85-9059-48ed-82aa-1a3f2906e3c9" />
 <img width="1854" height="892" alt="image" src="https://github.com/user-attachments/assets/c6657065-5bdf-495d-ad78-db90d5f7871e" />
 <img width="1826" height="1103" alt="image" src="https://github.com/user-attachments/assets/fe92f9bb-9f9b-4b42-aafb-d69052871793" />
+
+## Azure Query Editor
+
+<img width="1818" height="687" alt="image" src="https://github.com/user-attachments/assets/68a54ada-22e4-475e-8cd2-9610e000b1e8" />
 <img width="1666" height="892" alt="image" src="https://github.com/user-attachments/assets/ded99ec4-acca-4ccd-9957-949f50f400f1" />
+
 ## Allow Firewall rule for this laptop IP to view/access to DB
+
 <img width="1847" height="1062" alt="image" src="https://github.com/user-attachments/assets/b5d96bf9-6270-4a40-8ffd-304c2f15fb9d" />
 
 __`Databases → app-sqldb → Tables → Right click → Select Top 1000 Rows`__
@@ -55,20 +61,35 @@ EXEC sp_help 'users';
 ```
 
 __`Using Command Line (sqlcmd)`__
+
+<img width="1881" height="835" alt="image" src="https://github.com/user-attachments/assets/74e45140-322c-485d-91ad-acd1c7cd388c" />
+
 ```
 sqlcmd -S app-sqldbserver.database.windows.net -U dbadmin -P yourpassword -d app-sqldb
 ```
-<img width="1816" height="883" alt="image" src="https://github.com/user-attachments/assets/2944c58d-9627-48df-a306-d00a4b262a3e" />
-<img width="1611" height="684" alt="image" src="https://github.com/user-attachments/assets/6cffbd9a-459a-4a57-b116-5b364b554ada" />
+<img width="1821" height="837" alt="image" src="https://github.com/user-attachments/assets/a45f9794-b8e8-4a22-aabf-b73c50b5ee76" />
+<img width="1881" height="835" alt="image" src="https://github.com/user-attachments/assets/33e1fdfe-19e1-4211-bbdc-3fae0a031042" />
 
-## Deploy 50 SQL DB same instance using template , downloads an ARM template JSON file
-<img width="1826" height="1103" alt="image" src="https://github.com/user-attachments/assets/63dee027-3d54-41e6-a0dc-b7318b55964f" />
-<img width="1572" height="1102" alt="image" src="https://github.com/user-attachments/assets/9988b34d-66f6-45fb-97e0-b28f63a0fd18" />
+<img width="1906" height="525" alt="image" src="https://github.com/user-attachments/assets/f562e199-2102-485d-8bc7-56bbd84072c1" />
+<img width="1906" height="525" alt="image" src="https://github.com/user-attachments/assets/0ccbea23-618b-4b3d-86c0-eae8f066c2a9" />
+<img width="1906" height="525" alt="image" src="https://github.com/user-attachments/assets/d4c6c560-81ac-44c8-acdf-09e3643ca212" />
+<img width="1885" height="577" alt="image" src="https://github.com/user-attachments/assets/915d013e-22d8-4212-872b-5bba328181fa" />
+<img width="1885" height="836" alt="image" src="https://github.com/user-attachments/assets/38d3146a-4fe0-4d54-a6d6-9dd645407034" />
 
 ## DataBase connection string:
+
 <img width="1841" height="1016" alt="image" src="https://github.com/user-attachments/assets/3667eba7-f0a5-489b-b91e-433e7a87549f" />
 <img width="1038" height="851" alt="image" src="https://github.com/user-attachments/assets/55c2667b-8bbe-41e1-b900-46b3db579c4c" />
 <img width="1851" height="542" alt="image" src="https://github.com/user-attachments/assets/404c9d12-94ae-409f-9b58-862adf66c33e" />
+
+
+## Deploy 50 SQL DB same instance using template , downloads an ARM template JSON file
+<img width="1816" height="883" alt="image" src="https://github.com/user-attachments/assets/2944c58d-9627-48df-a306-d00a4b262a3e" />
+<img width="1611" height="684" alt="image" src="https://github.com/user-attachments/assets/6cffbd9a-459a-4a57-b116-5b364b554ada" />
+
+<img width="1826" height="1103" alt="image" src="https://github.com/user-attachments/assets/63dee027-3d54-41e6-a0dc-b7318b55964f" />
+<img width="1572" height="1102" alt="image" src="https://github.com/user-attachments/assets/9988b34d-66f6-45fb-97e0-b28f63a0fd18" />
+
 
 ## SQL Database security:
 <img width="1747" height="993" alt="image" src="https://github.com/user-attachments/assets/bae893ba-ff30-4545-b752-bc72311b5c96" />
