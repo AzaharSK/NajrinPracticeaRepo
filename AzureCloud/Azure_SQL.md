@@ -32,6 +32,40 @@
 <img width="1143" height="1113" alt="image" src="https://github.com/user-attachments/assets/6ce21048-a992-41c1-a15d-9df8cecd71e0" />
 <img width="1364" height="1084" alt="image" src="https://github.com/user-attachments/assets/e59fa27d-332b-417a-ad45-12258e24e7b4" />
 <img width="1628" height="802" alt="image" src="https://github.com/user-attachments/assets/92e41fab-f707-42f2-a84f-984110bc5bb7" />
+<img width="1854" height="660" alt="image" src="https://github.com/user-attachments/assets/8e69cd85-9059-48ed-82aa-1a3f2906e3c9" />
+<img width="1854" height="892" alt="image" src="https://github.com/user-attachments/assets/c6657065-5bdf-495d-ad78-db90d5f7871e" />
+<img width="1826" height="1103" alt="image" src="https://github.com/user-attachments/assets/fe92f9bb-9f9b-4b42-aafb-d69052871793" />
+<img width="1666" height="892" alt="image" src="https://github.com/user-attachments/assets/ded99ec4-acca-4ccd-9957-949f50f400f1" />
+## Allow Firewall rule for this laptop IP to view/access to DB
+<img width="1847" height="1062" alt="image" src="https://github.com/user-attachments/assets/b5d96bf9-6270-4a40-8ffd-304c2f15fb9d" />
+
+__`Databases → app-sqldb → Tables → Right click → Select Top 1000 Rows`__
+<img width="1826" height="1103" alt="image" src="https://github.com/user-attachments/assets/302393db-347c-40ba-a252-76872460f71a" />
+
+```sql
+-- Show all tables
+SELECT * FROM INFORMATION_SCHEMA.TABLES;
+
+-- Show table data
+SELECT * FROM users;
+
+-- Show table structure
+EXEC sp_help 'users';
+
+```
+
+__`Using Command Line (sqlcmd)`__
+```
+sqlcmd -S app-sqldbserver.database.windows.net -U dbadmin -P yourpassword -d app-sqldb
+```
+<img width="1816" height="883" alt="image" src="https://github.com/user-attachments/assets/2944c58d-9627-48df-a306-d00a4b262a3e" />
+<img width="1611" height="684" alt="image" src="https://github.com/user-attachments/assets/6cffbd9a-459a-4a57-b116-5b364b554ada" />
+
+## Deploy 50 SQL DB same instance using template , downloads an ARM template JSON file
+<img width="1826" height="1103" alt="image" src="https://github.com/user-attachments/assets/63dee027-3d54-41e6-a0dc-b7318b55964f" />
+
+
+
 
 <img width="1572" height="1102" alt="image" src="https://github.com/user-attachments/assets/9988b34d-66f6-45fb-97e0-b28f63a0fd18" />
 
