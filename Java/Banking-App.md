@@ -39,4 +39,8 @@ Grafana, and Playwright.
 
 ------------------------------------------------------------------------------------------------------------------
 
-https://github.com/RameshMF/build-5-springboot4-projects/tree/main/banking-app
+## Simple-banking-app:
+- https://github.com/RameshMF/build-5-springboot4-projects/tree/main/banking-app
+
+## Real-Time banking-app
+- https://github.com/phegondev/phegon-bank/tree/master
