@@ -11,7 +11,6 @@ __Microsoft Azure Storage is a scalable, durable, highly available cloud storage
 
 __Think of it as AWS S3 + EBS + DynamoDB + File Server combined in one ecosystem.__
 
-
 # Azure Storage Account --- Feature Summary
 
 ## 10 Key Points
@@ -42,6 +41,15 @@ __Think of it as AWS S3 + EBS + DynamoDB + File Server combined in one ecosystem
     -   GRS → 6 copies across regions\
     -   RA-GRS → secondary region read access
 
+
+- `Locally redundant storage LRS` − Copy of the data is created in the same region where storage account is created. There are 3 copies of each request made against the data that resides on separate domains.
+
+- `Zone-redundant storage (available for blobs only) ZRS` − Copy of the data is created on separate facilities either in the same region or across two regions. The advantage is that even if there is failure on one facility, the data still can be retained. Three copies of data are created. One more advantage is that data can be read from a secondary location.
+
+- `Geo-redundant storage GRS` − `Copy is created in a different region which means data is retained even if there is a failure in the complete region. The numbers of copies of data created are 6 in this case.
+
+- `Read-access geo-redundant storage RA-GRS` − This option allows reading of data from a secondary location when data on the primary location is not available. The number of copies created is 6. The main advantage here is that availability of data can be maximized.
+  
 6.  **Security configuration**
 
     -   HTTPS-only access recommended\
