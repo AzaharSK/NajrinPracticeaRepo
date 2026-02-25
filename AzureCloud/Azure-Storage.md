@@ -225,10 +225,107 @@ __5. Flexible but Limited Queries__
 ------------------------------------------
 
 ### 💾 Queue Storage
-Async communication between services
+- Microsoft Azure provides two message queue services:
+
+```json
+        - 1> Azure Queue Storage
+        - 2> Azure Service Bus (Service Bus Queue)
+```
+
+This note mainly focuses on Azure Queue Storage.
+
+__Azure Queue Storage is a cloud-based message queue service used to store large numbers of messages.__
+
+It enables:
+    - A sender to send messages
+    - A receiver (client/worker) to receive and process messages
+    - Asynchronous communication between application components/services
+
+### 🔹 How It Works (Basic Flow)
+
+- Sender places a message in the queue.
+    - Where Each message includes attributes such as:
+       ```json
+          - Message ID
+          - Insertion time
+          - Expiry time (TTL – Time to Live)
+          - Dequeue count
+        ```
+    
+    - Maximum message size Limit: 64 KB
+    - A queue can handle millions of messages (older references mention 20,000 per request batch limit, not total).
+    - Data is automatically replicated depending on storage redundancy (LRS, GRS, etc.) -Azure Storage provides redundancy at the storage account level.
+    
+    
+- Message stays in the queue until -- A worker processes and deletes it, OR It expires.
+
+  ```json
+          Messages can be stored for up to 7 days (older limitation; modern Azure allows configurable TTL).
+          If not deleted within the TTL, the message is automatically removed.
+  ```
+- Worker retrieves the message - using a __peek-lock pattern (visibility timeout)__.
+- After processing, worker deletes the message- If a worker fails to delete the message, it becomes __visible__ again.
+- Azure Queue supports:
+
+```json
+    ✅ One sender → One receiver
+    ✅ One sender → Many receivers
+    ✅ Many senders → Many receivers
+```
+
+### Example:
+User Upload → Queue → Worker → DB
+
+
+
+### Used heavily in:
+
+- Background job processing
+- Microservices communication
+- Task scheduling
+- Order processing systems
+- Video processing pipelines
+
+### 🔹 Key Advantage – Decoupling
+
+Message queues help in loosely coupling components.
 
 Example:
-User Upload → Queue → Worker → DB
+
+- Frontend sends a task message.
+- Backend worker processes it asynchronously.
+- Frontend does not wait → improves performance & scalability.
+
+This enables:
+
+- Fault tolerance
+- Scalability
+- Asynchronous processing
+- Better workflow management
+
+### 🔹 Real-World Example
+
+E-commerce Order Flow:
+
+```json
+1. User places order.
+
+2. Order message sent to queue.
+
+3. Worker:
+
+    * Processes payment
+    * Updates inventory
+    * Sends confirmation email
+
+4. Deletes message after completion.
+```
+
+### 🔹 Interview One-Line Definition
+- Azure Queue Storage is a cloud-based messaging service that enables asynchronous communication between application components and services by storing and delivering messages reliably at scale.
+
+<img width="1036" height="482" alt="image" src="https://github.com/user-attachments/assets/7eee7c23-0102-4dad-89b6-7d6e026d5af3" />
+
 
 ------------------------------
 
