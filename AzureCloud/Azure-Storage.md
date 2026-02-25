@@ -180,10 +180,14 @@ Use cases:
 -------------------------------------
 
 ### 🧠 Table Storage
-NoSQL Key-Value DB
+NoSQL Key-Value DB: 
 
 Semi Structure data:
 PartitionKey | RowKey | Properties
+
+- Storing a table does not mean relational database here.
+- Azure Storage can store just a table without any foreign keys or any other kind of relation.
+- These tables are highly scalable and ideal for handling large amount of data. Tables can be stored and queried for large amount of data.
 
 Used for:
 - Sessions
