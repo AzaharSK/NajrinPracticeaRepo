@@ -43,10 +43,20 @@ Patching handled by Azure
 Built-in monitoring
 SLA-backed
 ```
+
+<img width="1252" height="746" alt="image" src="https://github.com/user-attachments/assets/f0b79b2c-0f30-445c-92e8-245353727b9a" />
+
 <img width="1894" height="957" alt="image" src="https://github.com/user-attachments/assets/2b7edf6a-be95-459f-af22-7c28018f7b91" />
+
+<img width="1201" height="835" alt="image" src="https://github.com/user-attachments/assets/1fef32e1-60f9-4aec-9c3c-f5660ab06d57" />
+
 <img width="1894" height="957" alt="image" src="https://github.com/user-attachments/assets/81737145-6588-4b25-9ab2-27b53d15d212" />
+
+<img width="1218" height="983" alt="image" src="https://github.com/user-attachments/assets/a2021a04-2f7c-4ef2-bd85-6ed5a565ff10" />
+
 <img width="1866" height="813" alt="image" src="https://github.com/user-attachments/assets/b0bfab20-5589-47ea-aed8-923b8e61f6cd" />
 
+<img width="1247" height="1016" alt="image" src="https://github.com/user-attachments/assets/2f460d47-ae2d-4b75-9b9a-2e43c2b2cb9a" />
 
 ### 4️⃣ Core Redis Data Structures
 
