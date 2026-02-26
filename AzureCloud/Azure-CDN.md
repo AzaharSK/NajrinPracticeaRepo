@@ -69,5 +69,17 @@ The application can create items at runtime and make them available to the CDN (
 <img width="1725" height="1000" alt="image" src="https://github.com/user-attachments/assets/d97b1842-b875-4a9f-81a9-082fe5f83ede" />
 <img width="1903" height="943" alt="image" src="https://github.com/user-attachments/assets/b44b94f2-a42c-4631-9dde-0c478234b1d2" />
 <img width="1725" height="1000" alt="image" src="https://github.com/user-attachments/assets/e0373e55-010b-41bb-829d-60fcffd24774" />
+<img width="1816" height="992" alt="image" src="https://github.com/user-attachments/assets/628348e2-2c92-4b43-966f-635d0bf012fc" />
+<img width="1915" height="937" alt="image" src="https://github.com/user-attachments/assets/2f6fcf2a-3583-48f9-97e1-8cd88ef18cc3" />
+
+## Test: Open Google chrome tab developer mode --> Network section --> Disable cache
+
+<img width="1918" height="1024" alt="image" src="https://github.com/user-attachments/assets/6c7068b8-5fa8-491a-849d-e7773916ed68" />
+<img width="1918" height="1024" alt="image" src="https://github.com/user-attachments/assets/d0a30b73-d624-4b75-b7f3-1209af51dbfa" />
+<img width="1918" height="1024" alt="image" src="https://github.com/user-attachments/assets/b37d4c99-763c-47f5-801e-c088bc3f7ade" />
+<img width="1918" height="1024" alt="image" src="https://github.com/user-attachments/assets/ff497fe4-dbc7-4e9d-bea9-e858ebedcdfd" />
+
+
+
 
 
