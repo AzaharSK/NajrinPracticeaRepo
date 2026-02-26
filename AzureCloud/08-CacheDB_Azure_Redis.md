@@ -1,3 +1,6 @@
+<img width="2607" height="2005" alt="image" src="https://github.com/user-attachments/assets/34eb6c3a-6281-4e81-937f-2b79203aef4d" />
+
+
 ## 1️⃣ What is Azure Redis?
 
 - Azure Cache for Redis is Microsoft’s managed Redis service on Microsoft Microsoft Azure.
