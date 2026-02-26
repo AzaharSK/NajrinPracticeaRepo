@@ -58,5 +58,16 @@ The application can create items at runtime and make them available to the CDN (
 
 - `Supporting IoT (Internet of Things) solutions:` The huge numbers of devices and appliances involved in an IoT solution could easily overwhelm an application if it had to distribute firmware updates directly to each device.
 
+
 - `Coping with peaks and surges in demand without requiring the application to scale:` avoiding the consequent increase in running costs. For example, when an update to an operating system is released for a hardware device such as a specific model of router, or for a consumer device such as a smart TV, there's a huge peak in demand as it is downloaded by millions of users and devices over a short period.
+
+
+
+<img width="1521" height="929" alt="image" src="https://github.com/user-attachments/assets/e02c7c12-a5d0-4a0f-a216-6d7addf9edf8" />
+<img width="1725" height="1000" alt="image" src="https://github.com/user-attachments/assets/2fb8302c-f733-42af-82d6-40d355dcdb7d" />
+<img width="1725" height="1000" alt="image" src="https://github.com/user-attachments/assets/c30fb82e-0c45-4211-a9e5-c57fc1a92ab1" />
+<img width="1725" height="1000" alt="image" src="https://github.com/user-attachments/assets/d97b1842-b875-4a9f-81a9-082fe5f83ede" />
+<img width="1903" height="943" alt="image" src="https://github.com/user-attachments/assets/b44b94f2-a42c-4631-9dde-0c478234b1d2" />
+<img width="1725" height="1000" alt="image" src="https://github.com/user-attachments/assets/e0373e55-010b-41bb-829d-60fcffd24774" />
+
 
