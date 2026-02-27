@@ -220,6 +220,14 @@ Avoid if:
 ### Review + Create
 <img width="1920" height="985" alt="image" src="https://github.com/user-attachments/assets/fc25ca50-a8ce-42b2-99b8-c1b7f1df9988" />
 
+<img width="1920" height="985" alt="image" src="https://github.com/user-attachments/assets/3ca09bbf-272e-4cc7-bbf0-95cba6d480fb" />
+<img width="1920" height="985" alt="image" src="https://github.com/user-attachments/assets/da25798c-4412-4116-8816-396663293f96" />
+<img width="1853" height="456" alt="image" src="https://github.com/user-attachments/assets/302ab9f6-337b-415d-a0fa-b3f220be1895" />
+<img width="1910" height="1146" alt="image" src="https://github.com/user-attachments/assets/b17e8081-e405-4b3f-81ee-1a5e9e495c21" />
+<img width="1910" height="1146" alt="image" src="https://github.com/user-attachments/assets/63a6d672-96ec-4a8b-8d11-b8503e79ebff" />
+
+
+<img width="1920" height="985" alt="image" src="https://github.com/user-attachments/assets/059d3429-104e-4494-a3ed-45160dc52ee7" />
 
 
 
