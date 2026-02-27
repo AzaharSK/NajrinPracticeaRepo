@@ -222,7 +222,7 @@ Avoid if:
 <img width="1920" height="985" alt="image" src="https://github.com/user-attachments/assets/da25798c-4412-4116-8816-396663293f96" />
 <img width="1853" height="456" alt="image" src="https://github.com/user-attachments/assets/302ab9f6-337b-415d-a0fa-b3f220be1895" />
 
-### Test speed: Latency of North-Europe faster then WestUS, as Requested User leaves nearby
+### Test speed: Latency of North-Europe(151ms) faster then WestUS (303ms), as Requested User leaves nearby
 <img width="1910" height="1146" alt="image" src="https://github.com/user-attachments/assets/b17e8081-e405-4b3f-81ee-1a5e9e495c21" />
 <img width="1910" height="1146" alt="image" src="https://github.com/user-attachments/assets/63a6d672-96ec-4a8b-8d11-b8503e79ebff" />
 
