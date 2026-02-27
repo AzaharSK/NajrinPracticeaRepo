@@ -1,5 +1,3 @@
-Here are **clean, structured, interview-ready notes** on:
-
 # 🌍 Azure Front Door
 
 ---
