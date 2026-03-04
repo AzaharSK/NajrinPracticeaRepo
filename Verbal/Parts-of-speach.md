@@ -8,6 +8,6 @@
 * `Place` - Goa, Taj Mahal, Sea, River, Planet, Farmhouse, Tourist place, etc. 
 * `Person` - John, Biographer, Cardiologist, Cameramen, Actress, Politicians, etc.
 * `Things` -  Grains, Rocks, Trees, Forest, Paper, Glass, Metals, Plastic, etc.
-* `Ideas* - Revolution, Resolution, Invention, Conclusion, Argument, etc.
+* `Ideas` - Revolution, Resolution, Invention, Conclusion, Argument, etc.
 
 
