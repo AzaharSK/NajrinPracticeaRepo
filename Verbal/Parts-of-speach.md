@@ -9,3 +9,6 @@
 * `Person` - John, Biographer, Cardiologist, Cameramen, Actress, Politicians, etc.
 * `Things` -  Grains, Rocks, Trees, Forest, Paper, Glass, Metals, Plastic, etc.
 * `Ideas* - Revolution, Resolution, Invention, Conclusion, Argument, etc.
+
+
+<img width="2500" height="1523" alt="download (1)" src="https://github.com/user-attachments/assets/238cc484-6c82-4459-8d3c-c65fcbb6c308" />
