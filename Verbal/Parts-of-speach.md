@@ -11,3 +11,5 @@
 * `Ideas` - Revolution, Resolution, Invention, Conclusion, Argument, etc.
 
 
+<img width="1344" height="434" alt="image" src="https://github.com/user-attachments/assets/0eeb1ac4-5628-42a0-8a8b-a920f606d511" />
+<img width="1350" height="415" alt="image" src="https://github.com/user-attachments/assets/6384807a-e24b-4741-8eaf-2eb36eee8da8" />
